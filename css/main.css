@@ -2,6 +2,19 @@ body {
     margin: 60px auto;
     width: 70%;
 }
+
+
+
+#bg {
+    background-image: url(./assets/Background.png);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 100;
+}
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -23,6 +36,10 @@ h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
+h2 {
+    font-size: 2em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
 p {
     font-size: 1.5em;
     line-height: 1.4em;
@@ -40,4 +57,17 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+div.dp {
+    position: absolute;
+    top: 60px;
+    right: 275px;
+    margin: 1px;
+    width: 150px;
+}
+
+div.dp img {
+    width: 100%;
+    height: auto;
 }
