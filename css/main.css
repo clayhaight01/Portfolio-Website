@@ -101,7 +101,6 @@ hr { /*horizontal line*/
     font-size: 1.25em;
     font-style: normal;
     font-weight: normal;
-    text-decoration: none;
     line-height: 1.25em;
 
     margin-left: 25px;
@@ -112,7 +111,7 @@ hr { /*horizontal line*/
 }
 
 .location {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.25em;
     font-style: normal;
     font-weight: normal;
@@ -126,6 +125,27 @@ hr { /*horizontal line*/
     margin-block-end: 0px;
 
     color: #363636;
+}
+
+.condensed_name {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 36px;
+    line-height: 36px;
+
+    text-align: left;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-top: 15px;
+
+    color: #363636;
+}
+
+.bottom_nav_condensed {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
 a {
