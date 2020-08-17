@@ -3,10 +3,14 @@ body {
     width: 100%;
 }
 
-header {
+.top_header {
     background-image: url(../assets/Background.png);
     background-size: cover;
     padding: 0px 115px 15px;
+}
+
+ul{
+    padding-inline-start: 0;
 }
 
 nav {
@@ -22,7 +26,6 @@ nav ul { /*entire list settings*/
     justify-content: space-between;
 
     font-family:'Helvetica', 'Arial';
-    font-weight: bold;
 }
 
 .nav_list {
@@ -39,9 +42,14 @@ footer ul { /*entire list settings*/
 }
 nav ul li { /*each list element*/
     display: inline-block;
+
     font-size: 1.25em;
     padding: 5px 5px;
     color: #363636;
+}
+
+.nav_list a {
+    font-weight: bold;
 }
 
 footer ul li { /*each list element*/
@@ -182,11 +190,10 @@ p {
     font-family:'Helvetica', 'Arial';
     font-size: 1.25em;
     line-height: 1.25em;
-    color: #333;
+    color: #535353;
 }
 
 footer {
-    border-top: 1px solid #d5d5d5;
     font-size: .8em;
     margin-left: 120px;
 }
@@ -198,4 +205,75 @@ main {
 
 .blurb {
 
+}
+
+.filter_header{
+    width: 100%;
+    display: inline-block;
+    padding: 0;
+}
+
+.filters{
+    max-width: calc(100vw - 300px);
+    margin: 0 0;
+    float: left;
+}
+
+.filters ul{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.filters ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px 20px 10px 0;
+}
+
+.filters ul li a{
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    color: #363636;
+}
+
+.filters ul li a:hover, .filters ul li a:active{
+    color: #54a4db;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+.card{
+    width: 31%;
+    margin: 0 1% 55px;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+}
+
+.card:hover{
+    border: 1px solid #363636;
+}
+
+.card img{
+    width: 100%;
+}
+
+figcaption {
+    padding: 0 10px;
+}
+
+.card h3{
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+    font-family:'Helvetica', 'Arial';
+    font-size: 1.25em;
+    line-height: 1.25em;
+    color: #363636;
 }

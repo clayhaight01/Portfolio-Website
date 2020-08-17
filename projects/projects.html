@@ -6,9 +6,10 @@
 			<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 			<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
 		</head>
 		<body>
-			<header>
+			<header class="top_header">
 				<nav>
 		    		<ul class="nav_list">
 		        		<li><a href="../index.html">Home</a></li>
@@ -19,7 +20,6 @@
 		    		</ul>
 				</nav>
 				<hr>
-
 				<div class="bottom_nav_condensed">
 					<h1 class="condensed_name">Clayton <b>Haight</b></h1>
 		    		<p class="location">ON | <b>CA</b></p>
@@ -29,14 +29,101 @@
 				<h2>Projects</h2>
 				<div class="blurb">
 					<p>I am a Waterloo Engineering Student. <a href="./about/about.html">Read more...</a></p>
-    			</div>
+				</div>
+				<header class="filter_header">
+					<div class="filters">
+						<ul>
+							<li><a data-filter=".all" href="#">All</a></li>
+							<li><a data-filter=".mech" href="#">Mechanical</a></li>
+							<li><a data-filter=".hardware" href="#">Hardware</a></li>
+							<li><a data-filter=".software" href="#">Software</a></li>
+							<li><a data-filter=".webdev" href="#">Webdev</a></li>
+						</ul>
+					</div>
+				</header>
+
+					<div class="container">
+						<!-- CARDS -->
+						<figure onclick="location.href='../assets/CNC Front View.png';" style="cursor: pointer;" class="card mech all">
+							<img src="../assets/CNC Front Full Render.png">
+							<figcaption>
+								<h3>CNC Router</h3>
+							</figcaption>
+						</figure>
+						<figure class="card hardware all">
+							<img src="../assets/DIODE Board Full Render.png">
+							<figcaption>
+								<h3>DIODE Mosfet Board</h3>
+							</figcaption>
+						</figure>
+						<figure class="card mech all">
+							<img src="../assets/Dock Trailer Full Render.png">
+							<figcaption>
+								<h3>Dock Trailer</h3>
+							</figcaption>
+						</figure>
+						<figure class="card mech all">
+							<img src="../assets/F4 Robot Full Render.png">
+							<figcaption>
+								<h3>F4 CADathon Competitive Robot</h3>
+							</figcaption>
+						</figure>
+						<figure class="card software mech all">
+							<img src="../assets/Fold3r Full Render.png">
+							<figcaption>
+								<h3>Fold3r Origami CNC</h3>
+							</figcaption>
+						</figure>
+						<figure class="card mech all">
+							<img src="../assets/Car Full Views.png">
+							<figcaption>
+								<h3>Sports Car Body Design</h3>
+							</figcaption>
+						</figure>
+						<figure class="card hardware mech all">
+							<img src="../assets/Stator Full Render.png">
+							<figcaption>
+								<h3>3D Printed BLDC Motor</h3>
+							</figcaption>
+						</figure>
+						<figure class="card hardware mech software all">
+							<img src="../assets/Ventilator Full Render.png">
+							<figcaption>
+								<h3>COVID-19 Ventilator</h3>
+							</figcaption>
+						</figure>
+					</div>
+				
 			</main>
 			<footer>
+				<hr>
 	    		<ul>
 	        		<li><a href="https://www.linkedin.com/in/claytonhaight/">&#128101 LinkedIn</a></li>
 	        		<li><a href="https://github.com/clayhaight01">&#128187 GitHub</a></li>
 	        		<li><a href="mailto:clayhaight@uwaterloo.ca">&#128236 chaight@uwaterloo.ca</a></li>
 				</ul>
 			</footer>
+
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+			<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+			
+			<script type="text/javascript">
+				$(".container").isotope({
+					itemSelector: '.card',
+					layoutMode: 'fitRows'
+				});
+
+				$(".filters ul li a").click(function(){
+					$(".filters ul li a").removeClass("active");
+					$(this).addClass("active");
+
+					var selector = $(this).attr("data-filter")
+
+					$(".container").isotope({
+						filter: selector
+					});
+					return false
+				});
+			</script>
 		</body>
 	</html>
