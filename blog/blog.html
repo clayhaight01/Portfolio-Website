@@ -1,42 +1,86 @@
-  <!DOCTYPE html>
-	<html>
-		<head>
-			<title>Clayton Haight</title>
-			<link rel="stylesheet" type="text/css" href="../css/main.css">
-			<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-			<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-		</head>
-		<body>
-			<header class="top_header">
-				<nav>
-		    		<ul class="nav_list">
-		        		<li><a href="../index.html">Home</a></li>
-			        	<li><a href="../about/about.html">About</a></li>
-						<li><a href="../projects/projects.html">Projects</a></li>
-						<li><a href="../blog/blog.html">Blog</a></li>
-		        		<li><a href="../resume/Resume-1B-V6D.pdf" target="_blank">Resume</a></li>
-		    		</ul>
-				</nav>
-				<hr>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Clayton Haight | Blog</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
-				<div class="bottom_nav_condensed">
-					<h1 class="condensed_name">Clayton <b>Haight</b></h1>
-		    		<p class="location">ON | <b>CA</b></p>
-		    	</div>
-			</header>
-			<main>
-				<h2>Blog</h2>
-				<div class="blurb">
-					<p>I am a Waterloo Engineering Student. <a href="./about/about.html">Read more...</a></p>
-    			</div>
-			</main>
-			<footer>
-	    		<ul>
-	        		<li><a href="https://www.linkedin.com/in/claytonhaight/">&#128101 LinkedIn</a></li>
-	        		<li><a href="https://github.com/clayhaight01">&#128187 GitHub</a></li>
-	        		<li><a href="mailto:clayhaight@uwaterloo.ca">&#128236 chaight@uwaterloo.ca</a></li>
+	</head>
+	<body>
+		<header class="top_header">
+			<nav>
+				<ul class="nav_list">
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../about/about.html">About</a></li>
+					<li><a href="../projects/projects.html">Projects</a></li>
+					<li><a href="../blog/blog.html">Blog</a></li>
+					<li><a href="../resume/Resume-1B-V6D.pdf" target="_blank">Resume</a></li>
 				</ul>
-			</footer>
-		</body>
-	</html>
+			</nav>
+			<hr>
+			<div class="bottom_nav_condensed">
+				<h1 class="condensed_name">Clayton <b>Haight</b></h1>
+				<p class="location">ON | <b>CA</b></p>
+			</div>
+		</header>
+		<main>
+			<h2>Blog</h2>
+			<header class="filter_header">
+				<div class="filters">
+					<ul>
+						<li><a data-filter=".all" href="#">All</a></li>
+						<li><a data-filter=".eng" href="#">Engineering</a></li>
+						<li><a data-filter=".thoughts" href="#">Thoughts</a></li>
+						<li><a data-filter=".exp" href="#">Experiments</a></li>
+					</ul>
+				</div>
+			</header>
+
+			<div class="cards_container">
+				<!-- CARDS -->
+				<figure onclick="location.href='../assets/CNC Front Full Render.png';" style="cursor: pointer;" class="card eng all">
+					<img src="../assets/CNC Front Full Render.png">
+					<figcaption>
+						<h3>CNC Router</h3>
+						<p class="date">August 18th 2020</p>
+					</figcaption>
+				</figure>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<ul>
+				<li><a href="https://www.linkedin.com/in/claytonhaight/">&#128101 LinkedIn</a></li>
+				<li><a href="https://github.com/clayhaight01">&#128187 GitHub</a></li>
+				<li><a href="mailto:clayhaight@uwaterloo.ca">&#128236 chaight@uwaterloo.ca</a></li>
+			</ul>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+		
+		<script type="text/javascript">
+			$(".cards_container").isotope({
+				itemSelector: '.card',
+				layoutMode: 'fitRows'
+			});
+
+			$(".filters ul li a").click(function(){
+				$(".filters ul li a").removeClass("active");
+				$(this).addClass("active");
+
+				var selector = $(this).attr("data-filter")
+
+				$(".cards_container").isotope({
+					filter: selector
+				});
+				return false
+			});
+		</script>
+	</body>
+</html>

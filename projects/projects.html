@@ -1,129 +1,175 @@
-  <!DOCTYPE html>
-	<html>
-		<head>
-			<title>Clayton Haight</title>
-			<link rel="stylesheet" type="text/css" href="../css/main.css">
-			<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-			<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
-			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Clayton Haight | Projects</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
-		</head>
-		<body>
-			<header class="top_header">
-				<nav>
-		    		<ul class="nav_list">
-		        		<li><a href="../index.html">Home</a></li>
-			        	<li><a href="../about/about.html">About</a></li>
-						<li><a href="../projects/projects.html">Projects</a></li>
-						<li><a href="../blog/blog.html">Blog</a></li>
-		        		<li><a href="../resume/Resume-1B-V6D.pdf" target="_blank">Resume</a></li>
-		    		</ul>
-				</nav>
-				<hr>
-				<div class="bottom_nav_condensed">
-					<h1 class="condensed_name">Clayton <b>Haight</b></h1>
-		    		<p class="location">ON | <b>CA</b></p>
-		    	</div>
-			</header>
-			<main>
-				<h2>Projects</h2>
-				<div class="blurb">
-					<p>I am a Waterloo Engineering Student. <a href="./about/about.html">Read more...</a></p>
-				</div>
-				<header class="filter_header">
-					<div class="filters">
-						<ul>
-							<li><a data-filter=".all" href="#">All</a></li>
-							<li><a data-filter=".mech" href="#">Mechanical</a></li>
-							<li><a data-filter=".hardware" href="#">Hardware</a></li>
-							<li><a data-filter=".software" href="#">Software</a></li>
-							<li><a data-filter=".webdev" href="#">Webdev</a></li>
-						</ul>
-					</div>
-				</header>
-
-					<div class="container">
-						<!-- CARDS -->
-						<figure onclick="location.href='../assets/CNC Front View.png';" style="cursor: pointer;" class="card mech all">
-							<img src="../assets/CNC Front Full Render.png">
-							<figcaption>
-								<h3>CNC Router</h3>
-							</figcaption>
-						</figure>
-						<figure class="card hardware all">
-							<img src="../assets/DIODE Board Full Render.png">
-							<figcaption>
-								<h3>DIODE Mosfet Board</h3>
-							</figcaption>
-						</figure>
-						<figure class="card mech all">
-							<img src="../assets/Dock Trailer Full Render.png">
-							<figcaption>
-								<h3>Dock Trailer</h3>
-							</figcaption>
-						</figure>
-						<figure class="card mech all">
-							<img src="../assets/F4 Robot Full Render.png">
-							<figcaption>
-								<h3>F4 CADathon Competitive Robot</h3>
-							</figcaption>
-						</figure>
-						<figure class="card software mech all">
-							<img src="../assets/Fold3r Full Render.png">
-							<figcaption>
-								<h3>Fold3r Origami CNC</h3>
-							</figcaption>
-						</figure>
-						<figure class="card mech all">
-							<img src="../assets/Car Full Views.png">
-							<figcaption>
-								<h3>Sports Car Body Design</h3>
-							</figcaption>
-						</figure>
-						<figure class="card hardware mech all">
-							<img src="../assets/Stator Full Render.png">
-							<figcaption>
-								<h3>3D Printed BLDC Motor</h3>
-							</figcaption>
-						</figure>
-						<figure class="card hardware mech software all">
-							<img src="../assets/Ventilator Full Render.png">
-							<figcaption>
-								<h3>COVID-19 Ventilator</h3>
-							</figcaption>
-						</figure>
-					</div>
-				
-			</main>
-			<footer>
-				<hr>
-	    		<ul>
-	        		<li><a href="https://www.linkedin.com/in/claytonhaight/">&#128101 LinkedIn</a></li>
-	        		<li><a href="https://github.com/clayhaight01">&#128187 GitHub</a></li>
-	        		<li><a href="mailto:clayhaight@uwaterloo.ca">&#128236 chaight@uwaterloo.ca</a></li>
+	</head>
+	<body>
+		<header class="top_header">
+			<nav>
+				<ul class="nav_list">
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="../about/about.html">About</a></li>
+					<li><a href="../projects/projects.html">Projects</a></li>
+					<li><a href="../blog/blog.html">Blog</a></li>
+					<li><a href="../resume/Resume-1B-V6D.pdf" target="_blank">Resume</a></li>
 				</ul>
-			</footer>
+			</nav>
+			<hr>
+			<div class="bottom_nav_condensed">
+				<h1 class="condensed_name">Clayton <b>Haight</b></h1>
+				<p class="location">ON | <b>CA</b></p>
+			</div>
+		</header>
+		<main>
+			<h2>Projects</h2>
+			<header class="filter_header">
+				<div class="filters">
+					<ul>
+						<li><a data-filter=".all" href="#">All</a></li>
+						<li><a data-filter=".mech" href="#">Mechanical</a></li>
+						<li><a data-filter=".hardware" href="#">Hardware</a></li>
+						<li><a data-filter=".software" href="#">Software</a></li>
+						<li><a data-filter=".webdev" href="#">Webdev</a></li>
+					</ul>
+				</div>
+			</header>
 
-			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-			<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-			
-			<script type="text/javascript">
-				$(".container").isotope({
-					itemSelector: '.card',
-					layoutMode: 'fitRows'
+			<div class="cards_container">
+				<!-- CARDS -->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="../assets/CNC Front Full Render.png">
+						<figcaption>
+							<h3>CNC Router</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button class="modal-close">
+								<img src="../assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Project Name</h2>
+									<p class="portfolio-subtitle">Subtitle</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum sed. Sollicitudin nibh sit amet commodo. Tristique nulla aliquet </p>
+								<img class="portfolio-full-width" src="../assets/Background.png">
+								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
+								<img class="portfolio-pull-left" src="../assets/Car Full Views.png">
+								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
+								<img class="portfolio-pull-right" src="../assets/Car Full Views.png">
+							</div>
+						</div>
+					</a>
+				</figure>
+
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="../assets/DIODE Board Full Render.png">
+						<figcaption>
+							<h3>CNC Router</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button class="modal-close">
+								<img src="../assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Project Name</h2>
+									<p class="portfolio-subtitle">Subtitle</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum sed. Sollicitudin nibh sit amet commodo. Tristique nulla aliquet </p>
+								<img class="portfolio-full-width" src="../assets/Background.png">
+								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
+								<img class="portfolio-pull-left" src="../assets/Car Full Views.png">
+								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
+								<img class="portfolio-pull-right" src="../assets/Car Full Views.png">
+							</div>
+						</div>
+					</a>
+				</figure>
+				
+				<figure style="cursor: pointer;" class="card mech all">
+					<img src="../assets/Dock Trailer Full Render.png">
+					<figcaption>
+						<h3>Dock Trailer</h3>
+					</figcaption>
+				</figure>
+				<figure style="cursor: pointer;" class="card mech all">
+					<img src="../assets/F4 Robot Full Render.png">
+					<figcaption>
+						<h3>F4 CADathon Competitive Robot</h3>
+					</figcaption>
+				</figure>
+				<figure style="cursor: pointer;" class="card software mech all">
+					<img src="../assets/Fold3r Full Render.png">
+					<figcaption>
+						<h3>Fold3r Origami CNC</h3>
+					</figcaption>
+				</figure>
+				<figure style="cursor: pointer;" class="card mech all">
+					<img src="../assets/Car Full Views.png">
+					<figcaption>
+						<h3>Sports Car Body Design</h3>
+					</figcaption>
+				</figure>
+				<figure style="cursor: pointer;" class="card hardware mech all">
+					<img src="../assets/Stator Full Render.png">
+					<figcaption>
+						<h3>3D Printed BLDC Motor</h3>
+					</figcaption>
+				</figure>
+				<figure style="cursor: pointer;" class="card hardware mech software all">
+					<img src="../assets/Ventilator Full Render.png">
+					<figcaption>
+						<h3>COVID-19 Ventilator</h3>
+					</figcaption>
+				</figure>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<ul>
+				<li><a href="https://www.linkedin.com/in/claytonhaight/">&#128101 LinkedIn</a></li>
+				<li><a href="https://github.com/clayhaight01">&#128187 GitHub</a></li>
+				<li><a href="mailto:clayhaight@uwaterloo.ca">&#128236 chaight@uwaterloo.ca</a></li>
+			</ul>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+		
+		<script type="text/javascript">
+			$(".cards_container").isotope({
+				itemSelector: '.card',
+				layoutMode: 'fitRows'
+			});
+
+			$(".filters ul li a").click(function(){
+				$(".filters ul li a").removeClass("active");
+				$(this).addClass("active");
+
+				var selector = $(this).attr("data-filter")
+
+				$(".cards_container").isotope({
+					filter: selector
 				});
-
-				$(".filters ul li a").click(function(){
-					$(".filters ul li a").removeClass("active");
-					$(this).addClass("active");
-
-					var selector = $(this).attr("data-filter")
-
-					$(".container").isotope({
-						filter: selector
-					});
-					return false
-				});
-			</script>
-		</body>
-	</html>
+				return false
+			});
+		</script>
+		<script src="../js/modal.js"></script>
+	</body>
+</html>

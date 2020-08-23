@@ -1,5 +1,6 @@
 body {
-    margin: 0px auto;
+    margin: 0 auto;
+    padding: 0;
     width: 100%;
 }
 
@@ -11,6 +12,8 @@ body {
 
 ul{
     padding-inline-start: 0;
+    margin-block-start: 10px;
+    margin-block-end: 0;
 }
 
 nav {
@@ -24,7 +27,6 @@ nav ul { /*entire list settings*/
     display: flex;
     flex: 1 0 0%;
     justify-content: space-between;
-
     font-family:'Helvetica', 'Arial';
 }
 
@@ -32,6 +34,14 @@ nav ul { /*entire list settings*/
     margin-block-start: 0px;
     margin-block-end: 0px;
     padding: 10px 0px;
+}
+
+footer {
+    background-image: url(../assets/Background.png);
+    background-size: cover;
+    font-size: .8em;
+    height: 50px;
+    padding: 0 115px;
 }
 
 footer ul { /*entire list settings*/
@@ -42,9 +52,8 @@ footer ul { /*entire list settings*/
 }
 nav ul li { /*each list element*/
     display: inline-block;
-
     font-size: 1.25em;
-    padding: 5px 5px;
+    padding: 5px 0px;
     color: #363636;
 }
 
@@ -55,15 +64,15 @@ nav ul li { /*each list element*/
 footer ul li { /*each list element*/
     display: inline;
     font-size: 1.25em;
-    padding: 0 5px 0 0;
+    padding: 0 10px 0 0;
     color: #363636;
 }
 
 hr { /*horizontal line*/
     margin-block-start: 0;
     margin-block-end: 0;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 0px;
+    margin-left: 0px;
     height: 4px;
     border-width: 0;
     color: #363636;
@@ -193,18 +202,10 @@ p {
     color: #535353;
 }
 
-footer {
-    font-size: .8em;
-    margin-left: 120px;
-}
-
 main {
     margin-left: 115px;
+    margin-right: 115px;
     padding: 0 0 15px;
-}
-
-.blurb {
-
 }
 
 .filter_header{
@@ -242,7 +243,7 @@ main {
     color: #54a4db;
 }
 
-.container{
+.cards_container{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -252,7 +253,8 @@ main {
 
 .card{
     width: 31%;
-    margin: 0 1% 55px;
+    min-width: 190px;
+    margin: 0 1% 2%;
     border: 1px solid #e4e4e4;
     border-radius: 8px;
 }
@@ -266,7 +268,11 @@ main {
 }
 
 figcaption {
-    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 5px 15px;
 }
 
 .card h3{
@@ -276,4 +282,101 @@ figcaption {
     font-size: 1.25em;
     line-height: 1.25em;
     color: #363636;
+}
+
+.date{
+    font-size: 1em;
+}
+
+/*Modal*/
+.portfolio-modal{
+    position: fixed;
+    z-index: 10;
+    top: 2em;
+    bottom: 0;
+    left: 2em;
+    right: 2em;
+    background: white;
+    box-shadow: 0px 0px 30px 2em rgba(0, 0, 0, 0.5);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: default;
+    display: none;
+}
+
+.portfolio-modal.is-open{
+    position: fixed;
+    z-index: 10;
+    top: 2em;
+    bottom: 0;
+    left: 2em;
+    right: 2em;
+    background: white;
+    box-shadow: 0px 0px 30px 2em rgba(0, 0, 0, 0.5);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: default;
+    display: block;
+}
+
+.portfolio-header:nth-of-type(1) {
+    background-image: url(../assets/Background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-title-box{
+    background: rgba(#54a4db, 0.75);
+    padding: 3em 0 3em 3em;
+    color: white;
+    width: 70%;
+}
+
+.portfolio-title{
+    font-size: 3em;
+}
+
+.portfolio-subtitle {
+    font-size: 2em;
+}
+
+.portfolio-content{
+    text-align: left;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+
+.portfolio-full-width {
+    width: 100vw;
+    max-width: initial;
+    margin: 0 calc(50% - 50vw);
+    height: 20vh;
+    object-fit: cover;
+}
+
+@media (min-width: 40em) {
+    .portfolio-pull-left{
+        width: 65%;
+        float: left;
+        margin-right: 2em;
+    }
+    .portfolio-pull-right{
+        width: 65%;
+        float: right;
+        margin-left: 2em;
+    }
+}
+
+.modal-close{
+    background: transparent;
+    position: fixed;
+    cursor: pointer;
+    left: 3em;
+    top: 3.375em;
+    border: 0;
+}
+
+button:focus{
+    outline: none;
 }
