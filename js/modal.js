@@ -16,9 +16,8 @@ portfolioContainer.addEventListener('click', e => {
 
     modal.classList.add('is-open')
 
-    closeButton.addEventListener('click', _ => {
+    closeButton.onclick = (e) => {
         modal.classList.remove('is-open')
-        return
-    })
-    
+        e.stopPropagation()
+    }
 })

@@ -303,7 +303,6 @@ figcaption {
     cursor: default;
     display: none;
 }
-
 .portfolio-modal.is-open{
     position: fixed;
     z-index: 10;
