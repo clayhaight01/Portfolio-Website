@@ -254,6 +254,7 @@ main {
 .card{
     width: 31%;
     min-width: 190px;
+    min-height: 390.75px;
     margin: 0 1% 2%;
     border: 1px solid #e4e4e4;
     border-radius: 8px;
