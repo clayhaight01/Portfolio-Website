@@ -40,16 +40,18 @@ footer {
     background-image: url(../assets/Background.png);
     background-size: cover;
     font-size: .8em;
-    height: 50px;
     padding: 0 115px;
 }
 
 footer ul { /*entire list settings*/
     font-family:'Helvetica', 'Arial';
-    padding: 0px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 12px 0;
     list-style: none;
     font-weight: bold;
 }
+
 nav ul li { /*each list element*/
     display: inline-block;
     font-size: 1.25em;
@@ -64,7 +66,7 @@ nav ul li { /*each list element*/
 footer ul li { /*each list element*/
     display: inline;
     font-size: 1.25em;
-    padding: 0 10px 0 0;
+    padding: 0 10px;
     color: #363636;
 }
 
