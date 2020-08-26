@@ -10,7 +10,7 @@ body {
     padding: 0px 115px 15px;
 }
 
-ul{
+ul {
     padding-inline-start: 0;
     margin-block-start: 10px;
     margin-block-end: 0;
@@ -79,6 +79,10 @@ hr { /*horizontal line*/
     border-width: 0;
     color: #363636;
     background-color: #363636;
+}
+
+.small-hr {
+    margin: 1em 0;
 }
 
 .first_name {
@@ -176,7 +180,77 @@ a {
 }
 
 a:hover {
+    cursor: pointer;
     text-decoration: underline;
+}
+
+.about-blurb {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-sidebar {
+    width: 30%;
+    margin-right: 4em;
+}
+
+.dp {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.about-text {
+    width: 70%;
+}
+
+.text-box {
+    margin: 0 0 2em;
+}
+
+.about-pull-left {
+    margin-top: 1em;
+    display: inline-block;
+}
+
+@media (min-width: 40em) {
+    .left-picture {
+        margin-right: 1em;
+        float: left;
+        height: calc(10 * 1.5625em);
+    }
+    .right-picture {
+        margin-left: 1em;
+        float: right;
+        height: calc(10 * 1.5625em);
+    }
+}
+
+.about-contact {
+    border-top: 4px #363636;
+    border-bottom: 4px #363636;
+}
+
+.home-blurb {
+    display: grid;
+    grid-template-columns: [left-align] 20% [left-picture] 2em [left-text] 1fr [right-text] 2em [right-picture] 20% [right-align];
+    grid-template-rows: [top-align] auto [row1] auto [row2] auto [row3] auto [row4] auto [bottom-align];
+    grid-template-areas: 
+        "text1 text1 text1 text1 text1"
+        "picture1 . text2 text2 text2"
+        "text3 text3 text3 . picture2"
+        "picture3 . text4 text4 text4"
+        "text5 text5 text5 text5 text5";
+    row-gap: 1em;
+}
+
+a p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family:'Helvetica', 'Arial';
+    font-size: 1.25em;
+    line-height: 1.25em;
+    color: #363636;
 }
 
 h1 {
@@ -201,7 +275,7 @@ p {
     font-family:'Helvetica', 'Arial';
     font-size: 1.25em;
     line-height: 1.25em;
-    color: #535353;
+    color: #363636;
 }
 
 main {
@@ -210,30 +284,30 @@ main {
     padding: 0 0 15px;
 }
 
-.filter_header{
+.filter_header {
     width: 100%;
     display: inline-block;
     padding: 0;
 }
 
-.filters{
+.filters {
     max-width: calc(100vw - 300px);
     margin: 0 0;
     float: left;
 }
 
-.filters ul{
+.filters ul {
     margin-block-start: 0;
     margin-block-end: 0;
 }
 
-.filters ul li{
+.filters ul li {
     list-style-type: none;
     display: inline-block;
     margin: 10px 20px 10px 0;
 }
 
-.filters ul li a{
+.filters ul li a {
     text-decoration: none;
     display: inline-block;
     font-weight: bold;
@@ -241,11 +315,11 @@ main {
     color: #363636;
 }
 
-.filters ul li a:hover, .filters ul li a:active{
+.filters ul li a:hover, .filters ul li a:active {
     color: #54a4db;
 }
 
-.cards_container{
+.cards_container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -253,7 +327,7 @@ main {
     padding: 15px 0;
 }
 
-.card{
+.card {
     width: 31%;
     min-width: 190px;
     /*min-height: 390.75px;*/
@@ -262,11 +336,11 @@ main {
     border-radius: 8px;
 }
 
-.card:hover{
+.card:hover {
     border: 1px solid #363636;
 }
 
-.card img{
+.card img {
     width: 100%;
 }
 
@@ -278,7 +352,7 @@ figcaption {
     padding: 5px 15px;
 }
 
-.card h3{
+.card h3 {
     margin-block-start: 3px;
     margin-block-end: 3px;
     font-family:'Helvetica', 'Arial';
@@ -287,12 +361,12 @@ figcaption {
     color: #363636;
 }
 
-.date{
+.date {
     font-size: 1em;
 }
 
 /*Modal*/
-.portfolio-modal{
+.portfolio-modal {
     position: fixed;
     z-index: 10;
     top: 2em;
@@ -306,7 +380,7 @@ figcaption {
     cursor: default;
     display: none;
 }
-.portfolio-modal.is-open{
+.portfolio-modal.is-open {
     position: fixed;
     z-index: 10;
     top: 2em;
@@ -327,14 +401,14 @@ figcaption {
     background-position: center;
 }
 
-.portfolio-title-box{
+.portfolio-title-box {
     background: rgba(#54a4db, 0.75);
     padding: 3em 0 3em 3em;
     color: white;
     width: 70%;
 }
 
-.portfolio-title{
+.portfolio-title {
     font-size: 3em;
 }
 
@@ -342,7 +416,7 @@ figcaption {
     font-size: 2em;
 }
 
-.portfolio-content{
+.portfolio-content {
     text-align: left;
     width: 85%;
     margin: 0 auto;
@@ -370,7 +444,7 @@ figcaption {
     }
 }
 
-.modal-close{
+.modal-close {
     background: transparent;
     position: fixed;
     cursor: pointer;
@@ -379,6 +453,6 @@ figcaption {
     border: 0;
 }
 
-button:focus{
+button:focus {
     outline: none;
 }
