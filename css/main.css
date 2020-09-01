@@ -70,6 +70,7 @@ footer ul li { /*each list element*/
     color: #363636;
 }
 
+
 hr { /*horizontal line*/
     margin-block-start: 0;
     margin-block-end: 0;
@@ -571,5 +572,10 @@ button:focus {
     }
     nav ul li {
         font-size: 1em;
+    }
+    footer ul li {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 }
