@@ -7,7 +7,7 @@ body {
 .top_header {
     background-image: url(../assets/Background.png);
     background-size: cover;
-    padding: 0px 115px 15px;
+    padding: 0px 8vw 15px;
 }
 
 ul {
@@ -40,7 +40,7 @@ footer {
     background-image: url(../assets/Background.png);
     background-size: cover;
     font-size: .8em;
-    padding: 0 115px;
+    padding: 0 8vw;
 }
 
 footer ul { /*entire list settings*/
@@ -89,7 +89,7 @@ hr { /*horizontal line*/
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 300;
-    font-size: 72px;
+    font-size: 4.5em;
     line-height: 72px;
 
     text-align: left;
@@ -109,7 +109,7 @@ hr { /*horizontal line*/
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 72px;
+    font-size: 4.5em;
     line-height: 64px;
 
     text-align: left;
@@ -255,9 +255,17 @@ a:hover {
     height: calc(10 * 1.5625em);
 }
 
+.full-width {
+    position: static;
+    left: 0;
+    object-fit: cover;
+    width: 100vw;
+    height: 16em;
+}
+
 .center-picture {
     width: 100%;
-    max-width: initial;
+    height: 37.5vh;
     object-fit: cover;
 }
 
@@ -333,19 +341,6 @@ a:hover {
     color: #363636;
 }
 
-.home-blurb {
-    display: grid;
-    grid-template-columns: [left-align] 20% [left-picture] 2em [left-text] 1fr [right-text] 2em [right-picture] 20% [right-align];
-    grid-template-rows: [top-align] auto [row1] auto [row2] auto [row3] auto [row4] auto [bottom-align];
-    grid-template-areas: 
-        "text1 text1 text1 text1 text1"
-        "picture1 . text2 text2 text2"
-        "text3 text3 text3 . picture2"
-        "picture3 . text4 text4 text4"
-        "text5 text5 text5 text5 text5";
-    row-gap: 1em;
-}
-
 a p {
     margin-block-start: 0px;
     margin-block-end: 0px;
@@ -381,9 +376,8 @@ p {
 }
 
 main {
-    margin-left: 115px;
-    margin-right: 115px;
-    padding: 0 0 15px;
+    margin: 0 8vw;
+    padding: 0;
 }
 
 .filter_header {
@@ -533,7 +527,20 @@ figcaption {
     object-fit: cover;
 }
 
-@media (min-width: 40em) {
+.modal-close {
+    background: transparent;
+    position: fixed;
+    cursor: pointer;
+    left: 3em;
+    top: 3.375em;
+    border: 0;
+}
+
+button:focus {
+    outline: none;
+}
+/* MOBILE */
+@media (min-width: 650px) {
     .portfolio-pull-left{
         width: 65%;
         float: left;
@@ -546,15 +553,23 @@ figcaption {
     }
 }
 
-.modal-close {
-    background: transparent;
-    position: fixed;
-    cursor: pointer;
-    left: 3em;
-    top: 3.375em;
-    border: 0;
-}
-
-button:focus {
-    outline: none;
+@media (max-width: 650px) {
+    .first_name {
+        font-size: 3em;
+        line-height: 48px;
+        margin-bottom: 2px;
+    }
+    .last_name {
+        font-size: 3em;
+        line-height: 40px;
+    }
+    .student {
+        font-size: 13px;
+    }
+    .location {
+        display: none;
+    }
+    nav ul li {
+        font-size: 1em;
+    }
 }
