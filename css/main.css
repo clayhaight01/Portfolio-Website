@@ -418,7 +418,6 @@ main {
 
 .cards_container {
     width: 100%;
-    min-height: 952px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
