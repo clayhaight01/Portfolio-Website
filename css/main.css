@@ -416,6 +416,19 @@ main {
     color: #54a4db;
 }
 
+div #preload {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    left: -9999px; 
+    top: -9999px;
+    height: 1px;
+    width: 1px;
+ }
+
 .cards_container {
     width: 100%;
     min-height: 952px;
@@ -436,10 +449,6 @@ main {
 
 .card:hover {
     border: 1px solid #363636;
-}
-
-.card img {
-    width: 100%;
 }
 
 figcaption {
