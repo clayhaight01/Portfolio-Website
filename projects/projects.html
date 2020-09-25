@@ -127,16 +127,15 @@
 								</div>
 							</div>
 						</div>
-
 					</a>
 				</figure>
 
 				<!-- CARD 3-->
-				<figure style="cursor: pointer;" class="card mech all">
+				<figure style="cursor: pointer;" class="card mech hardware software all">
 					<a class="portfolio-link">
-						<img src="../assets/Dock Trailer Full Render 320p.png" width=100% height=66.6%>
+						<img src="../assets/Ventilator Full Render 320p.png" width=100% height=66.6%>
 						<figcaption>
-							<h3>Dock Trailer</h3>
+							<h3>COVID-19 Ventilator</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
@@ -145,23 +144,118 @@
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">Dock Trailer</h2>
-									<p class="portfolio-subtitle">An easy and safe way to remove docks from harbours</p>
+									<h2 class="portfolio-title">COVID-19 Ventilator</h2>
+									<p class="portfolio-subtitle">An easy to manufacture and cheap solution to the high demands of ventilators during the COVID-19 pandemic</p>
 								</div>
 							</div>
 							<div class="portfolio-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum sed. Sollicitudin nibh sit amet commodo. Tristique nulla aliquet </p>
-								<img class="portfolio-full-width" src="../assets/Background.png">
-								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
-								<img class="portfolio-pull-left" src="../assets/Car Full Views.png">
-								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
-								<img class="portfolio-pull-right" src="../assets/Car Full Views.png">
+								<div class="text-box">
+									<img class="left-picture" src="../assets/Ventilator Full Render.png" style="height: calc(11 * 1.5625em); width: auto;">
+									<p>At the beginning of March 2020, it was clear that the COVID-19 pandemic was taking the world by storm. Hospitals were not equipped to deal with the thousands of new cases popping up daily, increasing at a scary rate. During this huge demand for ventilators and medical equipment, I knew I wanted to do something to help, so I found a competition (Code Life Ventilator Challenge) that brought together engineers, medical professionals, and anyone else that wanted to help to come up with a solution to the ventilator shortage. This competition brought together my team of peers from Waterloo, CSA engineers, and doctors from the Ottawa Hospital. Together over the course of 10 days we designed, built, and tested a functioning ventilator, with myself taking a lot of the mechanical design and documentation work.</p>
+								</div>
+								<div class="text-box">
+									<img class="right-picture" src="../assets/Ventilator.png" style="height: calc(11 * 1.5625em); width: auto;">
+									<p>Initially, we did a lot of brainstorming to make sure that we could design a simple and effective solution, we came up with the idea of using large disposable syringes that could be easily replaced instead of sanitizing the entire machine. Then we worked on finding materials we could source in a matter of days, this basically limited our selection to Amazon and McMaster Carr. I worked on designing the airway control paths, this included sealing the syringes, sealing the integrated airways, and connecting the solenoid valves. The final design could pump 600ml of proportionally mixed oxygen and air at a pressure of 40cmH2O into a patient. It could withstand the cyclic loading of 800 breathes per hour in simulation, and had adjustable settings on a simple to use Android app. All the parts were shipped to my house, I assembled it in 12 hours and drove it up to Ottawa to be tested the next day. While it was being tested I helped with documentation, including a simple annotated assembly manual for others to use if they wanted to recreate our device.</p>
+								</div>
+								<div class="text-box">
+									<img class="left-picture" src="../assets/Ventilator Testing.png" style="height: calc(12 * 1.5625em); width: auto;">
+									<p>The device was tested successfully with an artificial lung (pictured right) and signed off by doctors at the Ottawa Hospital, but sadly did not qualify to the final round. We were missing a vital part of the requirements; an oxygen sensor, which was extremely difficult to find. Despite this, we posted the files (online) for anyone to access in case they want to build on our progress. Overall I was extremely proud of our team, although we didn’t meet the requirements, we still made something great that had a unique, simple, and effective design.</p>
+								</div>
 							</div>
 						</div>
 					</a>
 				</figure>
 
 				<!-- CARD 4-->
+				<figure style="cursor: pointer;" class="card mech hardware software all">
+					<a class="portfolio-link">
+						<img src="../assets/Stator Full Render 320p.png" width=100% height=66.6%>
+						<figcaption>
+							<h3>3D Printed BLDC Motor</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img src="../assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">3D Printed BLDC Motor</h2>
+									<p class="portfolio-subtitle">An almost entirely 3D printed brushless motor</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<img class="right-picture" src="../assets/Motor  Annotated.png" style="height: calc(9 * 1.5625em); width: auto;">
+									<p>As a design challenge, I thought it would be interesting to try 3D printing a basic “air core” motor. Little did I know this would turn into a deep rabbit hole of prototyping, iteration, and learning. After 20+ design iterations, major design changes, and a lot of filament later, I finally had a model that could spin at a decent speed, with a good amount of torque all things considered. The main stator core is made of iron infused PLA filament to increase magnetic flux, wrapped in copper magnet wire. The outer shell of the motor revolves around the stator, housing the magnets in an outrunner fashion. In some prototypes, I was looking at arranging the magnets in a Halbach array but didn’t think the extra diameter and cost was worth the small efficiency gain.</p>
+								</div>
+								<div class="text-box">
+									<img class="left-picture" src="../assets/Stator Full Render.png" style="height: calc(12 * 1.5625em); width: auto;">
+									<p>During this project, I learned a lot about GD&T, tolerancing, magnetics, electronics, and prototyping as it took many different iterations to get somewhere I was happy with. Obviously, with a large spinning mass, the concentricity is very important, and on a home-built 3D printer this isn’t the easiest thing to do. To get it not to wobble and be perfectly concentric, a lot of tuning had to be done to my printer, and some design changes made it easier to dial in. The stator core also proved difficult, as printing iron particles as a hot liquid is just asking for trouble. A ton of jamming and under extrusion forced me to print the stator in 4 different parts, sliding them onto each other similar to laminates in actual motors, this also theoretically reduced eddy currents. Then the stator was wrapped with magnet wire by hand and soldered together in a wye configuration.</p>
+								</div>
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="../assets/Motor Exposed View.png" style="height: calc(11 * 1.5625em); width: auto;">
+										<img class="center-picture" src="../assets/Motor Spinning.png" style="height: calc(11 * 1.5625em); width: auto;">
+									</div>
+									<p>Finally, using a 15A electronic speed controller I was able to get the motor to spin at up to 500rpm (pictured right). Although 3D printing a motor is super impractical, it was a super interesting learning experience and I am glad I went through with the project, despite the many pitfalls.</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+				</figure>
+				
+
+				<!-- CARD 5-->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="../assets/Car Full Views 320p.png" width=100% height=66.6%>
+						<figcaption>
+							<h3>Sports Car Body Design</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img src="../assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Sports Car Body Design</h2>
+									<p class="portfolio-subtitle">A complete car body design from scratch using stadard industry processes</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="../assets/Car Final 3.jpg" style="height: calc(13 * 1.5625em); width: auto;">
+										<img class="center-picture" src="../assets/Garage Render 6.jpg" style="height: calc(13 * 1.5625em); width: auto;">
+									</div>
+									<p>(!!!!!!!!!!!!! add flow sim stuff!!!!!!!!!!!!!*****************************!!!!!!!!!!!!!!!!!!!!!!!!!!) I have always had a love for cars, from F1 to sports cars, something about them feels very satisfying. Since the invention of the car, constant iteration on the design has brought us to what we have now. The beautiful curves and fancy body work that makes an automobile, is the product of years of improvements and upgrades. The amount of engineering and design work that makes up an automobile is fascinating to me, and I have always wanted to work in the automotive industry (although I have been told it’s a death wish).</p>
+									
+								</div>
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="../assets/Flow-Side.png" style="height: calc(10 * 1.5625em); width: auto;">
+										<img class="center-picture" src="../assets/Car Drawing.jpg" style="height: calc(10 * 1.5625em); width: auto;">
+									</div>
+									<p>This project started as an idea when I was in grade 8, using Google sketchup to slowly design a car, line by line. When I got to highschool I realized this was wrong, and stopped the project. In grade 10 I thought it would be cool to bring the project back to life, so starting with the original sketches I started carving out a block of clay. My hope with using clay was to be able to change the design, and try new things fast. This is actually how alot of car companies design their cars at first, by carving full scale models of plasticine.</p>
+								</div>
+								<div class="text-box">
+									<img class="center-picture" src="../assets/Modelling Process.png" style="height: calc(12 * 1.5625em); width: auto;">
+									<p>As seen above, after making a clay model I designed a custom 3D scanner to take a ton of photos from different angles, automatically. After taking 450 pictures of the car, I imported it into Autodesk ReCap and stitched the model together. Then this model was used as a template to resurface in Solidworks, using many 3D sketching techniques. Finally headlights and tail lights were designed, wheels, grilles and other details were added, and the car was ready to be rendered.</p>
+								</div>
+								<div class="text-box">
+									<img class="center-picture" src="../assets/Scene Render 2.jpg" style="height: calc(12 * 1.5625em); width: auto;">
+									<p>Overall, I learned so much from this project, and hope I can apply it to future projects and coop opportunities. I applied drafting principles to sketching, learned how to model clay, studied and implemented 3D scanning and greatly improved my Solidworks skills.</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+				</figure>
+
+				<!-- CARD 6-->
 				<figure style="cursor: pointer;" class="card mech software all">
 					<a class="portfolio-link">
 						<img src="../assets/Fold3r Full Render 320p.png" width=100% height=66.6%>
@@ -192,12 +286,12 @@
 					</a>
 				</figure>
 
-				<!-- CARD 5-->
+				<!-- CARD 7-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/Car Full Views 320p.png" width=100% height=66.6%>
+						<img src="../assets/Dock Trailer Full Render 320p.png" width=100% height=66.6%>
 						<figcaption>
-							<h3>Sports Car Body Design</h3>
+							<h3>Dock Trailer</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
@@ -206,8 +300,8 @@
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">Sports Car Body Design</h2>
-									<p class="portfolio-subtitle">A complete car body design from scratch using stadard industry processes</p>
+									<h2 class="portfolio-title">Dock Trailer</h2>
+									<p class="portfolio-subtitle">An easy and safe way to remove docks from harbours</p>
 								</div>
 							</div>
 							<div class="portfolio-content">
@@ -219,69 +313,6 @@
 								<img class="portfolio-pull-right" src="../assets/Car Full Views.png">
 							</div>
 						</div>
-
-					</a>
-				</figure>
-
-				<!-- CARD 6-->
-				<figure style="cursor: pointer;" class="card mech hardware software all">
-					<a class="portfolio-link">
-						<img src="../assets/Stator Full Render 320p.png" width=100% height=66.6%>
-						<figcaption>
-							<h3>3D Printed BLDC Motor</h3>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
-								<img src="../assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
-							</button>
-							<div class="portfolio-header">
-								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">3D Printed BLDC Motor</h2>
-									<p class="portfolio-subtitle">An easy to make BLDC motor using iron infused filament</p>
-								</div>
-							</div>
-							<div class="portfolio-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum sed. Sollicitudin nibh sit amet commodo. Tristique nulla aliquet </p>
-								<img class="portfolio-full-width" src="../assets/Background.png">
-								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
-								<img class="portfolio-pull-left" src="../assets/Car Full Views.png">
-								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
-								<img class="portfolio-pull-right" src="../assets/Car Full Views.png">
-							</div>
-						</div>
-
-					</a>
-				</figure>
-
-				<!-- CARD 7-->
-				<figure style="cursor: pointer;" class="card mech hardware software all">
-					<a class="portfolio-link">
-						<img src="../assets/Ventilator Full Render 320p.png" width=100% height=66.6%>
-						<figcaption>
-							<h3>COVID-19 Ventilator</h3>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
-								<img src="../assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
-							</button>
-							<div class="portfolio-header">
-								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">COVID-19 Ventilator</h2>
-									<p class="portfolio-subtitle">An easy to manufacture and cheap solution to the high demands of ventilators during the COVID-19 pandemic</p>
-								</div>
-							</div>
-							<div class="portfolio-content">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum sed. Sollicitudin nibh sit amet commodo. Tristique nulla aliquet </p>
-								<img class="portfolio-full-width" src="../assets/Background.png">
-								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
-								<img class="portfolio-pull-left" src="../assets/Car Full Views.png">
-								<p>Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph Paragraph</p>
-								<img class="portfolio-pull-right" src="../assets/Car Full Views.png">
-							</div>
-						</div>
-
 					</a>
 				</figure>
 			</div>
