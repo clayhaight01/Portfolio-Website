@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
 		<title>Clayton Haight | Projects</title>
 		<link rel="stylesheet" type="text/css" href="../css/main.css">
 		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
@@ -64,16 +65,22 @@
 								</div>
 							</div>
 							<div class="portfolio-content">
-								<div class="text-box">
+								<div class="image-box">
 									<img class="portfolio-full-width" src="../assets/CNC Front Full Render Cropped.png">
+								</div>
+								<div class="text-box">
 									<p>While working on other mechanical projects over my life, I always ran into one big problem: manufacturing. Paying a job shop to do a one-off part for me is way too expensive, and only so much can be made at home with basic tools. This problem was partly solved when I built a 3D printer in 2013, but there was still a missing piece; the ability to manufacture metal parts. Sometimes 3D printed plastic is just not good enough and stiffer, stronger materials need to be used. This, along with the challenge of 3 axis machine design enticed me enough to start this project in January of 2020.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<img class="center-picture" src="../assets/CNC CAD.png" style="width: 100%; height: auto; margin-bottom: 1em;">
-									<p>The entire design revolves around a T slot extrusion bed that ensures that the Y-axis rails are parallel and that the gantry structure is reinforced. Because of my manufacturing constraints, most of the parts had to be extrusion or 3D printed, but most of the 3D printed parts were designed to be converted to routered parts down the road. A cool learning experience for me was using topology optimization for a bracket between two pieces of extrusion, while not very practical it did offer me insight into FEA optimization. The entire cost of the machine was kept under $700 by avoiding the use of linear rails and ball screws, which typically push the price of the machine over $2000. Instead, a bearing block style system was used in conjunction with steel reinforced belts. For my purposes, it was an easy and cheap solution that still offers more than enough strength.</p>
 								</div>
 								<div class="text-box">
+									<p>The entire design revolves around a T slot extrusion bed that ensures that the Y-axis rails are parallel and that the gantry structure is reinforced. Because of my manufacturing constraints, most of the parts had to be extrusion or 3D printed, but most of the 3D printed parts were designed to be converted to routered parts down the road. A cool learning experience for me was using topology optimization for a bracket between two pieces of extrusion, while not very practical it did offer me insight into FEA optimization. The entire cost of the machine was kept under $700 by avoiding the use of linear rails and ball screws, which typically push the price of the machine over $2000. Instead, a bearing block style system was used in conjunction with steel reinforced belts. For my purposes, it was an easy and cheap solution that still offers more than enough strength.</p>
+								</div>
+								<div class="image-box">
 									<img class="center-picture" src="../assets/CNC Build.png" style="width: 100%; height: auto; margin-bottom: 1em;">
+								</div>
+								<div class="text-box">
 									<p>The build process was very long, spanning 2 months from April to May, mainly because I wanted to ensure that it was built properly and robustly. The main base is a wood table that I filled with a sand epoxy mixture for dampening and rigidity, everything else is built up from there. Throughout the entire process, I ensured perpendicularity was as close to perfect as possible, and that all dimensions were accurate to reduce tolerance stacks. Something very important I learned while building is just how important wire management is, originally I planned on just using cable sleeves but I realized how easily something could break without proper routing. I settled for a durable drag chain system on the X and Y axes and making everything unpluggable to make troubleshooting much easier.</p>
 								</div>
 								<div class="text-box">
@@ -167,11 +174,11 @@
 				</figure>
 
 				<!-- CARD 4-->
-				<figure style="cursor: pointer;" class="card mech hardware software all">
+				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/Stator Full Render 320p.png" width=100% height=66.6%>
+						<img src="../assets/F4 Robot Full Render 320p.png" width=100% height=66.6%>
 						<figcaption>
-							<h3>3D Printed BLDC Motor</h3>
+							<h3>2020 F4 CADathon Robot</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
@@ -180,38 +187,35 @@
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">3D Printed BLDC Motor</h2>
-									<p class="portfolio-subtitle">An almost entirely 3D printed brushless motor</p>
+									<h2 class="portfolio-title">2020 F4 CADathon Robot</h2>
+									<p class="portfolio-subtitle">A football and weight lifting robot</p>
 								</div>
 							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<img class="right-picture twenty-five-per" src="../assets/Motor  Annotated.png" style="height: auto;">
-									<p>As a design challenge, I thought it would be interesting to try 3D printing a basic “air core” motor. Little did I know this would turn into a deep rabbit hole of prototyping, iteration, and learning. After 20+ design iterations, major design changes, and a lot of filament later, I finally had a model that could spin at a decent speed, with a good amount of torque all things considered. The main stator core is made of iron infused PLA filament to increase magnetic flux, wrapped in copper magnet wire. The outer shell of the motor revolves around the stator, housing the magnets in an outrunner fashion. In some prototypes, I was looking at arranging the magnets in a Halbach array but didn’t think the extra diameter and cost was worth the small efficiency gain.</p>
+									<p>After the 2020 FRC competition was cancelled by COVID-19, I decided to join a CAD competition based on a sports challenge, with two of my close friends. The challenge was to pick up a 40lb barbell weight and throw footballs into field goals. The competition gave us 48 hours to fully design a functional robot in a team of 3, a challenge that I underestimated at the beginning. Below is our final assembly that we submitted with, overall it placed 16th across over 150 teams.</p>
+								</div>
+								<div class="text-box">	
+									<img class="center-picture forty-per" src="../assets/F4 Robot Full Render.png">
+									<p>My role on the team was designing the football shooter and feeder system. In the preliminary design phase, I decided it would be easiest to store the football horizontally so that it wouldn’t have an option but to stay in that orientation, since it has the smallest radius. I later decided this would be the best orientation to shoot in as well, giving the ball a spiral to keep it stable. Both my designs can be seen below, keeping in mind they were designed very quickly, leaving time for integration and rendering.</p>
 								</div>
 								<div class="text-box">
-									<img class="left-picture twenty-five-per" src="../assets/Stator Full Render.png" style="height: auto;">
-									<p>During this project, I learned a lot about GD&T, tolerancing, magnetics, electronics, and prototyping as it took many different iterations to get somewhere I was happy with. Obviously, with a large spinning mass, the concentricity is very important, and on a home-built 3D printer this isn’t the easiest thing to do. To get it not to wobble and be perfectly concentric, a lot of tuning had to be done to my printer, and some design changes made it easier to dial in. The stator core also proved difficult, as printing iron particles as a hot liquid is just asking for trouble. A ton of jamming and under extrusion forced me to print the stator in 4 different parts, sliding them onto each other similar to laminates in actual motors, this also theoretically reduced eddy currents. Then the stator was wrapped with magnet wire by hand and soldered together in a wye configuration.</p>
-								</div>
-								<div class="text-box">
-									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Motor Exposed View.png">
-										<img class="center-picture" src="../assets/Motor Spinning.png">
+									<div class="multiple-pictures" style="margin-bottom: 1em;">
+										<img class="center-picture forty-per" src="../assets/F4 Hopper.png">
+										<img class="center-picture forty-per" src="../assets/F4 Shooter.png">
 									</div>
-									<p>Finally, using a 15A electronic speed controller I was able to get the motor to spin at up to 500rpm (pictured right). Although 3D printing a motor is super impractical, it was a super interesting learning experience and I am glad I went through with the project, despite the many pitfalls.</p>
 								</div>
 							</div>
 						</div>
-
 					</a>
 				</figure>
 
 				<!-- CARD 5-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/Car Full Views 320p.png" width=100% height=66.6%>
+						<img src="../assets/2020 FRC Robot Render 320p.png" width=100% height=66.6%>
 						<figcaption>
-							<h3>Sports Car Body Design</h3>
+							<h3>2020 FRC Robot</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
@@ -220,37 +224,30 @@
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">Sports Car Body Design</h2>
-									<p class="portfolio-subtitle">A complete car body design from scratch using stadard industry processes</p>
+									<h2 class="portfolio-title">2020 FRC Robot</h2>
+									<p class="portfolio-subtitle">Designed to shoot dodgeballs with extreme accuracy, in addition to other challenges</p>
 								</div>
 							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Car Final 3.jpg">
-										<img class="center-picture" src="../assets/Garage Render 6.jpg">
+									<p>Although the season got cancelled after one competition, due to COVID-19, my robotics team still made a great robot. If the season hadn’t been cancelled I think we would’ve done really well; we won our first competition at Georgian College. The game was based on Star Wars Episode IV, where Luke destroys the Death Star. In this FRC depiction, dodgeballs had to be scored through a goal, and then at the end of the match, the robot had to climb a rung.</p>
+								</div>
+								<div class="text-box">
+									<div class="multiple-pictures" style="margin-bottom: 1em;">
+										<img class="center-picture forty-per" src="../assets/2020 FRC Robot Render.png">
+										<img class="center-picture forty-per" src="../assets/2020 FRC IRL.jpg">
 									</div>
-									<p>I have always had a love for cars, from F1 to sports cars, something about them feels very satisfying. Since the invention of the car, constant iteration on the design has brought us to what we have now. The beautiful curves and fancy bodywork that makes an automobile is the product of years of improvements and upgrades. The amount of engineering and design work that makes up an automobile is fascinating to me, and I have always wanted to work in the automotive industry (although I have been told it’s a death wish).</p>
-									
+									<p>As a mentor on the team, I helped high school students with the conceptual design, prototyping, final design and build process. Teaching members new skills and passing on knowledge is really fulfilling and important to me, and mentoring my old robotics team was a perfect way to do this. During this season I mainly helped design the intaking mechanism and the shooting mechanism.</p>
 								</div>
 								<div class="text-box">
-									<img class="center-picture" src="../assets/Car Drawing.jpg" style="width: 100%;">
-									<p>This project started as an idea when I was in grade 8, using Google SketchUp to slowly design a car, line by line. When I got to high school I learned about proper CAD software and stopped the project. In grade 10 I thought it would be cool to bring the project back to life, so starting with the original sketches I started carving out a block of clay. My hope with using clay was to be able to change the design and try new things fast. This is actually how a lot of car companies design their cars at first, by carving full-scale models of plasticine.</p>
-								</div>
-								<div class="text-box">
-									<img class="center-picture" src="../assets/Modelling Process.png" style="width: 100%;">
-									<p>As seen above, after making a clay model I designed a custom 3D scanner to take a ton of photos from different angles, automatically. After taking 450 pictures of the car, I imported it into Autodesk ReCap and stitched the model together. Then this model was used as a template to resurface in Solidworks, using many 3D sketching and surfacing techniques. This surface model was tweaked until I was happy with the flow simulation results and the drag coefficient of ~0.28. Finally, headlights and tail lights were designed, wheels, grilles, and other details were added, and the car was ready to be rendered.</p>
-								</div>
-								<div class="text-box">
-									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Flow-Side.png" style="width: 100%;">
-										<img class="center-picture" src="../assets/Scene Render 2.jpg" style="width: 100%;">
+									<div class="multiple-pictures" style="margin-bottom: 1em;">
+										<img class="center-picture forty-per" src="../assets/2020 Intake.png">
+										<img class="center-picture forty-per" src="../assets/2020 Shooter.png">
 									</div>
-									<p>Overall, I learned so much from this project, and hope I can apply it to future projects and coop opportunities. I applied draft principles to sketching, learned how to model clay, studied and implemented 3D scanning, learned basic flow simulation, and greatly improved my Solidworks skills.</p>
+									<p>For the intake, the main challenge was automatically centering the balls so they could be stored in the hopper. To do this we used Mecanum wheels that would roll the ball into the center and then pick it up. And for the shooter, it was vital to automatically aim at the target from any angle or distance. To accomplish this we designed a custom bushing that the ball could be passed through, this bushing was mounted to a ring gear so the entire shooter could be rotated. In addition to this, the length of the hood could be adjusted on the fly for different shot lengths.</p>
 								</div>
 							</div>
 						</div>
-
 					</a>
 				</figure>
 
@@ -305,130 +302,10 @@
 								</div>
 							</div>
 						</div>
-
 					</a>
 				</figure>
 
 				<!-- CARD 7-->
-				<figure style="cursor: pointer;" class="card mech all">
-					<a class="portfolio-link">
-						<img src="../assets/Dock Trailer Full Render 320p.png" width=100% height=66.6%>
-						<figcaption>
-							<h3>Dock Trailer</h3>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
-							</button>
-							<div class="portfolio-header">
-								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">Dock Trailer</h2>
-									<p class="portfolio-subtitle">An easy and safe way to remove docks from harbours</p>
-								</div>
-							</div>
-							<div class="portfolio-content">
-								<div class="text-box">
-									<p>One of my favourite activities, starting from a young age at summer camp, is sailing. Except, like many other enjoyable things, it takes a lot of work. Twice a year the docks need to be moved, which means many days of work and manual labour. As a solution to this, the club decided to come up with a better solution, a trailer to pull the docks up with a car. I ended up designing and validating it, ensuring that it would survive the harsh Canadian climate, the lake water, and the repetitive loads.</p>
-								</div>
-								<div class="text-box">
-									<img class="center-picture forty-per" src="../assets/Dock Trailer Full Render.png">
-									<p>The trailer was designed for the sole purpose of lifting 500+ lb docks out of the water and holding them securely while a truck could pull them up the boat launch. It also has a secondary purpose of lifting a 400+ lb mast crane (pictured below). It is used around 20 times a year at the Mississauga Sailing Club and saves a ton of time.</p>
-								</div>
-								<div class="text-box" style="margin-bottom: 0;">
-									<p>The main frame is constructed with hollow steel tubing, making it relatively light but more than strong enough. Since almost the entire assembly has to be submerged in lake water, it is important that it is corrosion-resistant. The cheapest way to do this was to assembly it and then hot-dip galvanize it, protecting it from rust.</p>
-								</div>
-								<div class="text-box">
-									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/MSC.jpg">
-										<img class="center-picture forty-per" src="../assets/Dock Trailer Picture.jpg">
-									</div>
-									<p>I learned a lot about structural design working on this project, the heavy docks and trailer hitch presented a lot of static equilibrium problems. Ensuring that the dock didn’t prematurely corrode was also important, and required me to learn about different corrosion resistance options.</p>
-								</div>
-							</div>
-						</div>
-					</a>
-				</figure>
-
-				<!-- CARD 8-->
-				<figure style="cursor: pointer;" class="card mech all">
-					<a class="portfolio-link">
-						<img src="../assets/F4 Robot Full Render 320p.png" width=100% height=66.6%>
-						<figcaption>
-							<h3>2020 F4 CADathon Robot</h3>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
-							</button>
-							<div class="portfolio-header">
-								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">2020 F4 CADathon Robot</h2>
-									<p class="portfolio-subtitle">A football and weight lifting robot</p>
-								</div>
-							</div>
-							<div class="portfolio-content">
-								<div class="text-box">
-									<p>After the 2020 FRC competition was cancelled by COVID-19, I decided to join a CAD competition based on a sports challenge, with two of my close friends. The challenge was to pick up a 40lb barbell weight and throw footballs into field goals. The competition gave us 48 hours to fully design a functional robot in a team of 3, a challenge that I underestimated at the beginning. Below is our final assembly that we submitted with, overall it placed 16th across over 150 teams.</p>
-								</div>
-								<div class="text-box">	
-									<img class="center-picture forty-per" src="../assets/F4 Robot Full Render.png">
-									<p>My role on the team was designing the football shooter and feeder system. In the preliminary design phase, I decided it would be easiest to store the football horizontally so that it wouldn’t have an option but to stay in that orientation, since it has the smallest radius. I later decided this would be the best orientation to shoot in as well, giving the ball a spiral to keep it stable. Both my designs can be seen below, keeping in mind they were designed very quickly, leaving time for integration and rendering.</p>
-								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
-										<img class="center-picture forty-per" src="../assets/F4 Hopper.png">
-										<img class="center-picture forty-per" src="../assets/F4 Shooter.png">
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</figure>
-
-				<!-- CARD 9-->
-				<figure style="cursor: pointer;" class="card mech all">
-					<a class="portfolio-link">
-						<img src="../assets/2020 FRC Robot Render 320p.png" width=100% height=66.6%>
-						<figcaption>
-							<h3>2020 FRC Robot</h3>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
-							</button>
-							<div class="portfolio-header">
-								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">2020 FRC Robot</h2>
-									<p class="portfolio-subtitle">Designed to shoot dodgeballs with extreme accuracy, in addition to other challenges</p>
-								</div>
-							</div>
-							<div class="portfolio-content">
-								<div class="text-box">
-									<p>Although the season got cancelled after one competition, due to COVID-19, my robotics team still made a great robot. If the season hadn’t been cancelled I think we would’ve done really well; we won our first competition at Georgian College. The game was based on Star Wars Episode IV, where Luke destroys the Death Star. In this FRC depiction, dodgeballs had to be scored through a goal, and then at the end of the match, the robot had to climb a rung.</p>
-								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
-										<img class="center-picture forty-per" src="../assets/2020 FRC Robot Render.png">
-										<img class="center-picture forty-per" src="../assets/2020 FRC IRL.jpg">
-									</div>
-									<p>As a mentor on the team, I helped high school students with the conceptual design, prototyping, final design and build process. Teaching members new skills and passing on knowledge is really fulfilling and important to me, and mentoring my old robotics team was a perfect way to do this. During this season I mainly helped design the intaking mechanism and the shooting mechanism.</p>
-								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
-										<img class="center-picture forty-per" src="../assets/2020 Intake.png">
-										<img class="center-picture forty-per" src="../assets/2020 Shooter.png">
-									</div>
-									<p>For the intake, the main challenge was automatically centering the balls so they could be stored in the hopper. To do this we used Mecanum wheels that would roll the ball into the center and then pick it up. And for the shooter, it was vital to automatically aim at the target from any angle or distance. To accomplish this we designed a custom bushing that the ball could be passed through, this bushing was mounted to a ring gear so the entire shooter could be rotated. In addition to this, the length of the hood could be adjusted on the fly for different shot lengths.</p>
-								</div>
-							</div>
-						</div>
-					</a>
-				</figure>
-
-				<!-- CARD 10-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
 						<img src="../assets/2019 FRC Robot Render 320p.png" width=100% height=66.6%>
@@ -470,6 +347,141 @@
 					</a>
 				</figure>
 
+				<!-- CARD 8-->
+				<figure style="cursor: pointer;" class="card mech hardware software all">
+					<a class="portfolio-link">
+						<img src="../assets/Stator Full Render 320p.png" width=100% height=66.6%>
+						<figcaption>
+							<h3>3D Printed BLDC Motor</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">3D Printed BLDC Motor</h2>
+									<p class="portfolio-subtitle">An almost entirely 3D printed brushless motor</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<img class="right-picture twenty-five-per" src="../assets/Motor  Annotated.png" style="height: auto;">
+									<p>As a design challenge, I thought it would be interesting to try 3D printing a basic “air core” motor. Little did I know this would turn into a deep rabbit hole of prototyping, iteration, and learning. After 20+ design iterations, major design changes, and a lot of filament later, I finally had a model that could spin at a decent speed, with a good amount of torque all things considered. The main stator core is made of iron infused PLA filament to increase magnetic flux, wrapped in copper magnet wire. The outer shell of the motor revolves around the stator, housing the magnets in an outrunner fashion. In some prototypes, I was looking at arranging the magnets in a Halbach array but didn’t think the extra diameter and cost was worth the small efficiency gain.</p>
+								</div>
+								<div class="text-box">
+									<img class="left-picture twenty-five-per" src="../assets/Stator Full Render.png" style="height: auto;">
+									<p>During this project, I learned a lot about GD&T, tolerancing, magnetics, electronics, and prototyping as it took many different iterations to get somewhere I was happy with. Obviously, with a large spinning mass, the concentricity is very important, and on a home-built 3D printer this isn’t the easiest thing to do. To get it not to wobble and be perfectly concentric, a lot of tuning had to be done to my printer, and some design changes made it easier to dial in. The stator core also proved difficult, as printing iron particles as a hot liquid is just asking for trouble. A ton of jamming and under extrusion forced me to print the stator in 4 different parts, sliding them onto each other similar to laminates in actual motors, this also theoretically reduced eddy currents. Then the stator was wrapped with magnet wire by hand and soldered together in a wye configuration.</p>
+								</div>
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="../assets/Motor Exposed View.png">
+										<img class="center-picture" src="../assets/Motor Spinning.png">
+									</div>
+									<p>Finally, using a 15A electronic speed controller I was able to get the motor to spin at up to 500rpm (pictured right). Although 3D printing a motor is super impractical, it was a super interesting learning experience and I am glad I went through with the project, despite the many pitfalls.</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+				</figure>
+
+				<!-- CARD 9-->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="../assets/Car Full Views 320p.png" width=100% height=66.6%>
+						<figcaption>
+							<h3>Sports Car Body Design</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Sports Car Body Design</h2>
+									<p class="portfolio-subtitle">A complete car body design from scratch using stadard industry processes</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="../assets/Car Final 3.jpg">
+										<img class="center-picture" src="../assets/Garage Render 6.jpg">
+									</div>
+									<p>I have always had a love for cars, from F1 to sports cars, something about them feels very satisfying. Since the invention of the car, constant iteration on the design has brought us to what we have now. The beautiful curves and fancy bodywork that makes an automobile is the product of years of improvements and upgrades. The amount of engineering and design work that makes up an automobile is fascinating to me, and I have always wanted to work in the automotive industry (although I have been told it’s a death wish).</p>
+									
+								</div>
+								<div class="text-box">
+									<img class="center-picture" src="../assets/Car Drawing.jpg" style="width: 100%;">
+									<p>This project started as an idea when I was in grade 8, using Google SketchUp to slowly design a car, line by line. When I got to high school I learned about proper CAD software and stopped the project. In grade 10 I thought it would be cool to bring the project back to life, so starting with the original sketches I started carving out a block of clay. My hope with using clay was to be able to change the design and try new things fast. This is actually how a lot of car companies design their cars at first, by carving full-scale models of plasticine.</p>
+								</div>
+								<div class="text-box">
+									<img class="center-picture" src="../assets/Modelling Process.png" style="width: 100%;">
+									<p>As seen above, after making a clay model I designed a custom 3D scanner to take a ton of photos from different angles, automatically. After taking 450 pictures of the car, I imported it into Autodesk ReCap and stitched the model together. Then this model was used as a template to resurface in Solidworks, using many 3D sketching and surfacing techniques. This surface model was tweaked until I was happy with the flow simulation results and the drag coefficient of ~0.28. Finally, headlights and tail lights were designed, wheels, grilles, and other details were added, and the car was ready to be rendered.</p>
+								</div>
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="../assets/Flow-Side.png" style="width: 100%;">
+										<img class="center-picture" src="../assets/Scene Render 2.jpg" style="width: 100%;">
+									</div>
+									<p>Overall, I learned so much from this project, and hope I can apply it to future projects and coop opportunities. I applied draft principles to sketching, learned how to model clay, studied and implemented 3D scanning, learned basic flow simulation, and greatly improved my Solidworks skills.</p>
+								</div>
+							</div>
+						</div>
+
+					</a>
+				</figure>
+
+				
+
+				<!-- CARD 9-->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="../assets/Dock Trailer Full Render 320p.png" width=100% height=66.6%>
+						<figcaption>
+							<h3>Dock Trailer</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Dock Trailer</h2>
+									<p class="portfolio-subtitle">An easy and safe way to remove docks from harbours</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<p>One of my favourite activities, starting from a young age at summer camp, is sailing. Except, like many other enjoyable things, it takes a lot of work. Twice a year the docks need to be moved, which means many days of work and manual labour. As a solution to this, the club decided to come up with a better solution, a trailer to pull the docks up with a car. I ended up designing and validating it, ensuring that it would survive the harsh Canadian climate, the lake water, and the repetitive loads.</p>
+								</div>
+								<div class="text-box">
+									<img class="center-picture forty-per" src="../assets/Dock Trailer Full Render.png">
+									<p>The trailer was designed for the sole purpose of lifting 500+ lb docks out of the water and holding them securely while a truck could pull them up the boat launch. It also has a secondary purpose of lifting a 400+ lb mast crane (pictured below). It is used around 20 times a year at the Mississauga Sailing Club and saves a ton of time.</p>
+								</div>
+								<div class="text-box" style="margin-bottom: 0;">
+									<p>The main frame is constructed with hollow steel tubing, making it relatively light but more than strong enough. Since almost the entire assembly has to be submerged in lake water, it is important that it is corrosion-resistant. The cheapest way to do this was to assembly it and then hot-dip galvanize it, protecting it from rust.</p>
+								</div>
+								<div class="text-box">
+									<div class="multiple-pictures">
+										<img class="center-picture forty-per" src="../assets/MSC.jpg">
+										<img class="center-picture forty-per" src="../assets/Dock Trailer Picture.jpg">
+									</div>
+									<p>I learned a lot about structural design working on this project, the heavy docks and trailer hitch presented a lot of static equilibrium problems. Ensuring that the dock didn’t prematurely corrode was also important, and required me to learn about different corrosion resistance options.</p>
+								</div>
+							</div>
+						</div>
+					</a>
+				</figure>
+
+
+
+
+
 				<!-- CARD 11-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
@@ -508,7 +520,7 @@
 					</a>
 				</figure>
 
-				
+				<!-- CARD 12-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
 						<img src="../assets/2017 FRC Robot Render 320p.png" width=100% height=66.6%>
@@ -541,6 +553,41 @@
 								<div class="text-box">
 									<img class="center-picture sixty-per" src="../assets/2017 Shooter Render.png">
 									<p>The gear mechanism eventually got fast enough to allow our robot to do 10-11 cycles a game, something that few teams achieved in the competition. Despite this advantage we had over other teams, one strategic point we oversaw was the low fuel scoring vs. the high fuel scoring, which was worth 3x as many points per ball. Because of this, after the season finished I made it a side project to design a turret shooter (pictured below) for this game, and we prototyped it after to learn things for future years (something that came in handy in 2020).</p>
+								</div>
+							</div>
+						</div>
+					</a>
+				</figure>
+
+				<!-- CARD 13-->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="../assets/Autonoprint Render 320p.png" width=100% height=66.6%>
+						<figcaption>
+							<h3>Autonoprint</h3>
+						</figcaption>
+						
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Autonoprint</h2>
+									<p class="portfolio-subtitle">Modified 3D printer with autonomous capabilities</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<p>During the University of Toronto’s “MakeUofT” 24 hour hackathon, my team of 4 decided to mod a Prusa i3 to make it more autonomous. Even though hobby 3D printers are amazing, and can be fairly maintenance-free, they aren’t autonomous and still require someone to manage them. Our idea was simple, allow the printer to be able to clear and clean its build plate, monitor its status, and start a print remotely. Since the printer can clear and clean its build plate, it can hypothetically print over and over again.</p>
+								</div>
+								<div class="text-box">
+									<img class="center-picture sixty-per" src="../assets/Autonoprint Render.png">
+									<p>To do this, I designed a “scraper arm” that would be lowered across the print bed, locking into a slot on the opposite side. With a scraper flush on the bed, when the bed is moved at full speed, the print easily pops off. While moving, isopropyl alcohol is pumped under the scraper and in front of the wiper, cleaning the PEI coating on the bed from any oil or debris.</p>
+								</div>
+								<div class="text-box">
+									<img class="center-picture sixty-per" src="../assets/Autonoprint.jpg">
+									<p>In addition to the scraper arm, we added a Raspberry Pi that could control the printer from a web server, cueing prints, moving the axis and live streaming a video feed. On the Raspberry Pi, we used a program called “Spaghetti Detective” to automatically detect failed prints, which would then trigger our scraper arm to remove the print and start over.</p>
 								</div>
 							</div>
 						</div>
