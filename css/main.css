@@ -2,6 +2,11 @@ body {
     margin: 0 auto;
     padding: 0;
     width: 100%;
+
+    min-height: 100vh;
+    display: block;
+    position: relative;
+    padding-bottom: 49px;
 }
 
 .top_header {
@@ -37,6 +42,11 @@ nav ul { /*entire list settings*/
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+
     background-image: url(../assets/Background.png);
     background-size: cover;
     font-size: .8em;
@@ -286,6 +296,10 @@ a:hover {
     margin: 0 auto 1em;
 }
 
+.twenty-per {
+    width: 20%;
+}
+
 .thirty-per {
     width: 30%;
 }
@@ -455,6 +469,7 @@ figcaption {
 
 .date {
     font-size: 1em;
+    text-align: right;
 }
 
 /*Modal*/
@@ -645,6 +660,9 @@ button:focus {
     }
     .portfolio-title-box {
         padding: 1em 0 1em 1.5em;
+    }
+    body {
+        padding-bottom: 91px;
     }
 }
 
