@@ -72,13 +72,13 @@
 									<p>While working on other mechanical projects over my life, I always ran into one big problem: manufacturing. Paying a job shop to do a one-off part for me is way too expensive, and only so much can be made at home with basic tools. This problem was partly solved when I built a 3D printer in 2013, but there was still a missing piece; the ability to manufacture metal parts. Sometimes 3D printed plastic is just not good enough and stiffer, stronger materials need to be used. This, along with the challenge of 3 axis machine design enticed me enough to start this project in January of 2020.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/CNC CAD.png" style="width: 100%; height: auto; margin-bottom: 1em;">
+									<img class="center-picture" src="../assets/CNC CAD.png" style="width: 100%; height: auto;">
 								</div>
 								<div class="text-box">
 									<p>The entire design revolves around a T slot extrusion bed that ensures that the Y-axis rails are parallel and that the gantry structure is reinforced. Because of my manufacturing constraints, most of the parts had to be extrusion or 3D printed, but most of the 3D printed parts were designed to be converted to routered parts down the road. A cool learning experience for me was using topology optimization for a bracket between two pieces of extrusion, while not very practical it did offer me insight into FEA optimization. The entire cost of the machine was kept under $700 by avoiding the use of linear rails and ball screws, which typically push the price of the machine over $2000. Instead, a bearing block style system was used in conjunction with steel reinforced belts. For my purposes, it was an easy and cheap solution that still offers more than enough strength.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/CNC Build.png" style="width: 100%; height: auto; margin-bottom: 1em;">
+									<img class="center-picture" src="../assets/CNC Build.png" style="width: 100%; height: auto;">
 								</div>
 								<div class="text-box">
 									<p>The build process was very long, spanning 2 months from April to May, mainly because I wanted to ensure that it was built properly and robustly. The main base is a wood table that I filled with a sand epoxy mixture for dampening and rigidity, everything else is built up from there. Throughout the entire process, I ensured perpendicularity was as close to perfect as possible, and that all dimensions were accurate to reduce tolerance stacks. Something very important I learned while building is just how important wire management is, originally I planned on just using cable sleeves but I realized how easily something could break without proper routing. I settled for a durable drag chain system on the X and Y axes and making everything unpluggable to make troubleshooting much easier.</p>
@@ -118,18 +118,22 @@
 								<div class="text-box">
 									<p>Whenever my simple projects need automation it's almost always higher power switching with a microcontroller. I don’t know how many times I’ve set up the same MOSFET circuit on a breadboard with an Arduino, hoping the breadboard doesn’t melt. After enough struggle, I decided it would be a fun project to make a simple microcontroller that controls a MOSFET array. This can be used for many applications such as solenoid switching (as seen on my ventilator project), motor control, or high power LED switching.</p>
 								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/DIODE Board Full Render.png" style="height: 25vw; width: auto;">
 										<img class="center-picture" src="../assets/DIODE 3D.png" style="height: 25vw; width: auto;">
 									</div>
-									<p>The microcontroller is a basic ATmega328P running at 16MHz with an FTDI breakout for programming. Six of the digital output pins go to Darlington transistors, which allow for 24V switching with a 3A load, leaving a lot of headroom for applications. On top of all of this, the board uses extremely common SMD components and was able to be SMT assembled, saving me from the difficult soldering work. Pictured below on the left is the board getting the through-hole components soldered on and on the right the board driving a 12V 775 motor.</p>
 								</div>
 								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+									<p>The microcontroller is a basic ATmega328P running at 16MHz with an FTDI breakout for programming. Six of the digital output pins go to Darlington transistors, which allow for 24V switching with a 3A load, leaving a lot of headroom for applications. On top of all of this, the board uses extremely common SMD components and was able to be SMT assembled, saving me from the difficult soldering work. Pictured below on the left is the board getting the through-hole components soldered on and on the right the board driving a 12V 775 motor.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/DIODE Soldering.png" style="height: 25vw; width: auto;">
 										<img class="center-picture" src="../assets/Motor Driven by DIODE.png" style="height: 25vw; width: auto;">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>This project taught me a lot about PCB design and the capabilities of manufacturers. The high power capabilities of the board meant special design considerations had to be made, teaching me a lot in the process.</p>
 								</div>
 							</div>
@@ -157,12 +161,12 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<img class="left-picture" src="../assets/Ventilator Full Render.png" style="height: auto;">
+									<img class="left-picture" src="../assets/Ventilator Full Render.png" style="height: auto;">	
 									<p>At the beginning of March 2020, it was clear that the COVID-19 pandemic was taking the world by storm. Hospitals were not equipped to deal with the thousands of new cases popping up daily, increasing at a scary rate. During this huge demand for ventilators and medical equipment, I knew I wanted to do something to help, so I found a competition (Code Life Ventilator Challenge) that brought together engineers, medical professionals, and anyone else that wanted to help to come up with a solution to the ventilator shortage. This competition brought together my team of peers from Waterloo, CSA engineers, and doctors from the Ottawa Hospital. Together over the course of 10 days we designed, built, and tested a functioning ventilator, with myself taking a lot of the mechanical design and documentation work.</p>
 								</div>
 								<div class="text-box">
 									<img class="right-picture" src="../assets/Ventilator.png" style="height: auto;">
-									<p>Initially, we did a lot of brainstorming to make sure that we could design a simple and effective solution, we came up with the idea of using large disposable syringes that could be easily replaced instead of sanitizing the entire machine. Then we worked on finding materials we could source in a matter of days, this basically limited our selection to Amazon and McMaster Carr. I worked on designing the airway control paths, this included sealing the syringes, sealing the integrated airways, and connecting the solenoid valves. The final design could pump 600ml of proportionally mixed oxygen and air at a pressure of 40cmH2O into a patient. It could withstand the cyclic loading of 800 breathes per hour in simulation, and had adjustable settings on a simple to use Android app. All the parts were shipped to my house, I assembled it in 12 hours and drove it up to Ottawa to be tested the next day. While it was being tested I helped with documentation, including a simple annotated assembly manual for others to use if they wanted to recreate our device.</p>
+									<p>Initially, we did a lot of brainstorming to make sure that we could design a simple and effective solution, we came up with the idea of using large disposable syringes that could be easily replaced instead of sanitizing the entire machine. Then we worked on finding materials we could source in a matter of days, this basically limited our selection to Amazon and McMaster Carr. I worked on designing the airway control paths, this included sealing the syringes, sealing the integrated airways, and connecting the solenoid valves. The final design could pump 600ml of proportionally mixed oxygen and air at a pressure of 40cmH2O into a patient. It could withstand the cyclic loading of 800 breathes per hour in simulation, and had adjustable settings on a simple to use Android app. All the parts were shipped to my house, I assembled it in 12 hours and drove it up to Ottawa to be tested the next day. While it was being tested I helped with documentation, including a simple annotated assembly manual for others to use if they wanted to recreate our device.</p>	
 								</div>
 								<div class="text-box">
 									<img class="left-picture" src="../assets/Ventilator Testing.png" style="height: auto;">
@@ -195,12 +199,14 @@
 								<div class="text-box">
 									<p>After the 2020 FRC competition was cancelled by COVID-19, I decided to join a CAD competition based on a sports challenge, with two of my close friends. The challenge was to pick up a 40lb barbell weight and throw footballs into field goals. The competition gave us 48 hours to fully design a functional robot in a team of 3, a challenge that I underestimated at the beginning. Below is our final assembly that we submitted with, overall it placed 16th across over 150 teams.</p>
 								</div>
-								<div class="text-box">	
+								<div class="image-box">
 									<img class="center-picture forty-per" src="../assets/F4 Robot Full Render.png">
+								</div>
+								<div class="text-box">	
 									<p>My role on the team was designing the football shooter and feeder system. In the preliminary design phase, I decided it would be easiest to store the football horizontally so that it wouldn’t have an option but to stay in that orientation, since it has the smallest radius. I later decided this would be the best orientation to shoot in as well, giving the ball a spiral to keep it stable. Both my designs can be seen below, keeping in mind they were designed very quickly, leaving time for integration and rendering.</p>
 								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/F4 Hopper.png">
 										<img class="center-picture forty-per" src="../assets/F4 Shooter.png">
 									</div>
@@ -232,18 +238,22 @@
 								<div class="text-box">
 									<p>Although the season got cancelled after one competition, due to COVID-19, my robotics team still made a great robot. If the season hadn’t been cancelled I think we would’ve done really well; we won our first competition at Georgian College. The game was based on Star Wars Episode IV, where Luke destroys the Death Star. In this FRC depiction, dodgeballs had to be scored through a goal, and then at the end of the match, the robot had to climb a rung.</p>
 								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/2020 FRC Robot Render.png">
 										<img class="center-picture forty-per" src="../assets/2020 FRC IRL.jpg">
 									</div>
-									<p>As a mentor on the team, I helped high school students with the conceptual design, prototyping, final design and build process. Teaching members new skills and passing on knowledge is really fulfilling and important to me, and mentoring my old robotics team was a perfect way to do this. During this season I mainly helped design the intaking mechanism and the shooting mechanism.</p>
 								</div>
 								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+									<p>As a mentor on the team, I helped high school students with the conceptual design, prototyping, final design and build process. Teaching members new skills and passing on knowledge is really fulfilling and important to me, and mentoring my old robotics team was a perfect way to do this. During this season I mainly helped design the intaking mechanism and the shooting mechanism.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/2020 Intake.png">
 										<img class="center-picture forty-per" src="../assets/2020 Shooter.png">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>For the intake, the main challenge was automatically centering the balls so they could be stored in the hopper. To do this we used Mecanum wheels that would roll the ball into the center and then pick it up. And for the shooter, it was vital to automatically aim at the target from any angle or distance. To accomplish this we designed a custom bushing that the ball could be passed through, this bushing was mounted to a ring gear so the entire shooter could be rotated. In addition to this, the length of the hood could be adjusted on the fly for different shot lengths.</p>
 								</div>
 							</div>
@@ -273,31 +283,40 @@
 								<div class="text-box">
 									<p>In my first year Mechatronics Engineering course we had a final design project, in which we were tasked in making an automated device with a Lego EV3 robotics kit. With the recent interest in origami from me and my friends, we thought it would be an awesome project to try to fold origami. But after looking at some preliminary designs we had, we figured it would be way too hard with the 4 motors we were limited to. So as a compromise we decided to make an origami creasing machine, one that you could import a picture of a folding pattern, and it would crease a paper on both sides to show the user where the folds needed to be. To do this we designed, built, and programmed a 4 axis CNC, with a rotating creasing wheel, pictured below. On the team, I handled the mechanical design, the build, and the control system code.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/Fold3r Full Render.png">
 										<img class="center-picture forty-per" src="../assets/Fold3r Real.png">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>Since we wanted to make the device easy to use for anyone, we wanted to make a “CAM” program of sorts. The simplest way we found to do this was to have the user draw blue or red lines on a square piece of paper, blue being a down fold and red being an up fold (seen below). This picture would be read into an OpenCV program that would detect the coordinate endpoints of these lines, and output a custom “G-code” of all the coordinates of crease lines to a text file, automatically optimizing them. Then the EV3 could interpret the text file and crease all the lines on one side of the paper, prompting the user to flip the page, and then finishing the lines on the other side.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<img class="center-picture" src="../assets/Crease Pattern.png" style="width: 100%;">
+								</div>
+								<div class="text-box">
 									<p>The main XY system is a basic gantry system using threaded rod and smooth rod. Since our time and budget was constrained we picked a very basic system, using a threaded rod kept the cost low yet allowed our machine to be precise. On top of this, by using a synchro shaft on the Y axis, we were able to drive two threaded rods with one servo motor.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<img class="center-picture" src="../assets/Exploded Gantry.png" style="width: 100%;">
-									<p>Holding the end effector is an extremely compact but simple Z and C axis. The Z-axis used a small lead screw and box way slides and was driven with the smaller servo motor. The Z-axis was retained in a ring gear that was responsible for spinning the creasing wheel. By rotating the entire Z-axis a much smaller sub-assembly was possible, as opposed to moving a rotational axis up and down. At the end of this assembly is a creasing wheel or “pizza cutter” which is essentially a sharp wheel to crease the paper.</p>
 								</div>
 								<div class="text-box">
+									<p>Holding the end effector is an extremely compact but simple Z and C axis. The Z-axis used a small lead screw and box way slides and was driven with the smaller servo motor. The Z-axis was retained in a ring gear that was responsible for spinning the creasing wheel. By rotating the entire Z-axis a much smaller sub-assembly was possible, as opposed to moving a rotational axis up and down. At the end of this assembly is a creasing wheel or “pizza cutter” which is essentially a sharp wheel to crease the paper.</p>
+								</div>
+								<div class="image-box">
 									<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/Creasing Head Render.png">
 										<img class="center-picture" src="../assets/Fold3r Creasing Wheel w Arrows.png">
 									</div>
-									<p>Keeping the paper down without damaging it was a big problem that we faced in the design phase, as paper is delicate and needs to be intact for origami to work. In addition to this, to make deep crease marks in the paper, it was necessary to allow the creasing wheel to push the paper into something compliant, thus wrapping the paper around the wheel. To tackle these problems we made a simple vacuum table with a shop vac and a perforated foam sheet, which allowed us to vary the compliance of the foam and the strength of the work holding.</p>
 								</div>
 								<div class="text-box">
+									<p>Keeping the paper down without damaging it was a big problem that we faced in the design phase, as paper is delicate and needs to be intact for origami to work. In addition to this, to make deep crease marks in the paper, it was necessary to allow the creasing wheel to push the paper into something compliant, thus wrapping the paper around the wheel. To tackle these problems we made a simple vacuum table with a shop vac and a perforated foam sheet, which allowed us to vary the compliance of the foam and the strength of the work holding.</p>
+								</div>
+								<div class="image-box">
 									<img class="center-picture" src="../assets/Exploded Vacuum Table Render.png" style="width: 100%;">
-									
+								</div>
+								<div class="text-box">
 									<p>This project was extremely fun, we tackled a really cool problem with some simple and clever solutions. The end product worked extremely well and impressed lots of professors and students, seeing a pre-creased origami paper opened people's eyes to the art of origami.</p>
 								</div>
 							</div>
@@ -327,19 +346,23 @@
 								<div class="text-box">
 									<p>In my last season on Team 1325, I was acting as co-captain of the team. I mainly focused on organizing the design side of things, making sure our final design followed our prototypes closely and ensuring different parts of the design would integrate well together. The 2019 FRC challenge was based on securing “rockets” with cargo and panels to seal the cargo in. It involved manipulating and scoring rubber balls, and attaching thin plastic discs to velcro on the rocket. Our robot was very competitive, specializing in extremely fast cycle times and eventually making it to semifinals at the World Championships in Detroit.</p>
 								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture thirty-per" src="../assets/2019 FRC Robot Render.png">
 										<img class="center-picture" src="../assets/2019 FRC IRL.jpg.png">
 									</div>
-									<p>I focused on designing the rotating axis for the “claw” which weighed around 20lbs. Swinging a 20lb claw around an elevator is a difficult challenge, so FEA was utilized to ensure the design would be rigid enough. Below is the final design I came up with, using a 410:1 reduction, Oilite bushings, and a lot of structural reinforcement. The arm also had CNC cut plates to hold ball bearings, that would allow it to slide up and down on the elevator.</p>
 								</div>
 								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+									<p>I focused on designing the rotating axis for the “claw” which weighed around 20lbs. Swinging a 20lb claw around an elevator is a difficult challenge, so FEA was utilized to ensure the design would be rigid enough. Below is the final design I came up with, using a 410:1 reduction, Oilite bushings, and a lot of structural reinforcement. The arm also had CNC cut plates to hold ball bearings, that would allow it to slide up and down on the elevator.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/2019 Carriage.png">
 										<img class="center-picture" src="../assets/Drop Down Mech Render.png">
 										<img class="center-picture" src="../assets/Drop Down Mech IRL.png">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>Another interesting thing that the team wanted to explore midseason was an addition to the claw that could swing down and hold the discs. With the claw being already so heavy and with little space to add a mechanism, a lot of clever packaging and design had to be utilized. I led this project and came up with a 4 bar mechanism that could fold up compactly, actuate and stop the movement of the “grabber” (pictured below).</p>
 								</div>
 							</div>
@@ -374,11 +397,13 @@
 									<img class="left-picture twenty-five-per" src="../assets/Stator Full Render.png" style="height: auto;">
 									<p>During this project, I learned a lot about GD&T, tolerancing, magnetics, electronics, and prototyping as it took many different iterations to get somewhere I was happy with. Obviously, with a large spinning mass, the concentricity is very important, and on a home-built 3D printer this isn’t the easiest thing to do. To get it not to wobble and be perfectly concentric, a lot of tuning had to be done to my printer, and some design changes made it easier to dial in. The stator core also proved difficult, as printing iron particles as a hot liquid is just asking for trouble. A ton of jamming and under extrusion forced me to print the stator in 4 different parts, sliding them onto each other similar to laminates in actual motors, this also theoretically reduced eddy currents. Then the stator was wrapped with magnet wire by hand and soldered together in a wye configuration.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/Motor Exposed View.png">
 										<img class="center-picture" src="../assets/Motor Spinning.png">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>Finally, using a 15A electronic speed controller I was able to get the motor to spin at up to 500rpm (pictured right). Although 3D printing a motor is super impractical, it was a super interesting learning experience and I am glad I went through with the project, despite the many pitfalls.</p>
 								</div>
 							</div>
@@ -405,28 +430,35 @@
 									<p class="portfolio-subtitle">A complete car body design from scratch using stadard industry processes</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
-								<div class="text-box">
-									<div class="multiple-pictures">
+							<div class="image-box">
+								<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/Car Final 3.jpg">
 										<img class="center-picture" src="../assets/Garage Render 6.jpg">
 									</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
 									<p>I have always had a love for cars, from F1 to sports cars, something about them feels very satisfying. Since the invention of the car, constant iteration on the design has brought us to what we have now. The beautiful curves and fancy bodywork that makes an automobile is the product of years of improvements and upgrades. The amount of engineering and design work that makes up an automobile is fascinating to me, and I have always wanted to work in the automotive industry (although I have been told it’s a death wish).</p>
-									
+								</div>
+								<div class="image-box">
+									<img class="center-picture" src="../assets/Car Drawing.jpg" style="width: 100%;">
 								</div>
 								<div class="text-box">
-									<img class="center-picture" src="../assets/Car Drawing.jpg" style="width: 100%;">
 									<p>This project started as an idea when I was in grade 8, using Google SketchUp to slowly design a car, line by line. When I got to high school I learned about proper CAD software and stopped the project. In grade 10 I thought it would be cool to bring the project back to life, so starting with the original sketches I started carving out a block of clay. My hope with using clay was to be able to change the design and try new things fast. This is actually how a lot of car companies design their cars at first, by carving full-scale models of plasticine.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<img class="center-picture" src="../assets/Modelling Process.png" style="width: 100%;">
-									<p>As seen above, after making a clay model I designed a custom 3D scanner to take a ton of photos from different angles, automatically. After taking 450 pictures of the car, I imported it into Autodesk ReCap and stitched the model together. Then this model was used as a template to resurface in Solidworks, using many 3D sketching and surfacing techniques. This surface model was tweaked until I was happy with the flow simulation results and the drag coefficient of ~0.28. Finally, headlights and tail lights were designed, wheels, grilles, and other details were added, and the car was ready to be rendered.</p>
 								</div>
 								<div class="text-box">
+									<p>As seen above, after making a clay model I designed a custom 3D scanner to take a ton of photos from different angles, automatically. After taking 450 pictures of the car, I imported it into Autodesk ReCap and stitched the model together. Then this model was used as a template to resurface in Solidworks, using many 3D sketching and surfacing techniques. This surface model was tweaked until I was happy with the flow simulation results and the drag coefficient of ~0.28. Finally, headlights and tail lights were designed, wheels, grilles, and other details were added, and the car was ready to be rendered.</p>
+								</div>
+								<div class="image-box">
 									<div class="multiple-pictures">
 										<img class="center-picture" src="../assets/Flow-Side.png" style="width: 100%;">
 										<img class="center-picture" src="../assets/Scene Render 2.jpg" style="width: 100%;">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>Overall, I learned so much from this project, and hope I can apply it to future projects and coop opportunities. I applied draft principles to sketching, learned how to model clay, studied and implemented 3D scanning, learned basic flow simulation, and greatly improved my Solidworks skills.</p>
 								</div>
 							</div>
@@ -442,7 +474,6 @@
 						<figcaption>
 							<h3>Autonoprint</h3>
 						</figcaption>
-						
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
 								<img class="close-svg" src="../assets/close button.svg" alt="Close">
@@ -457,12 +488,16 @@
 								<div class="text-box">
 									<p>During the University of Toronto’s “MakeUofT” 24 hour hackathon, my team of 4 decided to mod a Prusa i3 to make it more autonomous. Even though hobby 3D printers are amazing, and can be fairly maintenance-free, they aren’t autonomous and still require someone to manage them. Our idea was simple, allow the printer to be able to clear and clean its build plate, monitor its status, and start a print remotely. Since the printer can clear and clean its build plate, it can hypothetically print over and over again.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<img class="center-picture sixty-per" src="../assets/Autonoprint Render.png">
-									<p>To do this, I designed a “scraper arm” that would be lowered across the print bed, locking into a slot on the opposite side. With a scraper flush on the bed, when the bed is moved at full speed, the print easily pops off. While moving, isopropyl alcohol is pumped under the scraper and in front of the wiper, cleaning the PEI coating on the bed from any oil or debris.</p>
 								</div>
 								<div class="text-box">
+									<p>To do this, I designed a “scraper arm” that would be lowered across the print bed, locking into a slot on the opposite side. With a scraper flush on the bed, when the bed is moved at full speed, the print easily pops off. While moving, isopropyl alcohol is pumped under the scraper and in front of the wiper, cleaning the PEI coating on the bed from any oil or debris.</p>
+								</div>
+								<div class="image-box">
 									<img class="center-picture sixty-per" src="../assets/Autonoprint.jpg">
+								</div>
+								<div class="text-box">
 									<p>In addition to the scraper arm, we added a Raspberry Pi that could control the printer from a web server, cueing prints, moving the axis and live streaming a video feed. On the Raspberry Pi, we used a program called “Spaghetti Detective” to automatically detect failed prints, which would then trigger our scraper arm to remove the print and start over.</p>
 								</div>
 							</div>
@@ -492,18 +527,22 @@
 								<div class="text-box">
 									<p>One of my favourite activities, starting from a young age at summer camp, is sailing. Except, like many other enjoyable things, it takes a lot of work. Twice a year the docks need to be moved, which means many days of work and manual labour. As a solution to this, the club decided to come up with a better solution, a trailer to pull the docks up with a car. I ended up designing and validating it, ensuring that it would survive the harsh Canadian climate, the lake water, and the repetitive loads.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<img class="center-picture forty-per" src="../assets/Dock Trailer Full Render.png">
+								</div>
+								<div class="text-box">
 									<p>The trailer was designed for the sole purpose of lifting 500+ lb docks out of the water and holding them securely while a truck could pull them up the boat launch. It also has a secondary purpose of lifting a 400+ lb mast crane (pictured below). It is used around 20 times a year at the Mississauga Sailing Club and saves a ton of time.</p>
 								</div>
-								<div class="text-box" style="margin-bottom: 0;">
+								<div class="text-box">
 									<p>The main frame is constructed with hollow steel tubing, making it relatively light but more than strong enough. Since almost the entire assembly has to be submerged in lake water, it is important that it is corrosion-resistant. The cheapest way to do this was to assembly it and then hot-dip galvanize it, protecting it from rust.</p>
 								</div>
-								<div class="text-box">
+								<div class="image-box">
 									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/MSC.jpg">
 										<img class="center-picture forty-per" src="../assets/Dock Trailer Picture.jpg">
 									</div>
+								</div>
+								<div class="text-box">
 									<p>I learned a lot about structural design working on this project, the heavy docks and trailer hitch presented a lot of static equilibrium problems. Ensuring that the dock didn’t prematurely corrode was also important, and required me to learn about different corrosion resistance options.</p>
 								</div>
 							</div>
@@ -529,17 +568,21 @@
 									<p class="portfolio-subtitle">Winner of the Ontario District Championship and World Championship semifinalist</p>
 								</div>
 							</div>
+							<div class="image-box">
+								<img class="center-picture" src="../assets/2018 Industrial Photoshoot.jpg" style="width: 85%; height: auto;">
+							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<img class="center-picture" src="../assets/2018 Industrial Photoshoot.jpg" style="width: 85%; height: auto;">
 									<p>During my grade 11 year in high school I took on the role of captain and design lead on Team 1325. In 2018 the challenge was to place milk crates onto scales and out-weigh the opponent and then climb up the scale at the end of the match. We designed a very unique robot with mechanisms designed to speed up cycles and work well with other teammates. We won the provincial championships in Ontario and made it to semi-finals at the World Championship in Detroit when our teammate's robot had a mechanical failure, costing us the match.</p>
 								</div>
-								<div class="text-box" style="margin-top: 0;">
+								<div class="image-box">
 									<img class="center-picture" src="../assets/2018 On Field.jpg" style="width: 85%; height: auto;">
-									<p>I designed the auxiliary intakes (pictured below) which could grab milk crates from a far distance, orient them properly and pull them into the robot in a predictable way. This was what separated us from other robots that had problems with grabbing milk crates from weird orientations.</p>
 								</div>
 								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+									<p>I designed the auxiliary intakes (pictured below) which could grab milk crates from a far distance, orient them properly and pull them into the robot in a predictable way. This was what separated us from other robots that had problems with grabbing milk crates from weird orientations.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/Aux Intake Render.png">
 										<img class="center-picture forty-per" src="../assets/Aux Intake Drawing.png">
 									</div>
@@ -567,20 +610,26 @@
 									<p class="portfolio-subtitle">A competitive robot designed for high cycle times</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="image-box">
 								<img class="center-picture sixty-per" src="../assets/2017 FRC Robot Render.png">
+							</div>
+							<div class="portfolio-content">
 								<div class="text-box">
 									<p>In my grade 10 years, I took on the role of design lead on my FRC team, during the Steamworks season. The game was designed around Wiffle balls (fuel) which had to be scored in a low and high goal, and large plastic gears that had to be placed on a spring. The strategic approach we took was to cycle as many gears as possible, and as a secondary function, we would assist our team mates in scoring fuel balls. Our robot, named The Beast, used rubberized conveyor rollers, and a sliding pocket to hold gears.</p>
 								</div>
-								<div class="text-box">
-									<div class="multiple-pictures" style="margin-bottom: 1em;">
+								<div class="image-box">
+									<div class="multiple-pictures">
 										<img class="center-picture forty-per" src="../assets/2017 Robot Climb.jpg">
 										<img class="center-picture forty-per" src="../assets/2017 Robot Gear.jpg">
 									</div>
-									<p>I worked on 2 sub-assemblies throughout the design and build phases, the fuel intake and the gear pocket. Since the gear pocket was the main system our strategy relied on we continuously iterated and improved it throughout the season, making a total of 5 design overhauls.</p>
 								</div>
 								<div class="text-box">
+									<p>I worked on 2 sub-assemblies throughout the design and build phases, the fuel intake and the gear pocket. Since the gear pocket was the main system our strategy relied on we continuously iterated and improved it throughout the season, making a total of 5 design overhauls.</p>
+								</div>
+								<div class="image-box">
 									<img class="center-picture sixty-per" src="../assets/2017 Shooter Render.png">
+								</div>
+								<div class="text-box">
 									<p>The gear mechanism eventually got fast enough to allow our robot to do 10-11 cycles a game, something that few teams achieved in the competition. Despite this advantage we had over other teams, one strategic point we oversaw was the low fuel scoring vs. the high fuel scoring, which was worth 3x as many points per ball. Because of this, after the season finished I made it a side project to design a turret shooter (pictured below) for this game, and we prototyped it after to learn things for future years (something that came in handy in 2020).</p>
 								</div>
 							</div>
