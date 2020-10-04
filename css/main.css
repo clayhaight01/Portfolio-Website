@@ -7,6 +7,7 @@ body {
     display: block;
     position: relative;
     padding-bottom: 49px;
+    box-sizing: border-box;
 }
 
 .top_header {
