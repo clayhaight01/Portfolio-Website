@@ -531,9 +531,13 @@ figcaption {
     padding-bottom: 2em;
 }
 
-/* .portfolio-content:first-child {
-    margin-top: 0;
-} */
+.text-box:first-child {
+    margin-top: 1em;
+}
+
+.multiple-pictures:first-child {
+    margin-top: 1em;
+}
 
 .portfolio-full-width {
     width: 100vw;
@@ -585,20 +589,20 @@ button:focus {
         height: 4px;
     }
     .text-box {
-        display: inline;
+        display: inline-block;
     }
     .image-box {
-        display: inline;
+        display: inline-block;
     }
     .left-picture {
         width: 100%;
         height: auto;
-        margin: 1em 0;
+        margin: 0 0 1em;
     }
     .right-picture {
         width: 100%;
         height: auto;
-        margin: 1em 0;
+        margin: 0 0 1em;
     }
 }
 
@@ -611,6 +615,9 @@ button:focus {
     }
     .center-picture {
         width: 100%;
+    }
+    .exception {
+        margin-bottom: 1em;
     }
 }
 
