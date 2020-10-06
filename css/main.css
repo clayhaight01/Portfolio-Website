@@ -396,6 +396,10 @@ main {
     padding: 0;
 }
 
+.home-blurb {
+    margin-bottom: 1.5em;
+}
+
 .filter_header {
     width: 100%;
     display: inline-block;
