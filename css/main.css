@@ -446,7 +446,7 @@ main {
 .card {
     width: calc((79.8vw - 49.566px) / 3);
     min-width: 190px;
-    height: calc(0.6666*((79.8vw - 49.566px) / 3) + 44.987px);
+    height: calc(0.6666*(26.6vw - 16.522px) + 44.987px);
     margin: 0 1% 2%;
     border: 1px solid #e4e4e4;
     border-radius: 8px;
@@ -456,8 +456,8 @@ main {
 
 @media (min-width: 651px) and (max-width: 749px) {
     .card {
-        width: calc((79.8vw - 37.566px) / 2);
-        height: calc(((0.6666*(79.8vw - 37.566px) / 2) + 44.987px);
+        width: calc(39.9vw - 18.783px);
+        height: calc(0.6666*(39.9vw - 18.783px) + 44.987px);
     }
 }
 
