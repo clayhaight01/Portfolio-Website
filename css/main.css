@@ -444,12 +444,27 @@ main {
 }
 
 .card {
-    width: calc((79.8vw - 41.6px) / 3);
+    width: calc((79.8vw - 49.566px) / 3);
     min-width: 190px;
-    height: calc(0.6666*((79.8vw - 41.6px) / 3) + 44.987px);
+    height: calc(0.6666*((79.8vw - 49.566px) / 3) + 44.987px);
     margin: 0 1% 2%;
     border: 1px solid #e4e4e4;
     border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (max-width: 749px, min-width: 651px) {
+    .card {
+        width: calc((79.8vw - 37.566px) / 2);
+        height: calc(0.6666*(79.8vw - 37.566px) / 2) + 44.987px);
+    }
+}
+
+@media (max-width: 650px) {
+    .card {
+        height: calc(0.6666*(84vw - 12.28px) + 44.987px);
+    }
 }
 
 .card:hover {
