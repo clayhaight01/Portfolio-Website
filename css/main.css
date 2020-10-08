@@ -457,7 +457,7 @@ main {
 @media (min-width: 651px) and (max-width: 749px) {
     .card {
         width: calc((79.8vw - 37.566px) / 2);
-        height: calc(0.6666*(79.8vw - 37.566px) / 2) + 44.987px);
+        height: calc(((0.6666*(79.8vw - 37.566px) / 2) + 44.987px);
     }
 }
 
