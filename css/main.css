@@ -549,6 +549,8 @@ figcaption {
     width: 85%;
     margin: 0 auto;
     padding-bottom: 2em;
+    white-space: normal;
+    overflow: auto;
 }
 
 .text-box:first-child {
