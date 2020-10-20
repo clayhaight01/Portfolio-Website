@@ -538,10 +538,14 @@ figcaption {
 
 .portfolio-title {
     font-size: 3em;
+    white-space: normal;
+    overflow: auto;
 }
 
 .portfolio-subtitle {
     font-size: 2em;
+    white-space: normal;
+    overflow: auto;
 }
 
 .portfolio-content {
