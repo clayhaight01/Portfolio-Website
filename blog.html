@@ -69,7 +69,16 @@
 									<img class="center-picture sixty-per" src="../assets/Work Holding.png">
 								</div>
 								<div class="text-box">
-									<p>Recently my roommates got into YoYoing, something that I didn’t realize there was still a following for. The most interesting part to me was the extremely specialty bearings (costing up to $40) that can spin under their own mass moment of inertia. When the large “butterfly” shaped flywheel is added, a good yoyo can freespin for more than 10 minutes. This, of course, interested me, and in my free time after studying I decided to start designing a yoyo bearing.</p>
+									<p>As the final part of my CNC project, I needed a way to secure material to the table. A common way to do this is a lever that pulls down applying a force to the workpiece. To adjust heights, the lever is placed on a “step block” that resembles a staircase. I liked this solution but I had two problems with it. First, they are generally pretty short and can’t hold work that is in the middle of a wasteboard. Second, the ends of them are usually flat, which puts a lot of force on a sharp edge which could lead to denting and more scrap. My solution for this was very simple, an arm with a round “finger”, that could better distribute the force.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="../assets/Work Holding Math.png">
+								</div>
+								<div class="text-box">
+									<p>I really wasn’t sure what kind of forces I could achieve with this, and I wanted to ensure I could keep the workpiece solid, as it is a very common failure of CNC routers. To calculate what forces I needed, I used the coefficients of static friction between some of the common materials I cut, and whatever they were secured to. The smallest coefficient (between the MDF waste board and the aluminum table) represents what will slip first from cutting forces. Using a rough estimate of cutting forces and the friction equation, I was able to calculate that I need 366.7N of force on the end of the finger. To get this force, the bolt would have to exert 620.6N of force, bending the finger.</p>
+								</div>
+								<div class="text-box">
+									<p>To ensure that the finger wouldn’t bend and potentially break I ran an FEA simulation. Since I was printing the parts solid I assumed that the simulation would be similar to real life. In the first simulation I ran, the maximum displacement was around 2.10mm, then I made the part taller to increase its area moment of inertia. In the second simulation I ran (below, left) the displacement dropped down to 1.04mm, and finally, I made the part a bit wider and achieved a maximum displacement of 0.0873mm (below right).</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -78,7 +87,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>Overall I learned about how bearings are designed, and the different styles used to construct them and make them function. Even though 3D printed plastic is not ideal for bearing races, it did help me learn a lot and experiment quickly. At the end of this, I used bearing (6) to make a yoyo (pictured below), and it free spun for around a minute!</p>
+									<p>All in all, I was very happy with the results, and I hope when I test them out they will work reliably. The worst thing I would want is to waste a work in progress part because it slipped out of work holding.</p>
 								</div>
 							</div>
 						</div>
