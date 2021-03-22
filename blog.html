@@ -16,9 +16,9 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
 		<title>Clayton Haight | Blog</title>
-		<link rel="stylesheet" type="text/css" href="../css/main.css">
-		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
 	</head>
@@ -26,11 +26,11 @@
 		<header class="top_header">
 			<nav>
 				<ul class="nav_list">
-					<li><a href="../index">Home</a></li>
-					<li><a href="../about">About</a></li>
-					<li><a href="../projects">Projects</a></li>
-					<li><a href="../blog">Blog</a></li>
-					<li><a href="../resume/Clayton-Haight-Resume.pdf" target="_blank">Resume</a></li>
+					<li><a href="./index">Home</a></li>
+					<li><a href="./about">About</a></li>
+					<li><a href="./projects">Projects</a></li>
+					<li><a href="./blog">Blog</a></li>
+					<li><a href="./resume/Clayton-Haight-Resume.pdf" target="_blank">Resume</a></li>
 				</ul>
 			</nav>
 			<hr>
@@ -55,6 +55,76 @@
 
 			<div class="cards_container">
 
+				<!-- CARD 7-->
+				<figure style="cursor: pointer;" class="card eng all">
+					<a class="portfolio-link">
+						<img src="./assets/Bridge Final.png" width=100% height=auto>
+						<figcaption>
+							<h3 class="post-name">UW Bridge Competition</h3>
+							<p class="date">Mar 12th 2021</p>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">UW Bridge Competition</h2>
+									<p class="portfolio-subtitle">My design process in a class wide bridge building competition</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<p>As part of my Mechanics of Deformable Solids (MODS) course we had to design and build a truss bridge using things we learned in class. This project was done in groups of 3 and was worth a significant amount of our final mark. Most of the mark was based on how your bridge performed in a competition with the rest of the class, with the success metric being the weight it held divided by the weight of the bridge.</p>
+								</div>
+								<div class="text-box">
+									<p>I took the initiative to do the design portion of the project and started laying out requirements and goals for the project. The bridge had to span a 40cm gap, be no taller than 10cm, no wider than 8cm, and be loaded in the center of the bridge. We were limited to using laser-cut balsa wood and hardwood dowels for the pin joints.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bridge Outline.png">
+								</div>
+								<div class="text-box">
+									<p>To start the design I thought about some typical truss bridge shapes and layouts, but after some pondering I determined that minimizing the amount of members would be beneficial. This is because with more members, the chances of one having a weak point or a tolerance issue and being a “weak link” would be detrimental. From this I came up with two bridge designs, shown below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bridge Sim.png">
+								</div>
+								<div class="text-box">
+									<p>I ended up picking the 7 member truss since Euler's critical buckling load gets smaller with 1/L², and the 3 member truss has a much longer compression members. We knew we wanted to break last year's record of 598 g/g, so we aimed for a score of 700. From here, using an estimated bridge weight an approximate load can be calculated. I then used formulas to optimize the design, ensuring all failure modes would meet or exceed the load goal. I also used empirical testing with my team members on some test pieces we got cut. This was used to verify material properties and formula estimations. For example, to optimize the width of the members under compression I determined what fraction of the load they took, and used basic formulas to determine a thickness. We then tested those members under tension to see if they met the estimation, which they did. An analysis of the material properties can be seen below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Material Data.png">
+								</div>
+								<div class="text-box">
+									<p>From here we got our bridge manufactured and tested it. We saw something that we didn’t predict happening; the bridge was twisting and shifting as we added more weight. It only made it to a score of 380, which was not up to our standards. We caught it on video and analyzed it to improve our next iteration (seen below).</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bridge Test 1.jpg">
+								</div>
+								<div class="text-box">
+									<p>To reduce the twisting we added cross members and hole supports to make the holes longer. After testing it, it successfully reached a score of 600 before twisting itself to pieces yet again. Our final iteration was the one we had to submit, no more testing, so we added even more twisting supports and handed it in hoping for the best.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture thirty-per" src="./assets/Bridge Twist Supports.png">
+								</div>
+								<div class="text-box">
+									<p>Despite a really poor video quality, our bridge looked like it just kept taking more and more weight. It successfully broke the record and came 1st in the class. The final PV ratio was 649, breaking at 10kg and weighing a mere 15.4 grams. Despite not meeting the designed goal of 700, I am still proud of our team and the outcome of the competition.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture thirty-per" src="./assets/Bridge Test 3.png">
+								</div>
+								<div class="text-box">
+									<p>A render of the final design can be seen below, with cross members, twisting supports and T-beam compression members.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture thirty-per" src="./assets/Bridge Final.png">
+								</div>
+							</div>
+						</div>
+					</a>
+				</figure>
+				
 				<!-- CARD 6-->
 				<figure style="cursor: pointer;" class="card eng all">
 					<a class="portfolio-link">
