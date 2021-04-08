@@ -109,13 +109,13 @@
 									<p>The design of the inner ring gear is much more simple, the tooth geometry is just a semicircle and connecting them is a “valley” that provides clearance for the cycloidal teeth as it rolls. On one side a ring bearing gets press fit in to hold the output plate.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Cycloidal Front.png">
+									<img class="center-picture thirty-per" src="./assets/Cycloidal Front.png">
 								</div>
 								<div class="text-box">
 									<p>The two cycloidal discs and inner cycloidal gear are the only parts cut on my CNC out of 6061. Although I would’ve liked to make the central camshaft out of aluminum or steel, it's a challenging part to fixture and machine. Because of this I printed it out of PETG, which despite being a compromise ended up working really well. Since FDM 3D printing has anisotropic (and unpredictable) properties I used an empirical testing jig to determine the ultimate shear strength of the shaft, and the coupling (seen below).</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Torsion Test.png">
+									<img class="center-picture thirty-per" src="./assets/Torsion Test.png">
 								</div>
 								<div class="text-box">
 									<p>The shaft could easily handle the 0.63Nm max torque of the motor, as it survived well above 2Nm. The coupling however became a big problem, the first design only held 0.3Nm before shearing. At first I tried generating different designs and testing them, such as a quarter circle, semi circle, and a spline (seen below, keep in mind they all go into a sleeve, so that they can’t just deflect). The quarter circle had the best results, shearing at around 1.2Nm. This still wasn’t great, considering it's less than 2x the motors peak torque, and with the heat and cycling of this part it is probably the first failure point of this actuator design. Currently I am looking into making it out of a nylon carbon fiber blend filament that has much better strength properties.</p>
@@ -140,7 +140,7 @@
 									</div>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Cycloidal Exploded View.gif">
+									<img class="center-picture forty-per" src="./assets/Cycloidal Exploded View.gif">
 								</div>
 								<div class="text-box">
 									<p>After designing the actuator I started manufacturing it, keeping in mind that I might have to do multiple iterations. I sourced all the parts I needed, including 6061 stock and PETG filament. To cut the aluminum on my CNC router I used a 2 flute 3mm and 6mm end mill with cutting fluid, low feed rates and a medium-high speed. Pictures of the milling process can be seen below.</p>
@@ -156,7 +156,7 @@
 									<p>This was the first time cutting aluminum on my CNC router, I had only done test cuts before. Overall I am extremely happy with the results, the finish is a lot better than I expected. The tolerances were around ±4thou which despite being better than expected caused some minor assembly issues and some reworking. The biggest issue I had was with the ring bearing hole, (the large bore on the inner ring gear) it came out as a 24 sided polygon which is partially visible in the rightmost photo above. After some root cause analysis I found out it has to do with my CAM software output settings, and I have mitigated the issue for future jobs.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Bearings Press Fit.jpg">
+									<img class="center-picture thirty-per" src="./assets/Bearings Press Fit.jpg">
 								</div>
 								<div class="text-box">
 									<p>With the custom parts made and the off the shelf components arriving I started the assembly process. I started by cleaning up some of the burrs and edges on the parts, and then press fitting the bearings into place. The next step was to start fitting the other parts together and making sure everything lined up nicely. A “knolling” photo of what this looks like can be seen below.</p>
@@ -168,13 +168,13 @@
 									<p>Before adding the motor and motor casing to the cycloidal subassembly I lubricated it and tested backdrivability. The results were really impressive, it is quite easy to backdrive the gearbox despite being 20:1, a 16x slow-mo GIF can be seen below. It is clear to see just how well the cycloidal discs fit in the inner gear, and the second cycloidal disc can be seen behind the one in the front, 180 degrees out of phase.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Backdrive.gif">
+									<img class="center-picture thirty-per" src="./assets/Backdrive.gif">
 								</div>
 								<div class="text-box">
 									<p>Finally I put the motor and motor casing on. I ran some powered tests with a DC power supply and an ESC, and they turned out really well (seen below). My only gripe is that there is a minimum RPM I need to go to get it to spin. This is because at low RPM the motor isn’t operating near it's max power and has relatively low torque. This low torque isn’t quite enough to overcome the friction in the gearbox. Because of this the speed range of the motor that has worked so far is 1800rpm-6660rpm. This results in an output shaft speed of 90rpm-333rpm which I am still quite happy with.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Final Cycloidal Test.gif">
+									<img class="center-picture forty-per" src="./assets/Final Cycloidal Test.gif">
 								</div>
 							</div>
 						</div>
