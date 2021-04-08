@@ -82,7 +82,7 @@
 									<p>I knew I wanted to use my new CNC router, along with my 3D printer to try and come up with a versatile solution to this problem, so I started laying out the groundwork. I would need to come up with a mechanical reduction to provide a low speed, low backlash, high torque output.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture eighty-per" src="./assets/Cycloidal Criteria Constraints.png">
+									<img class="center-picture sixty-per" src="./assets/Cycloidal Criteria Constraints.png">
 								</div>
 								<div class="text-box">
 									<p>With these criteria and constraints I started choosing reasonable parts and locking down some variables. The first thing I wanted to pick was the BLDC motor, with the main criteria being a low KV, and a small size. When it comes to low KV motors the selection is pretty small, and the Tarot 4008 motor stands out as the best power to size ratio when compared to others. This motor has a 300kv speed and around 500W peak power, and if I want to drive it at a maximum of 6s (~22.2V) that means a speed of ~6660rpm. To get 10Nm of torque I would need a reduction of 20:1 or more (assuming ~80% efficiency), and to turn a full rotation in 0.2s I would need a reduction of 22:1 or less. Picking a middle ground I decided to go with a 20:1 reduction, leading me to a trade study of what type of reduction to go with given my manufacturing capabilities:</p>
