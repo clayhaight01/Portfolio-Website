@@ -16,9 +16,9 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
 		<title>Clayton Haight | Projects</title>
-		<link rel="stylesheet" type="text/css" href="../css/main.css">
-		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+		<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
 	</head>
@@ -26,11 +26,11 @@
 		<header class="top_header">
 			<nav>
 				<ul class="nav_list">
-					<li><a href="../index">Home</a></li>
-					<li><a href="../about">About</a></li>
-					<li><a href="../projects">Projects</a></li>
-					<li><a href="../blog">Blog</a></li>
-					<li><a href="../resume/Clayton-Haight-Resume.pdf" target="_blank">Resume</a></li>
+					<li><a href="./index">Home</a></li>
+					<li><a href="./about">About</a></li>
+					<li><a href="./projects">Projects</a></li>
+					<li><a href="./blog">Blog</a></li>
+					<li><a href="./resume/Clayton-Haight-Resume.pdf" target="_blank">Resume</a></li>
 				</ul>
 			</nav>
 			<hr>
@@ -56,17 +56,142 @@
 
 			<div class="cards_container">
 
+				<!-- CARD 0-->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="./assets/Cycloidal Final Render 320p.png" width=100% height=auto>
+						<figcaption>
+							<h3>Robotic Actuator</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Cyloidal Robotic Actuator</h2>
+									<p class="portfolio-subtitle">Custom double cycloidal gearbox designed for robotics</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="image-box">
+									<img class="portfolio-full-width" src="./assets/CNC Front Full Render Cropped.png">
+								</div>
+								<div class="text-box">
+									<p>As robotics grows as an industry, physical interaction with the real world is becoming more and more crucial. Lots of interesting design problems come up when designing robots for a world made for humans. Some examples would be touching and feeling surfaces, pushing and pulling things, balancing objects and much more. One of the largest problems with physical interaction i’ve identified over the last 6 years of working with robotics is that making compact, cheap, powerful actuators is really hard. With the emergence of cheap and easily accessible hobby brushless motors it's almost hard to ignore that they are a perfect solution for this problem, except for one small thing; they’re really, really fast. To make a usable actuator (rotational or linear) out of them, some sort of reduction needs to be implemented, as typically they run over 10,000 rpm with relatively low torque.</p>
+								</div>
+								<div class="text-box">
+									<p>I knew I wanted to use my new CNC router, along with my 3D printer to try and come up with a versatile solution to this problem, so I started laying out the groundwork. I would need to come up with a mechanical reduction to provide a low speed, low backlash, high torque output.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture eighty-per" src="./assets/Cycloidal Criteria Constraints.png">
+								</div>
+								<div class="text-box">
+									<p>With these criteria and constraints I started choosing reasonable parts and locking down some variables. The first thing I wanted to pick was the BLDC motor, with the main criteria being a low KV, and a small size. When it comes to low KV motors the selection is pretty small, and the Tarot 4008 motor stands out as the best power to size ratio when compared to others. This motor has a 300kv speed and around 500W peak power, and if I want to drive it at a maximum of 6s (~22.2V) that means a speed of ~6660rpm. To get 10Nm of torque I would need a reduction of 20:1 or more (assuming ~80% efficiency), and to turn a full rotation in 0.2s I would need a reduction of 22:1 or less. Picking a middle ground I decided to go with a 20:1 reduction, leading me to a trade study of what type of reduction to go with given my manufacturing capabilities:</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Actuator Trade Study.png">
+								</div>
+								<div class="text-box">
+									<p>This trade study has lots of assumptions and estimations, but that being said the cycloidal drive has the highest score by a sizable margin. I also like the idea of making a cycloidal drive because it means I can mill my own parts on my custom CNC router, since the teeth are round and there are no small internal corners like in a spur gear. From here I began studying how cycloidal drives work, how different parameters change different factors, and what some typical design rules are. Some cycloidal drives use multiple cycloidal discs offset by a certain angle to decrease the backlash, and reduce imbalance. I decided to go with 2 discs to keep things a bit more simple but decrease backlash that could be caused by my loose manufacturing tolerances. I started designing the gearbox with a layout sketch to determine the rough size of all the parts and what space the actual cycloidal geometry would be limited to.</p>
+								</div>
+								<div class="text-box">
+									<p>Cycloidal geometry can be represented by a parametric equation when given parameters of the inner ring gear and the eccentricity. I was limited by the internal radius I could cut on my CNC (3mm ideally) as well as some geometry constraints (less than 80mm diameter to meet project constraints). When I was satisfied with the geometry I imported it into solidworks and started designing.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Cycloidal Parametric Equations.png">
+								</div>
+								<div class="text-box">
+									<p>The cycloidal discs then get 6 holes for bearings to transmit their rotation to the pins, as well as a center hole for the center bearing. I decided to use bearings over bushings to transmit the rotation to the pins since I wanted a really low rolling resistance at high speeds, for good backdrivability. The speed of the pins running in the bearings is also relatively high, since it is the same speed as the motor, so it makes more sense to use bearings.</p>
+								</div>
+								<div class="text-box">
+									<p>The design of the inner ring gear is much more simple, the tooth geometry is just a semicircle and connecting them is a “valley” that provides clearance for the cycloidal teeth as it rolls. On one side a ring bearing gets press fit in to hold the output plate.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Cycloidal Front.png">
+								</div>
+								<div class="text-box">
+									<p>The two cycloidal discs and inner cycloidal gear are the only parts cut on my CNC out of 6061. Although I would’ve liked to make the central camshaft out of aluminum or steel, it's a challenging part to fixture and machine. Because of this I printed it out of PETG, which despite being a compromise ended up working really well. Since FDM 3D printing has anisotropic (and unpredictable) properties I used an empirical testing jig to determine the ultimate shear strength of the shaft, and the coupling (seen below).</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Torsion Test.png">
+								</div>
+								<div class="text-box">
+									<p>The shaft could easily handle the 0.63Nm max torque of the motor, as it survived well above 2Nm. The coupling however became a big problem, the first design only held 0.3Nm before shearing. At first I tried generating different designs and testing them, such as a quarter circle, semi circle, and a spline (seen below, keep in mind they all go into a sleeve, so that they can’t just deflect). The quarter circle had the best results, shearing at around 1.2Nm. This still wasn’t great, considering it's less than 2x the motors peak torque, and with the heat and cycling of this part it is probably the first failure point of this actuator design. Currently I am looking into making it out of a nylon carbon fiber blend filament that has much better strength properties.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Shaft Couplings.png">
+								</div>
+								<div class="text-box">
+									<p>A drawing showing the full actuator design can be seen below, with parts labelled. The final dimensions came out to be 57x54x54mm and the actuator weighs in at 236g.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Cycloidal Gearbox Simple.PNG">
+								</div>
+								<div class="text-box">
+									<p>Some more renders and an animation can be seen below, rendered in SolidWorks Visualize.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Floor 1 2.png">
+										<img class="center-picture" src="./assets/Hidden Body.png">
+										<img class="center-picture" src="./assets/Floor 2.png">
+									</div>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Cycloidal Exploded View.gif">
+								</div>
+								<div class="text-box">
+									<p>After designing the actuator I started manufacturing it, keeping in mind that I might have to do multiple iterations. I sourced all the parts I needed, including 6061 stock and PETG filament. To cut the aluminum on my CNC router I used a 2 flute 3mm and 6mm end mill with cutting fluid, low feed rates and a medium-high speed. Pictures of the milling process can be seen below.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Milling Cycloidal Disc.jpg">
+										<img class="center-picture" src="./assets/Milling Inner Gear.jpg">
+										<img class="center-picture" src="./assets/Disc and Inner Gear.jpg">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>This was the first time cutting aluminum on my CNC router, I had only done test cuts before. Overall I am extremely happy with the results, the finish is a lot better than I expected. The tolerances were around ±4thou which despite being better than expected caused some minor assembly issues and some reworking. The biggest issue I had was with the ring bearing hole, (the large bore on the inner ring gear) it came out as a 24 sided polygon which is partially visible in the rightmost photo above. After some root cause analysis I found out it has to do with my CAM software output settings, and I have mitigated the issue for future jobs.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bearings Press Fit.jpg">
+								</div>
+								<div class="text-box">
+									<p>With the custom parts made and the off the shelf components arriving I started the assembly process. I started by cleaning up some of the burrs and edges on the parts, and then press fitting the bearings into place. The next step was to start fitting the other parts together and making sure everything lined up nicely. A “knolling” photo of what this looks like can be seen below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Knolling.png">
+								</div>
+								<div class="text-box">
+									<p>Before adding the motor and motor casing to the cycloidal subassembly I lubricated it and tested backdrivability. The results were really impressive, it is quite easy to backdrive the gearbox despite being 20:1, a 16x slow-mo GIF can be seen below. It is clear to see just how well the cycloidal discs fit in the inner gear, and the second cycloidal disc can be seen behind the one in the front, 180 degrees out of phase.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Backdrive.gif">
+								</div>
+								<div class="text-box">
+									<p>Finally I put the motor and motor casing on. I ran some powered tests with a DC power supply and an ESC, and they turned out really well (seen below). My only gripe is that there is a minimum RPM I need to go to get it to spin. This is because at low RPM the motor isn’t operating near it's max power and has relatively low torque. This low torque isn’t quite enough to overcome the friction in the gearbox. Because of this the speed range of the motor that has worked so far is 1800rpm-6660rpm. This results in an output shaft speed of 90rpm-333rpm which I am still quite happy with.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Final Cycloidal Test.gif">
+								</div>
+							</div>
+						</div>
+					</a>
+				</figure>
+				
 				<!-- CARD 1-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/CNC Front Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/CNC Front Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>CNC Router</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -76,29 +201,29 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="image-box">
-									<img class="portfolio-full-width" src="../assets/CNC Front Full Render Cropped.png">
+									<img class="portfolio-full-width" src="./assets/CNC Front Full Render Cropped.png">
 								</div>
 								<div class="text-box">
 									<p>While working on other mechanical projects over my life, I always ran into one big problem: manufacturing. Paying a job shop to do a one-off part for me is way too expensive, and only so much can be made at home with basic tools. This problem was partly solved when I built a 3D printer in 2013, but there was still a missing piece; the ability to manufacture metal parts. Sometimes 3D printed plastic is just not good enough and stiffer, stronger materials need to be used. This, along with the challenge of 3 axis machine design enticed me enough to start this project in January of 2020.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/CNC CAD.png" style="width: 100%; height: auto;">
+									<img class="center-picture" src="./assets/CNC CAD.png" style="width: 100%; height: auto;">
 								</div>
 								<div class="text-box">
 									<p>The entire design revolves around a T slot extrusion bed that ensures that the Y-axis rails are parallel and that the gantry structure is reinforced. Because of my manufacturing constraints, most of the parts had to be extrusion or 3D printed, but most of the 3D printed parts were designed to be converted to routered parts down the road. A cool learning experience for me was using topology optimization for a bracket between two pieces of extrusion, while not very practical it did offer me insight into FEA optimization. The entire cost of the machine was kept under $700 by avoiding the use of linear rails and ball screws, which typically push the price of the machine over $2000. Instead, a bearing block style system was used in conjunction with steel reinforced belts. For my purposes, it was an easy and cheap solution that still offers more than enough strength.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/CNC Build.png" style="width: 100%; height: auto;">
+									<img class="center-picture" src="./assets/CNC Build.png" style="width: 100%; height: auto;">
 								</div>
 								<div class="text-box">
 									<p>The build process was very long, spanning 2 months from April to May, mainly because I wanted to ensure that it was built properly and robustly. The main base is a wood table that I filled with a sand epoxy mixture for dampening and rigidity, everything else is built up from there. Throughout the entire process, I ensured perpendicularity was as close to perfect as possible, and that all dimensions were accurate to reduce tolerance stacks. Something very important I learned while building is just how important wire management is, originally I planned on just using cable sleeves but I realized how easily something could break without proper routing. I settled for a durable drag chain system on the X and Y axes and making everything unpluggable to make troubleshooting much easier.</p>
 								</div>
 								<div class="text-box">
-									<img class="right-picture" src="../assets/Dial Indicator On Rail.png" style="height: auto;">
+									<img class="right-picture" src="./assets/Dial Indicator On Rail.png" style="height: auto;">
 									<p>The CNC router is still being improved and developed but as of now, it can cut wood, plastics, and aluminum with up to 0.002in accuracy. The T slot table makes work holding super easy with custom clamps or even a machine vice. The router, despite being for wood, is very powerful and can spin at over 30k rpm. In the future, I would like to try more 3D contours and hopefully some PCB milling with extremely small end mills.</p>
 								</div>
 								<div class="text-box">
-									<img class="left-picture" src="../assets/CNC Electronics.png" style="height: auto;">
+									<img class="left-picture" src="./assets/CNC Electronics.png" style="height: auto;">
 									<p>The machine is controlled with a 32 bit ARM processor and an ESP32 module for wifi connectivity and controlling the TFT touchscreen. The processor sends commands to 3 TB6600 stepper controllers that in turn control the NEMA 23 stepper motors on all axes. The ESP32 communicates with the STM32 via serial and can send G-code to jog it, change a tool, probe a tool, and run a program from wifi or an SD card.</p>
 								</div>
 							</div>
@@ -109,14 +234,14 @@
 				<!-- CARD 2-->
 				<figure style="cursor: pointer;" class="card hardware all">
 					<a class="portfolio-link">
-						<img src="../assets/DIODE Board Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/DIODE Board Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>DIODE Board</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -130,8 +255,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture exception" src="../assets/DIODE Board Full Render.png" style="height: 25vw; width: auto;">
-										<img class="center-picture" src="../assets/DIODE 3D.png" style="height: 25vw; width: auto;">
+										<img class="center-picture exception" src="./assets/DIODE Board Full Render.png" style="height: 25vw; width: auto;">
+										<img class="center-picture" src="./assets/DIODE 3D.png" style="height: 25vw; width: auto;">
 									</div>
 								</div>
 								<div class="text-box">
@@ -139,8 +264,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/DIODE Soldering.png" style="height: 25vw; width: auto;">
-										<img class="center-picture" src="../assets/Motor Driven by DIODE.png" style="height: 25vw; width: auto;">
+										<img class="center-picture" src="./assets/DIODE Soldering.png" style="height: 25vw; width: auto;">
+										<img class="center-picture" src="./assets/Motor Driven by DIODE.png" style="height: 25vw; width: auto;">
 									</div>
 								</div>
 								<div class="text-box">
@@ -154,14 +279,14 @@
 				<!-- CARD 3-->
 				<figure style="cursor: pointer;" class="card mech hardware software all">
 					<a class="portfolio-link">
-						<img src="../assets/Ventilator Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/Ventilator Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>COVID-19 Ventilator</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -171,15 +296,15 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<img class="left-picture" src="../assets/Ventilator Full Render.png" style="height: auto;">	
+									<img class="left-picture" src="./assets/Ventilator Full Render.png" style="height: auto;">	
 									<p>At the beginning of March 2020, it was clear that the COVID-19 pandemic was taking the world by storm. Hospitals were not equipped to deal with the thousands of new cases popping up daily, increasing at a scary rate. During this huge demand for ventilators and medical equipment, I knew I wanted to do something to help, so I found a competition (Code Life Ventilator Challenge) that brought together engineers, medical professionals, and anyone else that wanted to help to come up with a solution to the ventilator shortage. This competition brought together my team of peers from Waterloo, CSA engineers, and doctors from the Ottawa Hospital. Together over the course of 10 days we designed, built, and tested a functioning ventilator, with myself taking a lot of the mechanical design and documentation work.</p>
 								</div>
 								<div class="text-box">
-									<img class="right-picture twenty-five-per" src="../assets/Ventilator.png" style="height: auto;">
+									<img class="right-picture twenty-five-per" src="./assets/Ventilator.png" style="height: auto;">
 									<p>Initially, we did a lot of brainstorming to make sure that we could design a simple and effective solution, we came up with the idea of using large disposable syringes that could be easily replaced instead of sanitizing the entire machine. Then we worked on finding materials we could source in a matter of days, this basically limited our selection to Amazon and McMaster Carr. I worked on designing the airway control paths, this included sealing the syringes, sealing the integrated airways, and connecting the solenoid valves. The final design could pump 600ml of proportionally mixed oxygen and air at a pressure of 40cmH2O into a patient. It could withstand the cyclic loading of 800 breathes per hour in simulation, and had adjustable settings on a simple to use Android app. All the parts were shipped to my house, I assembled it in 12 hours and drove it up to Ottawa to be tested the next day. While it was being tested I helped with documentation, including a simple annotated assembly manual for others to use if they wanted to recreate our device.</p>	
 								</div>
 								<div class="text-box">
-									<img class="left-picture" src="../assets/Ventilator Testing.png" style="height: auto;">
+									<img class="left-picture" src="./assets/Ventilator Testing.png" style="height: auto;">
 									<p>The device was tested successfully with an artificial lung (pictured right) and signed off by doctors at the Ottawa Hospital, but sadly did not qualify to the final round. We were missing a vital part of the requirements; an oxygen sensor, which was extremely difficult to find. Despite this, we posted the files (online) for anyone to access in case they want to build on our progress. Overall I was extremely proud of our team, although we didn’t meet the requirements, we still made something great that had a unique, simple, and effective design.</p>
 								</div>
 							</div>
@@ -190,14 +315,14 @@
 				<!-- CARD 4-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/FSAE Full.jpg" width=100% height=auto>
+						<img src="./assets/FSAE Full.jpg" width=100% height=auto>
 						<figcaption>
 							<h3>UW Formula Motorsports</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -211,7 +336,7 @@
 										When I first came to Waterloo, we had a session to learn about all the student design teams so that we could explore our options. When I talked to members of the Formula Motorsports team, I was instantly hooked. It seemed a lot like FRC from high school, which I was very involved in, so I decided to go. In my first semester, I really wanted to go every week, but due to my schedule it was challenging. But more and more, I started taking on more tasks and gaining responsibility on the team. I decided to join the suspension team, as it has lots of dynamic moving parts and greatly affects the car's performance.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="../assets/Suspension.png">
+									<img class="center-picture forty-per" src="./assets/Suspension.png">
 								</div>
 								<div class="text-box">	
 									<p>Recently I have been working on the 2021 car suspension, and making sure everything is ready to go to manufacturing and eventually be assembled. The pushrod suspension is constructed out of a lot of hollow tubing, with spherical rod ends used as pivots, giving the tyres an unconstrained vertical motion. The suspension A-arms attach to the wheel and go up to a bell crank that compresses a shock, constraining the system. The roll suspension is also integrated into the bellcrank by having two asymmetrical levers. This way, if both tyres heave at the same rate, the roll suspension doesn’t compress. But, if there is more force on one side than the other, the roll suspension starts reacting back. The design (seen above, censored until public release) is super compact and works very well in practice.</p>
@@ -224,14 +349,14 @@
 				<!-- CARD 5-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/F4 Robot Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/F4 Robot Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>2020 F4 CADathon Robot</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -244,15 +369,15 @@
 									<p>After the 2020 FRC competition was cancelled by COVID-19, I decided to join a CAD competition based on a sports challenge, with two of my close friends. The challenge was to pick up a 40lb barbell weight and throw footballs into field goals. The competition gave us 48 hours to fully design a functional robot in a team of 3, a challenge that I underestimated at the beginning. Below is our final assembly that we submitted with, overall it placed 16th across over 150 teams.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="../assets/F4 Robot Full Render.png">
+									<img class="center-picture forty-per" src="./assets/F4 Robot Full Render.png">
 								</div>
 								<div class="text-box">	
 									<p>My role on the team was designing the football shooter and feeder system. In the preliminary design phase, I decided it would be easiest to store the football horizontally so that it wouldn’t have an option but to stay in that orientation, since it has the smallest radius. I later decided this would be the best orientation to shoot in as well, giving the ball a spiral to keep it stable. Both my designs can be seen below, keeping in mind they were designed very quickly, leaving time for integration and rendering.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/F4 Hopper.png">
-										<img class="center-picture forty-per" src="../assets/F4 Shooter.png">
+										<img class="center-picture forty-per" src="./assets/F4 Hopper.png">
+										<img class="center-picture forty-per" src="./assets/F4 Shooter.png">
 									</div>
 								</div>
 							</div>
@@ -263,14 +388,14 @@
 				<!-- CARD 6-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/2020 FRC Robot Render 320p.png" width=100% height=auto>
+						<img src="./assets/2020 FRC Robot Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>2020 FRC Robot</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -284,8 +409,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/2020 FRC Robot Render.png">
-										<img class="center-picture forty-per" src="../assets/2020 FRC IRL.jpg">
+										<img class="center-picture forty-per" src="./assets/2020 FRC Robot Render.png">
+										<img class="center-picture forty-per" src="./assets/2020 FRC IRL.jpg">
 									</div>
 								</div>
 								<div class="text-box">
@@ -293,8 +418,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/2020 Intake.png">
-										<img class="center-picture forty-per" src="../assets/2020 Shooter.png">
+										<img class="center-picture forty-per" src="./assets/2020 Intake.png">
+										<img class="center-picture forty-per" src="./assets/2020 Shooter.png">
 									</div>
 								</div>
 								<div class="text-box">
@@ -308,14 +433,14 @@
 				<!-- CARD 7-->
 				<figure style="cursor: pointer;" class="card mech software all">
 					<a class="portfolio-link">
-						<img src="../assets/Fold3r Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/Fold3r Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>Fold3r Origami CNC</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -329,36 +454,36 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/Fold3r Full Render.png">
-										<img class="center-picture forty-per" src="../assets/Fold3r Real.png">
+										<img class="center-picture forty-per" src="./assets/Fold3r Full Render.png">
+										<img class="center-picture forty-per" src="./assets/Fold3r Real.png">
 									</div>
 								</div>
 								<div class="text-box">
 									<p>Since we wanted to make the device easy to use for anyone, we wanted to make a “CAM” program of sorts. The simplest way we found to do this was to have the user draw blue or red lines on a square piece of paper, blue being a down fold and red being an up fold (seen below). This picture would be read into an OpenCV program that would detect the coordinate endpoints of these lines, and output a custom “G-code” of all the coordinates of crease lines to a text file, automatically optimizing them. Then the EV3 could interpret the text file and crease all the lines on one side of the paper, prompting the user to flip the page, and then finishing the lines on the other side.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/Crease Pattern.png" style="width: 100%;">
+									<img class="center-picture" src="./assets/Crease Pattern.png" style="width: 100%;">
 								</div>
 								<div class="text-box">
 									<p>The main XY system is a basic gantry system using threaded rod and smooth rod. Since our time and budget was constrained we picked a very basic system, using a threaded rod kept the cost low yet allowed our machine to be precise. On top of this, by using a synchro shaft on the Y axis, we were able to drive two threaded rods with one servo motor.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="../assets/Exploded Gantry.png">
+									<img class="center-picture sixty-per" src="./assets/Exploded Gantry.png">
 								</div>
 								<div class="text-box">
 									<p>Holding the end effector is an extremely compact but simple Z and C axis. The Z-axis used a small lead screw and box way slides and was driven with the smaller servo motor. The Z-axis was retained in a ring gear that was responsible for spinning the creasing wheel. By rotating the entire Z-axis a much smaller sub-assembly was possible, as opposed to moving a rotational axis up and down. At the end of this assembly is a creasing wheel or “pizza cutter” which is essentially a sharp wheel to crease the paper.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Creasing Head Render.png">
-										<img class="center-picture" src="../assets/Fold3r Creasing Wheel w Arrows.png">
+										<img class="center-picture" src="./assets/Creasing Head Render.png">
+										<img class="center-picture" src="./assets/Fold3r Creasing Wheel w Arrows.png">
 									</div>
 								</div>
 								<div class="text-box">
 									<p>Keeping the paper down without damaging it was a big problem that we faced in the design phase, as paper is delicate and needs to be intact for origami to work. In addition to this, to make deep crease marks in the paper, it was necessary to allow the creasing wheel to push the paper into something compliant, thus wrapping the paper around the wheel. To tackle these problems we made a simple vacuum table with a shop vac and a perforated foam sheet, which allowed us to vary the compliance of the foam and the strength of the work holding.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="../assets/Exploded Vacuum Table Render.png">
+									<img class="center-picture sixty-per" src="./assets/Exploded Vacuum Table Render.png">
 								</div>
 								<div class="text-box">
 									<p>This project was extremely fun, we tackled a really cool problem with some simple and clever solutions. The end product worked extremely well and impressed lots of professors and students, seeing a pre-creased origami paper opened people's eyes to the art of origami.</p>
@@ -371,14 +496,14 @@
 				<!-- CARD 8-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/2019 FRC Robot Render 320p.png" width=100% height=auto>
+						<img src="./assets/2019 FRC Robot Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>2019 FRC Robot</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -392,15 +517,15 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture thirty-per" src="../assets/2019 FRC Robot Render.png">
-										<img class="center-picture" src="../assets/2019 FRC IRL.jpg.png">
+										<img class="center-picture thirty-per" src="./assets/2019 FRC Robot Render.png">
+										<img class="center-picture" src="./assets/2019 FRC IRL.jpg.png">
 									</div>
 								</div>
 								<div class="text-box">
 									<p>I focused on designing the rotating axis for the “claw” which weighed around 20lbs. Swinging a 20lb claw around an elevator is a difficult challenge, so FEA was utilized to ensure the design would be rigid enough. Below is the final design I came up with, using a 410:1 reduction, Oilite bushings, and a lot of structural reinforcement. The arm also had CNC cut plates to hold ball bearings, that would allow it to slide up and down on the elevator.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/2019 Carriage.png">
+									<img class="center-picture" src="./assets/2019 Carriage.png">
 									
 								</div>
 								<div class="text-box">
@@ -408,8 +533,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Drop Down Mech Render.png">
-										<img class="center-picture" src="../assets/Drop Down Mech IRL.png">
+										<img class="center-picture" src="./assets/Drop Down Mech Render.png">
+										<img class="center-picture" src="./assets/Drop Down Mech IRL.png">
 									</div>
 								</div>
 							</div>
@@ -420,14 +545,14 @@
 				<!-- CARD 9-->
 				<figure style="cursor: pointer;" class="card mech hardware software all">
 					<a class="portfolio-link">
-						<img src="../assets/Stator Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/Stator Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>3D Printed BLDC Motor</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -437,17 +562,17 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<img class="right-picture twenty-five-per" src="../assets/Motor  Annotated.png" style="height: auto;">
+									<img class="right-picture twenty-five-per" src="./assets/Motor  Annotated.png" style="height: auto;">
 									<p>As a design challenge, I thought it would be interesting to try 3D printing a basic “air core” motor. Little did I know this would turn into a deep rabbit hole of prototyping, iteration, and learning. After 20+ design iterations, major design changes, and a lot of filament later, I finally had a model that could spin at a decent speed, with a good amount of torque all things considered. The main stator core is made of iron infused PLA filament to increase magnetic flux, wrapped in copper magnet wire. The outer shell of the motor revolves around the stator, housing the magnets in an outrunner fashion. In some prototypes, I was looking at arranging the magnets in a Halbach array but didn’t think the extra diameter and cost was worth the small efficiency gain.</p>
 								</div>
 								<div class="text-box">
-									<img class="left-picture twenty-five-per" src="../assets/Stator Full Render.png" style="height: auto;">
+									<img class="left-picture twenty-five-per" src="./assets/Stator Full Render.png" style="height: auto;">
 									<p>During this project, I learned a lot about GD&T, tolerancing, magnetics, electronics, and prototyping as it took many different iterations to get somewhere I was happy with. Obviously, with a large spinning mass, the concentricity is very important, and on a home-built 3D printer this isn’t the easiest thing to do. To get it not to wobble and be perfectly concentric, a lot of tuning had to be done to my printer, and some design changes made it easier to dial in. The stator core also proved difficult, as printing iron particles as a hot liquid is just asking for trouble. A ton of jamming and under extrusion forced me to print the stator in 4 different parts, sliding them onto each other similar to laminates in actual motors, this also theoretically reduced eddy currents. Then the stator was wrapped with magnet wire by hand and soldered together in a wye configuration.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Motor Exposed View.png">
-										<img class="center-picture" src="../assets/Motor Spinning.png">
+										<img class="center-picture" src="./assets/Motor Exposed View.png">
+										<img class="center-picture" src="./assets/Motor Spinning.png">
 									</div>
 								</div>
 								<div class="text-box">
@@ -462,14 +587,14 @@
 				<!-- CARD 10-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/Car Full Views 320p.png" width=100% height=auto>
+						<img src="./assets/Car Full Views 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>Sports Car Body Design</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -480,29 +605,29 @@
 							<div class="portfolio-content">
 								<div class="image-box">
 									<div class="multiple-pictures">
-											<img class="center-picture" src="../assets/Car Final 3.jpg">
-											<img class="center-picture" src="../assets/Garage Render 6.jpg">
+											<img class="center-picture" src="./assets/Car Final 3.jpg">
+											<img class="center-picture" src="./assets/Garage Render 6.jpg">
 										</div>
 								</div>
 								<div class="text-box">
 									<p>I have always had a love for cars, from F1 to sports cars, something about them feels very satisfying. Since the invention of the car, constant iteration on the design has brought us to what we have now. The beautiful curves and fancy bodywork that makes an automobile is the product of years of improvements and upgrades. The amount of engineering and design work that makes up an automobile is fascinating to me, and I have always wanted to work in the automotive industry (although I have been told it’s a death wish).</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/Car Drawing.jpg" style="width: 100%;">
+									<img class="center-picture" src="./assets/Car Drawing.jpg" style="width: 100%;">
 								</div>
 								<div class="text-box">
 									<p>This project started as an idea when I was in grade 8, using Google SketchUp to slowly design a car, line by line. When I got to high school I learned about proper CAD software and stopped the project. In grade 10 I thought it would be cool to bring the project back to life, so starting with the original sketches I started carving out a block of clay. My hope with using clay was to be able to change the design and try new things fast. This is actually how a lot of car companies design their cars at first, by carving full-scale models of plasticine.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/Modelling Process.png" style="width: 100%;">
+									<img class="center-picture" src="./assets/Modelling Process.png" style="width: 100%;">
 								</div>
 								<div class="text-box">
 									<p>As seen above, after making a clay model I designed a custom 3D scanner to take a ton of photos from different angles, automatically. After taking 450 pictures of the car, I imported it into Autodesk ReCap and stitched the model together. Then this model was used as a template to resurface in Solidworks, using many 3D sketching and surfacing techniques. This surface model was tweaked until I was happy with the flow simulation results and the drag coefficient of ~0.28. Finally, headlights and tail lights were designed, wheels, grilles, and other details were added, and the car was ready to be rendered.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="../assets/Flow-Side.png">
-										<img class="center-picture" src="../assets/Scene Render 2.jpg">
+										<img class="center-picture" src="./assets/Flow-Side.png">
+										<img class="center-picture" src="./assets/Scene Render 2.jpg">
 									</div>
 								</div>
 								<div class="text-box">
@@ -517,13 +642,13 @@
 				<!-- CARD 11-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/Autonoprint Render 320p.png" width=100% height=auto>
+						<img src="./assets/Autonoprint Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>Autonoprint</h3>
 						</figcaption>
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -536,13 +661,13 @@
 									<p>During the University of Toronto’s “MakeUofT” 24 hour hackathon, my team of 4 decided to mod a Prusa i3 to make it more autonomous. Even though hobby 3D printers are amazing, and can be fairly maintenance-free, they aren’t autonomous and still require someone to manage them. Our idea was simple, allow the printer to be able to clear and clean its build plate, monitor its status, and start a print remotely. Since the printer can clear and clean its build plate, it can hypothetically print over and over again.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="../assets/Autonoprint Render.png">
+									<img class="center-picture sixty-per" src="./assets/Autonoprint Render.png">
 								</div>
 								<div class="text-box">
 									<p>To do this, I designed a “scraper arm” that would be lowered across the print bed, locking into a slot on the opposite side. With a scraper flush on the bed, when the bed is moved at full speed, the print easily pops off. While moving, isopropyl alcohol is pumped under the scraper and in front of the wiper, cleaning the PEI coating on the bed from any oil or debris.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="../assets/Autonoprint.jpg">
+									<img class="center-picture sixty-per" src="./assets/Autonoprint.jpg">
 								</div>
 								<div class="text-box">
 									<p>In addition to the scraper arm, we added a Raspberry Pi that could control the printer from a web server, cueing prints, moving the axis and live streaming a video feed. On the Raspberry Pi, we used a program called “Spaghetti Detective” to automatically detect failed prints, which would then trigger our scraper arm to remove the print and start over.</p>
@@ -555,14 +680,14 @@
 				<!-- CARD 12-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/Dock Trailer Full Render 320p.png" width=100% height=auto>
+						<img src="./assets/Dock Trailer Full Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>Dock Trailer</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -575,7 +700,7 @@
 									<p>One of my favourite activities, starting from a young age at summer camp, is sailing. Except, like many other enjoyable things, it takes a lot of work. Twice a year the docks need to be moved, which means many days of work and manual labour. As a solution to this, the club decided to come up with a better solution, a trailer to pull the docks up with a car. I ended up designing and validating it, ensuring that it would survive the harsh Canadian climate, the lake water, and the repetitive loads.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="../assets/Dock Trailer Full Render.png">
+									<img class="center-picture forty-per" src="./assets/Dock Trailer Full Render.png">
 								</div>
 								<div class="text-box">
 									<p>The trailer was designed for the sole purpose of lifting 500+ lb docks out of the water and holding them securely while a truck could pull them up the boat launch. It also has a secondary purpose of lifting a 400+ lb mast crane (pictured below). It is used around 20 times a year at the Mississauga Sailing Club and saves a ton of time.</p>
@@ -585,8 +710,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/MSC.jpg">
-										<img class="center-picture forty-per" src="../assets/Dock Trailer Picture.jpg">
+										<img class="center-picture forty-per" src="./assets/MSC.jpg">
+										<img class="center-picture forty-per" src="./assets/Dock Trailer Picture.jpg">
 									</div>
 								</div>
 								<div class="text-box">
@@ -600,14 +725,14 @@
 				<!-- CARD 13-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/2018 FRC Robot Render 320p.png" width=100% height=auto>
+						<img src="./assets/2018 FRC Robot Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>2018 FRC Robot</h3>
 						</figcaption>
 						<!--Modal-->
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -617,21 +742,21 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="image-box">
-									<img class="center-picture" src="../assets/2018 Industrial Photoshoot.png" style="width: 85%; height: auto;">
+									<img class="center-picture" src="./assets/2018 Industrial Photoshoot.png" style="width: 85%; height: auto;">
 								</div>
 								<div class="text-box">
 									<p>During my grade 11 year in high school I took on the role of captain and design lead on Team 1325. In 2018 the challenge was to place milk crates onto scales and out-weigh the opponent and then climb up the scale at the end of the match. We designed a very unique robot with mechanisms designed to speed up cycles and work well with other teammates. We won the provincial championships in Ontario and made it to semi-finals at the World Championship in Detroit when our teammate's robot had a mechanical failure, costing us the match.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture" src="../assets/2018 On Field.jpg" style="width: 85%; height: auto;">
+									<img class="center-picture" src="./assets/2018 On Field.jpg" style="width: 85%; height: auto;">
 								</div>
 								<div class="text-box">
 									<p>I designed the auxiliary intakes (pictured below) which could grab milk crates from a far distance, orient them properly and pull them into the robot in a predictable way. This was what separated us from other robots that had problems with grabbing milk crates from weird orientations.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/Aux Intake Render.png">
-										<img class="center-picture forty-per" src="../assets/Aux Intake Drawing.png">
+										<img class="center-picture forty-per" src="./assets/Aux Intake Render.png">
+										<img class="center-picture forty-per" src="./assets/Aux Intake Drawing.png">
 									</div>
 								</div>
 							</div>
@@ -642,14 +767,14 @@
 				<!-- CARD 14-->
 				<figure style="cursor: pointer;" class="card mech all">
 					<a class="portfolio-link">
-						<img src="../assets/2017 FRC Robot Render 320p.png" width=100% height=auto>
+						<img src="./assets/2017 FRC Robot Render 320p.png" width=100% height=auto>
 						<figcaption>
 							<h3>2017 FRC Robot</h3>
 						</figcaption>
 						
 						<div class="portfolio-modal">
 							<button type="button" class="modal-close">
-								<img class="close-svg" src="../assets/close button.svg" alt="Close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
@@ -659,15 +784,15 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="../assets/2017 FRC Robot Render.png">
+									<img class="center-picture sixty-per" src="./assets/2017 FRC Robot Render.png">
 								</div>
 								<div class="text-box">
 									<p>In my grade 10 years, I took on the role of design lead on my FRC team, during the Steamworks season. The game was designed around Wiffle balls (fuel) which had to be scored in a low and high goal, and large plastic gears that had to be placed on a spring. The strategic approach we took was to cycle as many gears as possible, and as a secondary function, we would assist our team mates in scoring fuel balls. Our robot, named The Beast, used rubberized conveyor rollers, and a sliding pocket to hold gears.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture forty-per" src="../assets/2017 Robot Climb.jpg">
-										<img class="center-picture forty-per" src="../assets/2017 Robot Gear.jpg">
+										<img class="center-picture forty-per" src="./assets/2017 Robot Climb.jpg">
+										<img class="center-picture forty-per" src="./assets/2017 Robot Gear.jpg">
 									</div>
 								</div>
 								<div class="text-box">
@@ -677,7 +802,7 @@
 									<p>The gear mechanism eventually got fast enough to allow our robot to do 10-11 cycles a game, something that few teams achieved in the competition. Despite this advantage we had over other teams, one strategic point we oversaw was the low fuel scoring vs. the high fuel scoring, which was worth 3x as many points per ball. Because of this, after the season finished I made it a side project to design a turret shooter (pictured below) for this game, and we prototyped it after to learn things for future years (something that came in handy in 2020).</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="../assets/2017 Shooter Render.png">
+									<img class="center-picture sixty-per" src="./assets/2017 Shooter Render.png">
 								</div>
 							</div>
 						</div>
@@ -686,7 +811,7 @@
 
 				<figure style="cursor: pointer;" class="card webdev">
 					<a class="portfolio-link" href="../index">
-						<img src="../assets/Website.png" width=100% height=auto>
+						<img src="./assets/Website.png" width=100% height=auto>
 						<figcaption>
 							<h3>This Website</h3>
 						</figcaption>
