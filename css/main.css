@@ -252,6 +252,15 @@ a:hover {
     width: 100%;
 }
 
+.text-box b {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 0 0 1em;
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+}
+
 .image-box {
     margin-block-start: 0px;
     margin-block-end: 0px;
