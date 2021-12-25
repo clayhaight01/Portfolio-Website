@@ -19,8 +19,6 @@ body {
 .kurt_header {
     background-image: url(../Kurt/Kurt_Background.png);
     background-size: cover;
-
-    /* height: calc(6.25vw - 32px); */
     padding: 16px 16px;
 }
 
