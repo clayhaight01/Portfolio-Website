@@ -16,66 +16,10 @@ body {
     padding: 0px 8vw 15px;
 }
 
-.kurt_header {
-    background-image: url(../Kurt/Kurt_Background.png);
-    background-size: cover;
-    padding: 16px 16px;
-}
-
-.kurt_footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-
-    background-image: url(../Kurt/Kurt_Background.png);
-    background-size: cover;
-    font-size: .8em;
-    padding: 0 8vw;
-}
-
-.kurt_nav {
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-    list-style: none;
-    flex: 1 0 0%;
-    font-family:'Helvetica', 'Arial';
-}
-
-.logo_height {
-    margin-block-start: 0;
-    padding: 0;
-    height: 48px;
-}
-
 .nav_list {
     margin-block-start: 0px;
     margin-block-end: 0px;
     padding: 10px 0px;
-}
-
-.kurt_logo {
-    height: 48px;
-    max-width:100%;
-}
-
-.basket_logo {
-    height: 48px;
-    max-width:100%;
-}
-
-@media (max-width: 745px) {
-    .kurt_nav {
-        flex-direction: column;
-    }
-    .basket_logo {
-        height: 32px;
-    }
 }
 
 ul {
