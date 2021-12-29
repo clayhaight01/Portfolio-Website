@@ -209,10 +209,6 @@ a:hover {
 }
 
 .text-box {
-
-}
-
-.text-box-white {
     display: inline-block;
     margin-block-start: 0px;
     margin-block-end: 0px;
@@ -220,6 +216,9 @@ a:hover {
 
     font-size: 24px;
     font-weight: 300;
+}
+
+.white {
     color: white;
 }
 
@@ -357,11 +356,6 @@ main {
     align-items: center;
 }
 
-
-
-
-
-
 .pcbs {
     margin: 2em 0;
     display: flex;
@@ -370,10 +364,17 @@ main {
     justify-content: space-around;
 }
 
-@media (max-width: 900px) {
+.pcb_side {
+    width: 30vw;
+}
+
+@media (max-width: 1400px) {
     .pcbs {
         display: flex;
         flex-flow: column nowrap;
+    }
+    .pcb_side {
+        width: auto;
     }
 }
 
@@ -407,9 +408,9 @@ main {
 }
   
   /* When you mouse over the container, fade in the overlay icon*/
-.pcb_container:hover .overlay {
+/* .pcb_container:hover .overlay {
     opacity: 1;
-}
+} */
   
   /* The icon inside the overlay is positioned in the middle vertically and horizontally */
 .icon {
@@ -421,9 +422,4 @@ main {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-}
-  
-  /* When you move the mouse over the icon, change color */
-.fa-user:hover {
-    color: #eee;
 }
