@@ -9,8 +9,33 @@ body {
     min-height: 100vh;
     display: block;
     position: relative;
-    padding-bottom: 49px;
+    padding-bottom: 45px;
     box-sizing: border-box;
+
+    overflow: overlay;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 14px 14px transparent;
+    border: solid 4px transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 14px 14px #6b6b6b;
+    border: solid 4px transparent;
+    border-radius: 14px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: inset 0 0 14px 14px #3a3a3a;
 }
 
 .kurt_header {
@@ -184,12 +209,18 @@ a:hover {
 }
 
 .text-box {
+
+}
+
+.text-box-white {
+    display: inline-block;
     margin-block-start: 0px;
     margin-block-end: 0px;
-    margin: 0 0 1em;
+    margin: 0 5em 1em;
+
+    font-size: 24px;
     font-weight: 300;
-    display: inline-block;
-    width: 100%;
+    color: white;
 }
 
 .text-box b {
@@ -296,7 +327,9 @@ p {
 }
 
 main {
-    margin: 0 8vw;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 0;
     padding: 0;
 }
 
@@ -317,8 +350,80 @@ main {
 }
 
 .multiple-pictures {
+    padding: 0 5em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+
+
+
+
+
+.pcbs {
+    margin: 2em 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+    .pcbs {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
+.pcb_container {
+    position: relative;
+    width: 100%;
+    max-width: 30vw;
+}
+  
+  /* Make the image to responsive */
+.image {
+    width: 100%;
+    height: auto;
+}
+  
+  /* The overlay effect (full height and width) - lays on top of the container and over the image */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.7s ease;
+}
+
+.labels {
+    width: 30vw;
+}
+  
+  /* When you mouse over the container, fade in the overlay icon*/
+.pcb_container:hover .overlay {
+    opacity: 1;
+}
+  
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.icon {
+    color: white;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+  /* When you move the mouse over the icon, change color */
+.fa-user:hover {
+    color: #eee;
 }
