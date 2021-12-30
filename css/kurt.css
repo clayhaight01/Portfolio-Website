@@ -104,22 +104,6 @@ body {
     display: none;
 }
 
-@media (max-width: 900px) {
-    .kurt_nav {
-        flex-direction: column;
-        height: auto;
-    }
-    .basket_logo {
-        height: 24px;
-    }
-    .vgap {
-        display: inline-block;
-    }
-    .hgap {
-        display: none;
-    }
-}
-
 ul {
     padding-inline-start: 0;
     margin-block-start: 0;
@@ -369,16 +353,6 @@ main {
     width: 30vw;
 }
 
-@media (max-width: 1400px) {
-    .pcbs {
-        display: flex;
-        flex-flow: column nowrap;
-    }
-    .pcb_side {
-        width: auto;
-    }
-}
-
 .pcb_container {
     position: relative;
     width: 100%;
@@ -423,4 +397,43 @@ main {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+}
+
+@media (max-width: 1400px) {
+    .pcbs {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .pcb_side {
+        width: auto;
+    }
+    .pcb_container {
+        max-width: 80vw;
+        margin-bottom: 1em;
+    }
+    .labels {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .kurt_nav {
+        flex-direction: column;
+        height: auto;
+    }
+    .basket_logo {
+        height: 24px;
+        margin-right: 0;
+    }
+    .vgap {
+        display: inline-block;
+    }
+    .hgap {
+        display: none;
+    }
+    .text-box {
+        margin: 0 2em 1em;
+        font-size: 14px;
+
+    }
 }
