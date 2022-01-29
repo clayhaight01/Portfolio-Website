@@ -10,7 +10,9 @@
 
   		gtag('config', 'UA-68183906-1');
 		</script>
-		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="../js/fade.js"></script>
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,7 +23,7 @@
 		<link rel="icon" href="../Kurt/Kurt_Icon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 	</head>
-	<body>
+	<body style="background-color: black;">
 		<header class="kurt_header">
 			<ul class="kurt_nav" style="overflow: auto;">
 				<li class="kurt_logo"><a href="../Kurt/kurt_index.html" style="font-size: 0;"><img src="../Kurt/Kurt_Logo_Text_300DPI.png" class="kurt_logo"></a></li>
@@ -35,11 +37,72 @@
 			</ul>
 		</header>
 		<main>
-			<div class="text-box" style="text-align: center;">
-				<br>
-				<p>Tech specs</p>
+			<div class="text-box gearbox_fadein">
+				<p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
 			</div>
-			<img style="width:100%" src="../assets/Under_Construction.png">
+			<div class="tech_table">
+				<div class="tech_row">
+					<div class="tech_row_header" style="min-width: 360px;">
+						<h2 class="white">Hardware Design</h2>
+					</div>
+					<div class="tech_row_entry">
+						<p class="white">Fully custom PCB</p>
+						<p class="white">ESP12E at 60MHz with wifi</p>
+						<p class="white">MOSFET motor and solenoid drivers</p>
+						<p class="white">4GB of MP3 storage for alarm tones</p>
+						<p class="white">88dB speaker with onboard amplifier</p>
+						<p class="white">Multiplexed sensor suite including two hall effect sensors and current</p>
+					</div>
+				</div>
+				<hr class="tech_row_hr">
+				<div class="tech_row">
+					<div class="tech_row_header" style="min-width: 360px;">
+						<h2 class="white">Mechanical Design</h2>
+					</div>
+					<div class="tech_row_entry">
+						<p class="white">DC brushed motor with 298 stage gearbox for high torque</p>
+						<p class="white">Micro solenoid for clutch activation</p>
+						<p class="white">Clutch can be mechanically tuned for a specific slippage torque</p>
+					</div>
+				</div>
+				<hr class="tech_row_hr">
+				<div class="tech_row">
+					<div class="tech_row_header" style="min-width: 360px;">
+						<h2 class="white">Industrial Design</h2>
+					</div>
+					<div class="tech_row_entry">
+						<p class="white">Completely screwless design using dovetails and locking features</p>
+						<p class="white">Swappable acrylic sheets for style matching (renders have semi transparent crimson red)</p>
+						<p class="white">Machined aerospace grade aluminum accents</p>
+						<p class="white">Silicone strap for adjustability on different sized curtain rods</p>
+					</div>
+				</div>
+				<hr class="tech_row_hr">
+			</div>
+
+			<div class="pcb_container">
+				<img class="image" style="width: 100vw;" src="../Kurt/Gearbox Back.png">
+				<div class="overlay">
+					<img class="labels" style="width: 100vw;" src="../Kurt/Gearbox Back Labels.png">
+				</div>
+			</div>
+			<div class="pcbs">
+				<div class="text-box pcb_side">
+					<p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+				</div>
+				<div class="pcb_container">
+					<img class="image" src="../Kurt/Front Shot.png">
+					<div class="overlay_2">
+						<img class="labels" src="../Kurt/Front Shot Labels.png">
+					</div>
+				</div>
+				<div class="pcb_container">
+					<img class="image" src="../Kurt/Back Shot.png">
+					<div class="overlay_2">
+						<img class="labels" src="../Kurt/Back Shot Labels.png">
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="kurt_footer">
 			<ul>
