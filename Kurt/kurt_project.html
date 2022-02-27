@@ -36,7 +36,79 @@
 		</header>
 		<main>
 			<div class="text-box">
-				<p class="white">I am still working on this project, this page is incomplete.</p>
+				<p class="white">My projects normally start as solutions to problems in my life, where I am not satisfied with the current solution. In this case, I have always had trouble waking up. Alarms give me headaches, and eventually my subconscious monkey brain learns how to club my arm at my phone to precisely hit the “Stop” button - that is fumble around with it until the noise stops. I’ve attempted, and written, about making a light based alarm clock in the past with LEDs, but this is challenging and an unnatural solution in my opinion.</p>
+			</div>
+			<div class="text-box">
+				<h2 class="white">Reasoning</h2>
+			</div>
+			<div class="text-box">
+				<p class="white">From a primal perspective, if we think about how cave men and even animals wakeup, it is purely based on a daylight cycle, and doesn’t involve alarms at all. Daylight is subtle enough that it will only wake you up when you’re in a light, easy to wake state.</p>
+			</div>
+			<div class="text-box">
+				<p class="white">It is widely known that it is best to wake up in a light sleep state, and after a REM period. Studies from sleep scientists including Matthew Walker and Andrew Huberman show that it is more beneficial to your sleep cycle to wake up during these times, as opposed to waking up after exactly X amount of hours. To do this properly, a wakeup signal needs to be just disturbing enough to wake you up in a light state, but not in a REM or deep state.</p>
+			</div>
+			<div class="text-box">
+				<p class="white">In addition to this, light has been shown to be very important to the wakeup cycle. Andrew Huberman suggests daylight every morning, quoted as saying “If sunlight reaches your eyes soon after you wake, it triggers a neural circuit that controls the timing of the hormones cortisol and melatonin, which affect sleep”. I believe that waking up to an alarm sound is extremely bad for your wake up cycle, and I can personally say that obnoxious noises just cause headaches, and eventually you just get used to ignoring them.</p>
+			</div>
+			<div class="text-box">
+				<p class="white">This is why I decided to build Kurt. A curtain opener that makes smart, informed decisions about your sleep cycle to wake you up with natural light and calming noises. Unlike current robotic curtain openers, Kurt is first an al*rm clock, and second a smart home appliance. Kurt can only open your blinds, not close them. This is on purpose, manually closing your blinds sends an automatic signal to Kurt to let it know you are going to sleep soon. From that point, your desired sleep time is measured, after which your curtains are opened and you can wake up peacefully.</p>
+			</div>
+			<div class="text-box">
+				<h2 class="white">Requirements</h2>
+			</div>
+			<div class="text-box">
+				<p class="white">As typical with my projects, I start by outlining the requirements, and then derive meaning from them to drive the design. These requirements are generated from what I believe to be the MLP (Minimum Lovable Product), and are mostly based on my personal wants.</p>
+			</div>
+			<div class="text-box">
+				<p class="white">Product Requirements</p>
+				<br>
+				<div class="text-box">
+					<li class="white">Open curtains quickly</li>
+					<li class="white">Draw a majority length of curtains</li>
+					<li class="white">Able to play audio for al*rm</li>
+					<li class="white">Allow low force, manual closing of curtains</li>
+					<li class="white">Blend in seamlessly to various interior decor</li>
+					<li class="white">Quiet operation</li>
+					<li class="white">Simple installation without specialist</li>
+					<li class="white">Charge less than once every year (or never)</li>
+					<li class="white">Reasonably priced</li>
+				</div>
+			</div>
+			<div class="text-box">
+				<p class="white">Design Input</p><br>
+				<div class="text-box">
+						<li class="white">Open curtains quickly <br>
+							&#10240;↳ User sampling shows under 5 seconds is the sweet spot</li><br>
+						<li class="white">Draw a majority length of curtains<br>
+							&#10240;↳    Curtain store availability shows that 92% of curtains are &lt60”<br>
+							&#10240;↳    Able to draw curtains up to 60”</li><br>
+						<li class="white">Able to play audio for al*rm<br>
+							&#10240;↳    Onboard loudspeaker, qualitatively louder than smartphone</li><br>
+						<li class="white">Allow low force, manual closing of curtains<br>
+							&#10240;↳    Some sort of disengagement so that curtain is free to move<br>
+							&#10240;↳    Ideally same amount of force as normal curtain</li><br>
+						<li class="white">Blend in seamlessly to various interior decor<br>
+							&#10240;↳    Good industrial design<br>
+							&#10240;↳    Small form factor to fit in the folds of curtain</li><br>
+						<li class="white">Quiet operation<br>
+							&#10240;↳   Noise isolating enclosure design<br>
+							&#10240;↳   Reduce moving parts rubbing/contact/vibration as much as possible</li><br>
+						<li class="white">Simple installation without specialist<br>
+							&#10240;↳    Should be as easy as setting up a normal alarm clock<br>
+							&#10240;↳    Ideally just affix it, and plug it in</li><br>
+						<li class="white">Charge less than once every year (or never)<br>
+							&#10240;↳    Better UX if user never has to worry about it<br>
+							&#10240;↳    Plug into wall, and have a clean routing that doesn't break with ID</li><br>
+						<li class="white">Reasonably priced<br>
+							&#10240;↳    Under $150 CAD (less than automatic blinds)</li>
+				</div>
+			</div>
+			<br>
+			<div class="text-box">
+				<h2 class="white">Design Process</h2>
+			</div>
+			<div class="text-box">
+				<p class="white">After better defining product requirements and design inputs, I started sketching concepts. This included napkin sketches, industrial design, and mechanism sketches. After some tradeoff studies, I decided on the only practical solution that meets all the requirements; a driven winch with an engagement clutch.</p>
 			</div>
 			<div class="image-box">
 				<div class="multiple-pictures">
@@ -45,12 +117,40 @@
 					<img class="center-picture" src="./Kurt Rough Design.png">
 				</div>
 			</div>
+			<div class="text-box">
+				<p class="white">I started doing some testing to get a ballpark of how much force would be required to open my curtains. I did this by using a rope and pulley and increasing the amount of weight at the end of the rope until the curtain started moving. Using this, I could come up with a motor torque given a winch radius and gear reduction. The winch needed to have a large enough radius and length that it could hold the 60” of string, but a small enough radius such that it could have enough torque. I like to think about these decisions as design trees, where different requirements drive different parts of the design.</p>
+			</div>
+			<div class="image-box">
+				<img class="center-picture sixty-per" src="./Motor Design Flow.png">
+			</div>
+			<div class="text-box">
+				<p class="white">Next, I started brainstorming ways to do the clutch. Originally I wanted to do a purely mechanical design such as a centrifugal clutch - but it was far too difficult to get it to work at such low speeds. Instead I started the selection process of an actuator, including making a mock friction (only force) testing setup. I eventually settled on a micro 6V solenoid with a long stroke and low force. Another problem with the clutch approach was engaging it linearly without imposing any moment that could jam it. A picture is shown below of two concepts to apply force to the clutch (blue) without imposing a moment. A lever arm was chosen as it moves the force to the centroid of the clutch, and also can increase the force and decrease the displacement of the solenoid at the end of the lever. Another driven design diagram is shown below.</p>
+			</div>
+			<div class="image-box">
+				<img class="center-picture sixty-per" src="./Clutch Design Flow.png">
+			</div>
+			<div class="text-box">
+				<p class="white">The last major design decision I will talk about is the architecture and enclosure. This is mainly driven by the size of the winch, motor, gearbox, solenoid, PCB, and clutch. It is also driven by the micro solenoid default position which in turn drives the lever - the biggest part. All of this comes together to drive the enclosure size, the shape of which is determined by the industrial design.</p>
+			</div>
+			<div class="image-box">
+				<img class="center-picture sixty-per" src="./Enclosure Design Flow.png">
+			</div>
 			<div class="image-box">
 				<div class="multiple-pictures">
 					<img class="center-picture" src="./Kurt Torque Calculations.png">
 					<img class="center-picture" src="./Kurt Solenoid Concepts.png">
 					<img class="center-picture" src="./Kurt CAD.jpg">
 				</div>
+			</div>
+			<div class="text-box">
+				<h2 class="white">Design Output</h2>
+			</div>
+			<br>
+			<div class="text-box">
+				<p class="white">Hardware</p>
+			</div>
+			<div class="text-box">
+				<p class="white">From all of the feature requirements listed above, I knew what I had to implement on the hardware side. The motor needed a motor driver, and I wasn’t happy with what was offered in hand solderable packages. To get around this I designed my own H bridge driver with MOSFETs, packaged tightly on the PCB. The solenoid needed a similar circuit which was basically a copy and paste of part of the H bridge driver. Then there was the speaker, which needed a way to play preloaded MP3 files and have an amplifier for the 1W speaker. Instead of designing a complicated circuit, I used a DFPlayer Mini which already has support for SD cards, with a built in amplifier. The brains of the operation is an ESP 12E which has a powerful microcontroller built in as well as wifi connectivity. The wifi is used for syncing an RTC and also for integration with an eventual web app. Finally the power supply system has two main levels, 3.3V and 6V. The 3.3V system uses a buck converter and is used for the microcontroller and all data connections. The 6V system uses an LDO regulator (only because I found it difficult to find an easily hand solderable buck converter that had the power requirements I needed) with big heat sink pads.</p>
 			</div>
 			<div class="image-box">
 				<div class="multiple-pictures">
@@ -61,18 +161,42 @@
 			<div class="image-box">
 				<div class="multiple-pictures">
 					<img class="center-picture" src="./Kurt Bare PCB.jpg">
-					<img class="center-picture" src="./PCB in Hand.jpg">
+					<img class="center-picture" src="./Kurt Complete PCB.jpg">
 					<img class="center-picture" src="./Tiny Components.jpg">
 				</div>
 			</div>
+			<div class="text-box">
+				<p class="white">Mechanical</p>
+			</div>
+			<div class="text-box">
+				<p class="white">Using all the mecahnical driven design parameters from above, I mocked up the first iteration in SolidWorks. After printing off some of the parts and test fitting it into the enclosure, I wasn’t quite happy with how it looked and felt. It was too thin, long and the architecture wasn’t as dense as I wanted it to be. Because of this I wanted to go back and completely redo the architecture.</p>
+			</div>
+			<div class="text-box">
+				<h2 class="white">Iteration</h2>
+			</div>
+			<div class="text-box">
+				<p class="white">In my next iteration, I wanted to package it more tightly by optimizing for a shape where all sides are closer together (more cube-like). To do this I drew out all the possible architectures and optimized them based on minimizing empty space. The solution I came up with was stacking the PCB directly above the lever assembly. This increases the width slightly but drastically reduces the length. A picture showing a comparison between the two iterations is shown below. The image on the right is the final design.</p>
+			</div>
 			<div class="image-box">
 				<div class="multiple-pictures">
-					<img class="center-picture" src="./Kurt Complete.jpg">
-					<img class="center-picture" src="./Kurt Complete PCB.jpg">
 					<img class="center-picture" src="./Kurt Form Factors.jpg">
+					<img class="center-picture" src="./Kurt Complete.jpg">
 				</div>
 			</div>
-
+			<div class="text-box">
+				<h2 class="white">Final Product</h2>
+			</div>
+			<br>
+			<div class="text-box">
+				<p class="white">Kurt started as a weekend project to make a better alarm clock and transitioned into one of my biggest projects to date. I am really proud of the outcome - it forced me to get better at PCB design, learn industrial design techniques, and ultimately go through the full product development process (excluding scaling).</p>
+			</div>
+			<div class="text-box">
+				<p class="white">This project was a really interesting and rewarding way for myself to go through the product development cycle. It's rare to find opportunities to own the entire process, and I highly recommend anyone trying to get into product design to go through the paces by yourself - it's very fulfilling. I hope Kurt proves to be useful in my everyday life and that it meets my standards of a lovable product.</p>
+			</div>
+			<div class="image-box">
+				<img class="center-picture sixty-per" src="./On Bedroom Curtain.png">
+			</div>
+			
 				
 		</main>
 		<footer class="kurt_footer">
