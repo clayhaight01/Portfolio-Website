@@ -533,8 +533,8 @@ figcaption {
     z-index: 10;
     top: 2em;
     bottom: 0;
-    left: 2em;
-    right: 2em;
+    left: 6em;
+    right: 6em;
     background: white;
     box-shadow: 0px 0px 30px 2em rgba(0, 0, 0, 0.5);
     overflow-y: scroll;
