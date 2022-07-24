@@ -533,8 +533,8 @@ figcaption {
     z-index: 10;
     top: 2em;
     bottom: 0;
-    left: 6em;
-    right: 6em;
+    left: 12em;
+    right: 12em;
     background: white;
     box-shadow: 0px 0px 30px 2em rgba(0, 0, 0, 0.5);
     overflow-y: scroll;
@@ -603,8 +603,8 @@ figcaption {
     background: transparent;
     position: fixed;
     cursor: pointer;
-    left: calc(2em + 0.375vw);
-    top: calc(2.375em + 0.375vw);
+    left: calc(12em + 0.375vw);
+    top: calc(12.375em + 0.375vw);
     border: 0;
     scale: 80%;
 }
@@ -627,6 +627,14 @@ button:focus {
 @media (max-width: 1043px) {
     .mobile-about-line {
         height: 4px;
+    }
+    .portfolio-modal.is-open {
+        left: 2em;
+        right: 2em;
+    }
+    .modal-close {
+        left: calc(2em + 0.375vw);
+        top: calc(2.375em + 0.375vw);
     }
 }
 
