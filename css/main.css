@@ -603,8 +603,8 @@ figcaption {
     background: transparent;
     position: fixed;
     cursor: pointer;
-    left: calc(12em + 0.375vw);
-    top: calc(12.375em + 0.375vw);
+    left: calc(14.5em + 0.375vw);
+    top: calc(3em + 0.375vw);
     border: 0;
     scale: 80%;
 }
