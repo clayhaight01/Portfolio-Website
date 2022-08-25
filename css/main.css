@@ -277,6 +277,12 @@ a:hover {
     width: 100%;
 }
 
+.image-caption {
+    font-size: 0.75em;
+    text-align: center;
+    margin-top: 4px;
+}
+
 .mobile-about-line {
     height: 0px;
     margin: 1em 0 1.5em;
