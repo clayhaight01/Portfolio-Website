@@ -55,6 +55,242 @@
 			</header>
 
 			<div class="cards_container">
+
+				<!-- CARD -2-->
+				<figure style="cursor: pointer;" class="card mech all">
+					<a class="portfolio-link">
+						<img src="./assets/Bracket Bot 320p.png" width=100% height=auto>
+						<figcaption>
+							<h3>Bracket Bot</h3>
+						</figcaption>
+						<!--Modal-->
+						<div class="portfolio-modal">
+							<button type="button" class="modal-close">
+								<img class="close-svg" src="./assets/close button.svg" alt="Close">
+							</button>
+							<div class="portfolio-header">
+								<div class="portfolio-title-box">
+									<h2 class="portfolio-title">Bracket Bot</h2>
+									<p class="portfolio-subtitle">A failed robot that taught me so much</p>
+								</div>
+							</div>
+							<div class="portfolio-content">
+								<div class="text-box">
+									<p>One of my favourite hackers, George Hotz, founder of comma.ai, recently mocked Tesla by coming out with the “comma body” seen below. Comma.ai is a company that like Tesla, is aiming to solve self driving - though their approach is much different. While Tesla was collecting data from their fleet of cars, George was crowdsourcing driving data through an app called chffr from a community of hackers. While Tesla was designing custom silicon for self driving computation, George and the comma team were modifying android phones to tap into the CAN system of steer by wire cars and perform simple ADAS. At one point comma had the highest ADAS rating of any automaker with the comma two - including Tesla autopilot. And finally, when Tesla revealed that it wanted to make a humanoid robot in August of 2021, George announced the comma body, a hoverboard with a piece of extrusion and a comma three on top. What a mockery.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/comma body.png">
+								</div>
+								<div class="text-box">
+									<p>But now the times are changing - there's a new kid on the block (or there was supposed to be). Meet Bracket Bot, or {bot} for short. Inspired by the simple form factor of the comma body, bracket bot is built very similarly. The segway form factor allows for easy controls and a cheap mechanical structure. Bracket bot uses 2 brushless hoverboard wheels to drive, much like the comma body, but paired with high resolution encoders and state of the art motor controllers. The structure is simply a piece of 4040 extrusion, a bracket, and another vertical piece of 4040 for the “mast”. Inside the enclosure is a custom built battery, a Jetson Nano,  and 4 long distance time-of-flight sensors. Atop the mast standing at 5’8 is a wide angle camera, in conjunction with an additional time-of-flight sensor.</p>
+								</div>
+								<div class="text-box">
+									<p>This was mainly my project, but two friends helped out near the end. Ethan Childerhose of bigcrete.engineering and Ivan Yevenko. Ethan designed a high power buck converter for the power hungry Jetson Nano, wrote a custom software SPI library, and worked with me on the firmware development. Ivan wrestled with ORB-SLAM and added functionality for local and global floor detection which helped with accurate homography, he also critiqued my crazy perception ideas. We aimed to have the project done within two weeks, but after running into significant motor controller problems and realizing the software was harder than anticipated, it lasted months and still never got completed. Typical.</p>
+								</div>
+								<div class="text-box">
+									<p>Although I am sad the robot never worked as intended, it was still a ton of work and I learned a lot that I can share. Now let's go through the robot part by part.</p>
+								</div>
+								<div class="text-box">
+									<b>Form Factor</b>
+								</div>
+								<div class="text-box">
+									<p></p>
+								</div>
+								<div class="text-box">
+									<p></p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Optimus.png">
+								</div>
+								<div class="text-box">
+									<p></p>
+								</div>
+								<div class="text-box">
+									<b>Mechanical</b>
+								</div>
+								<div class="text-box">
+									<p>I knew what we had to work with before the project started. I pooled together components with my roommates and some other friends to get this built as soon as possible. We gathered 3 Prusa’s in our apartment and started printing stuff 24/7, iterating fast with the initial 2 week goal in mind. We had a ton of 8” hoverboard wheels from broken hoverboards, as well as the 18650s that came with them. So I knew we could work with those. They have a D shaft to interface with so I designed a 3D printed flexure to clamp onto it (see below). Although using plastic was suboptimal for a part with such high contact stresses, it was what we had to work with. For the chassis I used a bunch of 4040 with 3D printed brackets (hence the name). Similar to the comma body I added a kickstand, which would catch the robot if it fell or died instead of face planting. On the ends of the kickstand were print-in-place wheels for prototyping and testing.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Bracket Bot Spoke FEA.png">
+										<img class="center-picture" src="./assets/Bracket Bot Prusa.png">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>The enclosure is pretty clever, it's 4 pieces with interlocking features that keep the outer surfaces aligned. FDM prints have a pretty characteristic texture and along with the gloss, it makes it very obvious when they aren’t aligned. Each piece is supported by spokes (shown below in white) which keeps the enclosure strong enough to support the weight of the robot in any crash orientation (with the kickstand removed). To align each piece, 2 dovetails that purposefully over constrain the assembly are attached to mating pieces. They flex the parts to be concentric and reduce warpage. The end pieces are also used to mount the wheel encoder and Time-of-Flight sensor.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Bracket Bot Spoke Side.png">
+										<img class="center-picture" src="./assets/Bracket Bot Side.jpg">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>Below you can see how simple the core assembly is. Many of these parts ended up getting combined into the enclosure, making the BOM even smaller.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bracket Bot Knolling.jpg">
+								</div>
+								<div class="text-box">
+									<p>I wish the mechanical aspect of this project was more complicated, I wanted to add a simple arm. Or something challenging. The hardest part was the enclosure fitment and panel gap, which is fantastic because I work at Tesla. I eventually ran out of things to do and started the electrical and even software myself (which wasn’t supposed to be my part of the project for a good reason).</p>
+								</div>
+								<div class="text-box">
+									<p>Bow down to your {evil} robot overlord.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Bracket Bot Body.jpg">
+										<img class="center-picture" src="./assets/Bracket Bot Camera.jpg">
+									</div>
+								</div>
+								<div class="text-box">
+									<b>Electrical</b>
+								</div>
+								<div class="text-box">
+									<p>Let me preempt this - the wire routing is not my best work. The electrical layout is shown below, showing most of the buses and power connections. I learned about how big of a problem wire routing is, even with 2 motors and motor controllers, I can’t imagine scaling up to Tesla Bot level. One of the big things I realized is how important it is to reduce wires per actuator. We were forced to use SPI because of our motor controller selection, which required 5 wires per controller (2 chip selects). Tesla Bot uses CAN as far as I can tell, which means 2.5X less points of failure, and 2.5X less wire to route per actuator.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bracket Bot Electrical Diagram.png">
+								</div>
+								<div class="text-box">
+									<p>Let's start with power distribution. Power directly from the battery gets distributed to each motor controller. The Jetson is power hungry, consuming 25W at max computation (which we will basically always be at) at an annoyingly low voltage of 5V. With no good high power 5V bucks on the market, Ethan decided to design and build his own using a 45V 5A DC-DC converter from TI.</p>
+								</div>
+								<div class="text-box">
+									<p>Modern day FOC brushless motor control is kind of a weird duopoly. You have two good options, VESC (and all of its copies) or O-Drive. Both of these options have a ton of features in terms of position, velocity, torque control and different sensored and sensorless techniques. Both of them are also pretty pricey, and we couldn’t get a sponsorship from either company. We started out with some spare VESCs we had lying around, but one of them was fried, forcing us to go another route. There is a third option that some hobbyists use, but it comes with unique challenges. Trinamic Motion Control, a German company making custom silicon motor controllers. Bought by Maxim Integrated (who is in turn owned by Analog Devices) it sounds as messy as it is. Although they very generously offered to sponsor our project by sending us two 4671+6100 breakout boards, they were a huge pain to work with. There was no available library for the Jetson so we were forced to write our own by writing bytes directly to memory addresses. On top of this, the Jetson only supports 2 hardware SPI chip selects, so Ethan had to write a custom software SPI library to use 4 devices on the line. Luckily, Trinamic provides an IDE that allows you to tune your control values and motor parameters. Unluckily, it is the worst software I have ever used. It is incredibly unstable, most versions didn’t even work at all. Enjoy some actual screenshots below.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/TMCL Errors.png">
+										<img class="center-picture" src="./assets/TMCL Windows.png">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>Once we finally got a usable tune on the motors, it was time to write the control code which I’ll go into in the software section. Trinamic only lets you command a velocity in integers, meaning no less than 1rpm! That means that the control loop couldn’t react until it commanded a velocity that rounded up to 1, which drastically hurt the stability. The controllers would also randomly set 363rpm to the velocity registers non-deterministically when we set the drive mode to stop. We still don’t know why this was the case, and this was the main bug holding us back from completing the project.</p>
+								</div>
+								<div class="text-box">
+									<p>Next I’ll talk about the battery. It was a pretty simple problem, we scavenged 18650 cells from hoverboards and spot welded them together with the generous help of Waterloo’s Solar Car team, Midnight Sun. We used the same voltage as a hoverboard (10S) and as many cells as we could in parallel (2P). Some rough napkin math shows it should last around 30 minutes of casual driving. I built up a nice 4040 friendly enclosure with a BMS included, seen below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bracket Bot Battery.png">
+								</div>
+								<div class="text-box">
+									<p>Let's talk about our sensor suite. I gained a lot of insight into robotics perception through my internship at Matician, working with some of the most talented CV engineers in robotics. I’ll dig more into perception later, but the gist of it is that we wanted to be able to identify and interact with people (requiring at least 1 camera) and also wanted to be certain we didn’t hit anything (proximity sensor safety net). Ivan and I didn’t think that a stereo pair was necessary as we didn’t care too much about depth accuracy. We planned to have safe margins around walls and objects anyway, and thus didn’t need accurate depth. Our SLAM system used our transient data to build decently accurate depth maps, just based on monocular vision. As for proximity sensing, I am a huge fan of the VL series of Time-of-Flight from STM. They're super precise, decently accurate (depends on the reflectivity sadly), tiny, and easy to work with. Although a member of the pure vision party, in this case not hitting things is immensely important. Both for the reasons of not being kicked out of Waterloo, and because the robot could tip over. Finally the IMU we chose was a BNO055 which is an awesome blend of accelerometer, magnetometer and gyroscope that yields low drift and a stable 3 axis output.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Bracket Bot Sensor FOV.png">
+										<img class="center-picture" src="./assets/Bracket Bot ToF Side.png">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>We started with a simple USB webcam, but it had horrible stability and white balance issues. Luckily the Jetson came with 2 CSI connectors for a MIPI interface, so we used a PiCam V2 which to my surprise was much better than the webcam. I liked the original webcam enclosure much better, I think the PiCam enclosure was really ugly. The two revisions are shown below.
+									</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Bracket Bot Camera V1.jpg">
+										<img class="center-picture" src="./assets/Bracket Bot Camera V2.png">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>As for the compute, our options were super limited here so this was brief. We knew we wanted something with CUDA cores for accelerating our ML models, but not much was available. Everything was sold out, and reselling for much more online. We wanted a Jetson TX2 but ended up with a Jetson Nano that a friend had lying around. This was okay, but ended up being super slow running our semantic segmentation model (only running once per 4 seconds) so we debated sending the video feed to one of our PCs with a beefier graphics card and running models off device, but this never happened. We probably could have optimized the model too, if we did some performance analysis.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bracket Bot Beans.png">
+								</div>
+								<div class="text-box">
+									<p>Do we get points for the bean can stand?</p>
+								</div>
+								<div class="text-box">
+									<b>Firmware</b>
+								</div>
+								<div class="text-box">
+									<p>Because we used a Nvidia Jetson, we were pretty limited in regards to libraries that would normally come with something like an Arduino or Raspberry Pi. The TMC motor controllers are also not common in hobbyist communities and don’t have any decent public libraries. Avoiding CircuitPython and ROS, we decided to go forward writing our own libraries from scratch. For the IMU (BNO055) and ToF (VL53L0CX) this was straightforward; they both communicate over I2C and return simple data formats.</p>
+								</div>
+								<div class="text-box">
+									<p>For the TMC controllers, this was an absolute nightmare. The controllers we ordered had the TMC4671 and TMC6100 on a single PCB, with separate CS lines through SPI. The boot up sequence alone required an intricate timing of address reads and writes to get the chips to play nice with each other. After which, initializing the motor parameters and encoder feedback was another poorly documented minefield. Changing motion modes between flux, torque, position, and velocity was extremely complicated - forgetting to set one address would end up catastrophically imploding the system (which isn’t very fun with 350W motors). Ultimately, we think the firmware might’ve been the downfall of this project - specifically with the motor controllers. We still aren’t sure if it was a bug on the TMC4671 side, or in our firmware, but it prevented us from moving forward with these controllers. Even though our firmware is most likely the problem, we were carefully watching how our code interacted with the registers and with no registers changing, the behavior of the motors would change suddenly.</p>
+								</div>
+								<div class="text-box">
+									<b>Controls</b>
+								</div>
+								<div class="text-box">
+									<p>The semester we were doing this project was also the first time learning basic controls. I remember learning block diagrams in SYDE 351 and then realizing that maybe just maybe I should be drawing one for this problem. I looked through a couple research papers on inverted pendulums and segway control systems and thought “this looks easy” - it was not. It was easy to make it balance, took a couple of educated guesses about control loop organization. It was very hard to make it robust to perturbations, of which on a college campus there could be many. We started with one loop that took a setpoint angle as an input, calculated error with the IMU and output a motor velocity (assuming a linear relationship between pendulum angle and velocity). But, to get it to stand still we had to add a setpoint heuristic that we would calculate on power up (meaning someone had to manually balance the robot on power up). Any tiny error in this set point caused it to slowly want to move, but because of an integer rounding problem, it couldn’t. This means it would just accumulate a ton of integral error, and then move drastically. To get around this, we pass the integral error through a window function to cut it off.</p>
+								</div>
+								<div class="text-box">
+									<p>After tuning that loop, another loop was added in series with this. It would take a commanded centroid robot speed (average between left and right motors) and output the angle required to drive at that speed. Then that angle would be fed into the prior loop as the setpoint. At a commanded robot speed  of 0, the loop would figure out what the angular set point had to be in order to keep the robot still. The next loop would take that setpoint and find a motor velocity path to get there. A block diagram can be seen below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Control Block Diagram.png">
+								</div>
+								<div class="text-box">
+									<p>It's important to note that the TMC4671 motor controllers had their own control loops baked in. They had cascaded loops around flux, torque, position, and velocity. Once tuned with a step response, they could be written to via the aforementioned byte addresses.</p>
+								</div>
+								<div class="text-box">
+									<p>Another unforeseen challenge is that the motor controllers (as mentioned previously) only let us command integer RPMs, meaning that the robot would tip forward a bit until the control loop output 0.5rpm which would get rounded up to 1 and the robot would jolt forward. Then, as it fell backward the same thing would happen, making it oscillate a tiny bit. To get around this we could have added another loop and controlled position instead of velocity, or maybe even torque, but this never got done before we put the project down.</p>
+								</div>
+								<div class="text-box">
+									<p>At this point with the motor controllers acting up so much, it became impossible to tune a reliable control system. The robot got scary to work with, often randomly accelerating to high speeds or jolting to a stop, sending a shock through the entire system.</p>
+								</div>
+								<div class="text-box">
+									<b>Perception</b>
+								</div>
+								<div class="text-box">
+									<p>To preface this, I know this is amateur hour - Ivan was supposed to do this part, but I wanted it done fast and he didn’t have the bandwidth to fully commit to the project. The perception code I came up with is not very robust or cutting edge. I did this just with my intuition of what would work and after reading some elementary research papers.</p>
+								</div>
+								<div class="text-box">
+									<p>The goal of the perception stack was to build a map of the drivable static environment, while avoiding obstacles dynamically. To build a map of the robot's surroundings, we used ORB-SLAM2 which worked really well even on our small processor. SLAM would be responsible for getting the floor plane, visual odometry, loop closure, and most importantly a ground truth for distances. To interact with our live environment we used a lightweight Mask2Former semantic segmentation model to find the pixels that were on the floor, obstacles, people, and anything else from the vast 137 classes. My thought process on getting the drivable map was to take the floor pixels from the semantic segmentation and project them using homography onto the floor plane (seen below). The projection would be scaled by correlating keypoints from SLAM with the same keypoint in the semantic segmentation. Once we had a 2D map of drivable space, and a way to measure where we were in it with SLAM, a path planning algorithm could be developed or we could simply randomly drive within the space.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/3 Step Perception.png">
+								</div>
+								<div class="text-box">
+									<p>To project the camera feed onto a birds eye view 2D map, we had to find a transform from the camera perspective to the ground plane. My intuition for how to do this was to find the vanishing point, and use a linear transformation to make the vanishing point at infinity, thus getting a top down view of the frame. At first I made a tool to manually sketch lines matching straight edges on a picture, and the tool would compute the vanishing point. Then I realized this wasn’t scalable or robust so I implemented automatic vanishing point detection using Canny edge detection and then a Hough transform to find lines. Lines would then be intersected at many different points, the highest density of points would be considered the vanishing point, which would be defined by the centroid of those points (shown below in blue).</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Vanishing Point.png">
+								</div>
+								<div class="text-box">
+									<p>I thought at first that the transformation would only need to be found once, and then could be used for the robot so long as the camera/camera mounting didn’t change. Later I realized how naive this was, as we were making a segway that was constantly swinging about changing the camera angle. To solve this, Ivan added a function to ORB-SLAM2 to find the ground plane using RANSAC. SLAM could then figure out our camera pose relative to this ground plane, making projections much more robust (see below).</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/3 Step Perception V2.png">
+								</div>
+								<div class="text-box">
+									<p>Semantic segmentation enables floor segmentation, as well as lots of useful features for the future. Although not implemented, it would allow us to avoid challenging obstacles such as chairs, stairs, and even animals. It also makes it easy to keep track of people and even follow them. After testing two of the ADE20K SOTA models (BEiT and a model built on SWIN V2) we realized that we would be extremely computationally limited - they were each taking about 4 seconds per image on a GTX1060. We then tested some lighter weight models made for low power applications - namely light-weight RefineNet, RGBX, and a model built on FAIR’s omnivore. These were too unpredictable and failed far too often to be drivable. We settled for something in between, a model called Mask2Former had amazing performance (see below for examples in E5) and ran decently fast. Now since this project didn’t get finished, we never got to try running SLAM, controls, and Mask2Former all at the same time (I’m sure it would’ve been a disaster) so we were actually playing around with the idea of streaming video to a server which could run the semantic segmentation model, and return a masked image of a requested label.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/Semantic Segmentation E5 EX1.png">
+										<img class="center-picture" src="./assets/Semantic Segmentation E5 EX2.png">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>For our SLAM system, ORB-SLAM seemed like the obvious choice. It’s crazy how far ahead it stands compared to other options, super optimized performance and amazing results. To gather calibration data and characterize different cameras, we walked around Waterloo’s E5 building at robot speed holding the camera very steady at robot height. As mentioned previously, the original webcam we wanted to use had horrible stability issues and ORB-SLAM was having a tough time keeping track of keypoints, but after switching to a PiCam everything started to work great. An image of the E5 lobby and data gathering can be seen below.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture" src="./assets/E5 SLAM.png">
+										<img class="center-picture" src="./assets/Robo Ivan.jpg">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>I learned a ton about perception doing this project. I wish I kept going to see what improvements I could make, and what’s possible. One thing still pulls me apart - reading papers gives you a better intuition for what works and what doesn’t work, but it also makes you think in a certain way. It’s this way of thought that might block new, crazy, radical ideas from entering space. I see this in many industries, and it troubles me.</p>
+								</div>
+								<div class="text-box">
+									<b>Result</b>
+								</div>
+								<div class="text-box">
+									<p>Although an unsuccessful result, it was good to get back to my roots and build a robot. It reminded me of the spark that got me interested in engineering in the first place - there’s something magical about software coming alive in a physical form. I’ll leave you with a video of the last balancing test we did before packing up the project and moving out of Waterloo.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture sixty-per" src="./assets/Bracket Bot Balancing.gif">
+								</div>
+							</div>
+						</div>
+					</a>
+				</figure>
+
 				<!-- CARD -1-->
 				<!-- <a href="./Kurt/kurt_index.html" target="_blank"> -->
 					<figure style="cursor: pointer;" class="card mech hardware software webdev all" onclick="window.location='https://clayhaight.com/Kurt/kurt_index.html';">
