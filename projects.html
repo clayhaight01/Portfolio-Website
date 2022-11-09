@@ -251,7 +251,7 @@
 									<img class="center-picture sixty-per" src="./assets/Vanishing Point.png">
 								</div>
 								<div class="text-box">
-									<p>I thought at first that the transformation would only need to be found once, and then could be used for the robot so long as the camera/camera mounting didn’t change. Later I realized how naive this was, as we were making a segway that was constantly swinging about changing the camera angle. To solve this, Ivan added a function to ORB-SLAM2 to find the ground plane using RANSAC. SLAM could then figure out our camera pose relative to this ground plane, making projections much more robust (see below).</p>
+									<p>I thought at first that the transformation would only need to be found once, and then could be used for the robot so long as the camera/camera mounting didn’t change. Later I realized how naive this was, as we were making a segway that was constantly swinging about changing the camera angle. To solve this, Ivan added a function to ORB-SLAM2 to find the ground plane using RANSAC. SLAM could then figure out our camera pose relative to this ground plane, making projections much more robust (see below). Although never implemented, SLAM could be used to add up sections of the 2D map slowly over time.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture sixty-per" src="./assets/3 Step Perception V2.png">
