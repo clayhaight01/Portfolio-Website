@@ -79,7 +79,7 @@
 									<p>One of my favourite hackers, George Hotz, founder of comma.ai, recently mocked Tesla by coming out with the “comma body” seen below. Comma.ai is a company that like Tesla, is aiming to solve self driving - though their approach is much different. While Tesla was collecting data from their fleet of cars, George was crowdsourcing driving data through an app called chffr from a community of hackers. While Tesla was designing custom silicon for self driving computation, George and the comma team were modifying android phones to tap into the CAN system of steer by wire cars and perform simple ADAS. At one point comma had the highest ADAS rating of any automaker with the comma two - including Tesla autopilot. And finally, when Tesla revealed that it wanted to make a humanoid robot in August of 2021, George announced the comma body, a hoverboard with a piece of extrusion and a comma three on top. What a mockery.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/comma body.png">
+									<img class="right-picture" src="./assets/comma body.png">
 								</div>
 								<div class="text-box">
 									<p>But now the times are changing - there's a new kid on the block (or there was supposed to be). Meet Bracket Bot, or {bot} for short. Inspired by the simple form factor of the comma body, bracket bot is built very similarly. The segway form factor allows for easy controls and a cheap mechanical structure. Bracket bot uses 2 brushless hoverboard wheels to drive, much like the comma body, but paired with high resolution encoders and state of the art motor controllers. The structure is simply a piece of 4040 extrusion, a bracket, and another vertical piece of 4040 for the “mast”. Inside the enclosure is a custom built battery, a Jetson Nano,  and 4 long distance time-of-flight sensors. Atop the mast standing at 5’8 is a wide angle camera, in conjunction with an additional time-of-flight sensor.</p>
@@ -94,16 +94,16 @@
 									<b>Form Factor</b>
 								</div>
 								<div class="text-box">
-									<p></p>
+									<p>People love to hate on the Tesla Bot form factor, I for one think that it makes sense for a lot of things. The one thing I don’t think it makes sense for is manufacturing, which confuses me since it’s supposed to be the first use case of the Tesla Bot. The things that are hard for machines to do are not hard because of the form factor, they are often hard because they need finesse. A fine degree of sensor fusion and processing. For example it's hard for robots to route cable harnesses through cars, yet trivial for humans. This is because humans have great force feedback, an understanding of cable physics, great 3D perception of where the cable is, but not because of the human form factor. It is often this case across the assembly line, trust me - i’ve walked it. Where the form factor really makes sense is in spaces designed for humans that can’t change as easily as an assembly line. Anytime a door needs to be opened, or stairs need to be climbed, or even getting into a car (just watch the 2015 DARPA robotics challenge) you’ll want a humanoid form factor.</p>
 								</div>
 								<div class="text-box">
-									<p></p>
+									<p>To be able to interact with human spaces, you need to accurately reflect the human body with around 30-40 DOF. But the goal of Bracket Bot was just to have a presence in public spaces, specifically in our buildings engineering build E5. This meant it had to be able to ride elevators, go over small bumps, and not block hallways or tight spaces. To meet these requirements, we made the robot roughly the size of an average human. It uses 8” wheels to traverse over large bumps and thresholds. Although not as close to a human as the Tesla Bot it’s surely close for 20X less degrees of freedom.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture sixty-per" src="./assets/Optimus.png">
+									<img class="center-picture forty-per" src="./assets/Optimus.png">
 								</div>
 								<div class="text-box">
-									<p></p>
+									<p>So this is why we picked the form factor, same stance and height as the average human. The segway allows for high speeds and great maneuverability in a small package. Similar eye placement to that of humans lets us get a wide angle view from high up, and a high mass moment of inertia for the segway.</p>
 								</div>
 								<div class="text-box">
 									<b>Mechanical</b>
