@@ -30,7 +30,6 @@
 					<li><a href="./about.html">About</a></li>
 					<li><a href="./projects.html">Projects</a></li>
 					<li><a href="./blog.html">Blog</a></li>
-					<li><a href="./resume.html">Resume</a></li>
 				</ul>
 			</nav>
 			<hr>
@@ -40,80 +39,31 @@
 			</div>
 		</header>
 		<main>
-			<h2>Blog</h2>
-			<hr>
-			<header class="filter_header">
-				<div class="filters">
-					<ul>
-						<li><a data-filter=".all" href="#">All</a></li>
-						<li><a data-filter=".eng" href="#">Engineering</a></li>
-						<li><a data-filter=".life" href="#">Life</a></li>
-						<li><a data-filter=".misc" href="#">Misc</a></li>
-					</ul>
-				</div>
-			</header>
+			<div class="wrapper">
+				<h2>Blog</h2>
+				<hr>
+				<ul class="blog-list">
+					<!--Post #-->
+					<!--
+					<li>
+						<h2 class="blog-link">Title</h2>
+						<h3 class="blog-date">Date, Year</h3>
 
-			
-
-			<div class="cards_container">
-				<!-- FORMAT 
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/*** picture ***" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">*** title ***</h3>
-							<p class="date">** date mm/dd/yy ***</p>
-						</figcaption>
-
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
-							<div class="portfolio-header">
-								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">*** title ***</h2>
-									<p class="portfolio-subtitle">*** subtitle ***</p>
-								</div>
-							</div>
-							<div class="portfolio-content">
-								<div class="text-box">
-									<p>*** normal text ***</p>
-								</div>
-								<div class="text-box">
-									<b>*** bold text ***</b>
-								</div>
-								<div class="image-box">
-										<img class="center-picture sixty-per" src="./assets/*** picture ***">
-								</div>
-								<div class="multiple-pictures">
-									<div class="image-box">
-										<img class="center-picture sixty-per" src="./assets/*** picture 1 ***">
-									</div>
-									<div class="image-box">
-										<img class="center-picture sixty-per" src="./assets/*** picture 2 ***">
-									</div>
-									<div class="image-box">
-										<img class="center-picture sixty-per" src="./assets/*** picture 3 ***">
-									</div>
-								</div>
-							</div>
+							
 						</div>
-					</a>
-				</figure>
-				-->
-				<!-- CARD 21-->
-				<!-- CARD 20-->
-				<!-- CARD 19-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/RUF Logo 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">RÜF</h3>
-							<p class="date">10/03/22</p>
-						</figcaption>
+					</li>
+					-->
 
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 20-->
+					<li>
+						<h2 class="blog-link">RÜF</h2>
+						<h3 class="blog-date">Oct 3, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -122,7 +72,7 @@
 									<p class="portfolio-subtitle">A reflection on a failed venture</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>RÜF is a project that myself and one of my closest friends Ethan Childerhose (of the well known bigcrete.engineering) worked on as part of an entrepreneurship course. The course, BET300 under the Conrad school of business, required a venture to be conceptualized and developed over 4 months. Ethan already had this idea to automate the roofing process and we couldn’t poke any holes in it at the time, so we went through with it.</p>
 								</div>
@@ -176,21 +126,19 @@
 								<div class="text-box">
 									<p>If you are able to break one of these four statements, you may have a golden ticket, or so I believe. The problem with our team was that we couldn’t find any passion for working on the “un-sexy” problem, and losing the Concept 5k was the last blow.</p>
 								</div>
+								<div class="text-box">
+									<p>Edit: A friend of mine recently told me to check out <a target="_blank" href="https://www.renovaterobotics.com/">Renovate Robotics</a> who seems to have just launched with a very similar system/vision as us. It’s always really cool to see competition because it means you’re solving the right problems - all the best.</p>
+								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 18-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Knowledge Accumulation 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">My 2 Cents</h3>
-							<p class="date">09/16/22</p>
-						</figcaption>
+					</li>
 
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 19-->
+					<li>
+						<h2 class="blog-link">My 2 Cents</h2>
+						<h3 class="blog-date">Sep 16, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -199,7 +147,7 @@
 									<p class="portfolio-subtitle">On getting, choosing, and maintaining internships</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>I’ve been around the block. I get the same questions from people over and over. I hope to answer the common ones here, and provide some of my advice.</p>
 								</div>
@@ -283,19 +231,26 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 17-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/AI art 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Battle of the AI Art</h3>
-							<p class="date">08/25/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 18-->
+					<li>
+						<h2 class="blog-link">Beautiful Functionality</h2>
+						<h3 class="blog-date">Apr 23, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
+								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
+							</button>
+
+						</div>
+					</li>
+
+					<!--Post 17-->
+					<li>
+						<h2 class="blog-link">Battle of the AI Art</h2>
+						<h3 class="blog-date">Aug 25, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -304,7 +259,7 @@
 									<p class="portfolio-subtitle">A comparison of DALL-E 2, Stable Diffusion, and DALL-E mini</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>With a lot of uptick lately about AI art and generation models, I thought it would be interesting to compare them using identical prompts. I originally wanted to compare DALL-E 2 and Imagen, but the former has a long waitlist and the latter won't be publically available. Instead, I found DALL-E 2 prompts and outputs online, and fed them into Stable Diffusion V1.4 and DALL-E mini/Craiyon. Keep in mind these technologies are always improving! These base Stable Diffusion settings are no where near maximum performance, and it seems to be improving every week.</p>
 								</div>
@@ -463,19 +418,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 16-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Feynman 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Educational Manifesto</h3>
-							<p class="date">07/24/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 16-->
+					<li>
+						<h2 class="blog-link">Educational Manifesto</h2>
+						<h3 class="blog-date">Jul 24, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -484,7 +434,7 @@
 									<p class="portfolio-subtitle">My rambling thoughts about the current post secondary environment</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<b>Preface</b>
 								</div>
@@ -617,19 +567,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 15-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Beautiful Functionality 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Beautiful Functionality</h3>
-							<p class="date">04/23/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 15-->
+					<li>
+						<h2 class="blog-link">Beautiful Functionality</h2>
+						<h3 class="blog-date">Apr 23, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -638,7 +583,7 @@
 									<p class="portfolio-subtitle">An exercise in balance in all things design</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>Recently at work, I've noticed something that I hadn't really thought about prior. It is a pretty well known idea that good design is beautiful and functional. But this can be represented as a gradient, as functionality is almost always a tradeoff of beauty and vice versa. There are multiple reasons for this in different applications, but in general beautiful design is simple, and functionality is often the opposite.</p>
 								</div>
@@ -674,19 +619,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 14-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Startup Cemetery 2 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Startup Cemetery 2</h3>
-							<p class="date">03/04/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 14-->
+					<li>
+						<h2 class="blog-link">Startup Cemetery pt. 2</h2>
+						<h3 class="blog-date">Mar 4, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -695,7 +635,7 @@
 									<p class="portfolio-subtitle">Some (more) ideas that I wish someone else would work on</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>This cemetery is themed for tools I want when I am designing things, and are more like individual products to solve some of my most common problems. I suppose a company could encompass all of these products, or they could be autonomous entities.</p>
 								</div>
@@ -734,19 +674,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 13-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/I Hate Cooking (320p).png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">I Hate Cooking</h3>
-							<p class="date">02/13/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 13-->
+					<li>
+						<h2 class="blog-link">I Hate Cooking</h2>
+						<h3 class="blog-date">Feb 13, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -755,7 +690,7 @@
 									<p class="portfolio-subtitle">And I wish I didn't have to think about it</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>As a university student with little free time it probably doesn’t come as a surprise to you that I have never gained the appreciation for cooking a nice meal, nevertheless becoming good at cooking. I also have a low attention span, and a need to be hyper productive. It takes 20 minutes for the rice to cook? Well you can find me back at my desk working on something - and the pot will almost surely boil over every single time.
 									</p>
@@ -775,19 +710,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 12-->
-				<figure style="cursor: pointer;" class="card life all">
-					<a class="portfolio-link">
-						<img src="./assets/Road Trip Map (320p).png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">YYZ-SFO (by car)</h3>
-							<p class="date">01/10/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 12-->
+					<li>
+						<h2 class="blog-link">YYZ-SFO (by car)</h2>
+						<h3 class="blog-date">Jan 10, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -796,7 +726,7 @@
 									<p class="portfolio-subtitle">Road trip from Mississauga to Palo Alto</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="image-box">
 									<img class="center-picture sixty-per" src="./assets/Road Trip Map.png">
 								</div>
@@ -949,28 +879,23 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 11-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Waking Up 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">I Hate Waking Up</h3>
-							<p class="date">01/03/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 11-->
+					<li>
+						<h2 class="blog-link">Waking Up</h2>
+						<h3 class="blog-date">Jan 3, 2022</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">I Hate Waking Up</h2>
+									<h2 class="portfolio-title">Waking Up</h2>
 									<p class="portfolio-subtitle">A proof for the need of a better al*rm clock</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>In a series of blog posts about product visions I have, I want to prove the need and usefulness of products using first principles. First principles might be a bit liberal - I’d call it more of a logical deduction, but that being said I think it speaks to the need for these products to solve problems.</p>
 								</div>
@@ -998,19 +923,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				<!-- CARD 10-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Startup Cemetery 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Startup Cemetery 1</h3>
-							<p class="date">12/06/21</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 10-->
+					<li>
+						<h2 class="blog-link">Startup Cemetery pt. 1</h2>
+						<h3 class="blog-date">Dec 6, 2021</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1019,7 +939,7 @@
 									<p class="portfolio-subtitle">Some ideas that I wish someone else would work on</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>The reason this list exists is that I have noticed I see a lot of startups where my first thought is: “I had that idea 2 years ago!” but I never keep the receipts. I also want to start cutting ties with old ideas to force myself into fresh ones. So here it is, free ideas that I will personally never see through, but would love to see come to life! I hope they don’t sound too insane.</p>
 								</div>
@@ -1065,32 +985,25 @@
 								<div class="text-box">
 									<p></p>
 								</div>
-
 							</div>
 						</div>
-					</a>
-				</figure>
+					</li>
 
-				<!-- CARD 9-->
-				<figure style="cursor: pointer;" class="card life all">
-					<a class="portfolio-link">
-						<img src="./assets/Summer 2021 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Summer 2021</h3>
-							<p class="date">09/05/21</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 9-->
+					<li>
+						<h2 class="blog-link">Alone in California</h2>
+						<h3 class="blog-date">Sep 5, 2021</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
 									<h2 class="portfolio-title">Summer 2021</h2>
-									<p class="portfolio-subtitle">Weekly blog of my trip to California over Summer 2021</p>
+									<p class="portfolio-subtitle">Weekly recount of my trip to California over Summer 2021</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>Part of my criteria for finding a summer internship in 2021 was that it was in person. As a generally mechanical engineering focused person, I believe it is very important to work hands on. Sadly during this time Canada was going through a strenuous time with COVID-19, with vaccine shortages, strict lockdowns and the rumoured third wave. This made it really hard to find an in person internship. Luckily, since I was now a second year student, I got a few job offers in California. I ended up accepting an offer to work at Matician, in Palo Alto. Matician is building autonomous robots to help people, something that I align with perfectly.</p>
 								</div>
@@ -1360,20 +1273,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
+					</li>
 
-				<!-- CARD 8-->
-				<figure style="cursor: pointer;" class="card life all">
-					<a class="portfolio-link">
-						<img src="./assets/2021 Reading 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">2021 Reading List</h3>
-							<p class="date">08/01/21</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 8-->
+					<li>
+						<h2 class="blog-link">2021 Reading List</h2>
+						<h3 class="blog-date">August 1, 2021</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1382,7 +1289,7 @@
 									<p class="portfolio-subtitle">What I've been reading throughout the year</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>Although it seems counter intuitive, in 2020, while I was locked up in my room, I didn’t read very many books. This led me to set a goal for 2021, to read one book a month. This seems like a pretty low number for people who regularly read, but as a busy university student who is already forced to read lots of textbooks, reading was not my favourite thing to do in my down time.</p>
 								</div>
@@ -1470,20 +1377,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-
-				<!-- CARD 7-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Bridge Final.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">UW Bridge Comp.</h3>
-							<p class="date">03/12/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+					
+					<!--Post 7-->
+					<li>
+						<h2 class="blog-link">UW Bridge Competition</h2>
+						<h3 class="blog-date">March 12, 2021</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1492,7 +1393,7 @@
 									<p class="portfolio-subtitle">My design process in a class wide bridge building competition</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>As part of my Mechanics of Deformable Solids (MODS) course we had to design and build a truss bridge using things we learned in class. This project was done in groups of 3 and was worth a significant amount of our final mark. Most of the mark was based on how your bridge performed in a competition with the rest of the class, with the success metric being the weight it held divided by the weight of the bridge.</p>
 								</div>
@@ -1540,20 +1441,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				
-				<!-- CARD 6-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Tong Cover.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">3 Day Prototype</h3>
-							<p class="date">01/05/22</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 6-->
+					<li>
+						<h2 class="blog-link">3 Day Prototype</h2>
+						<h3 class="blog-date">Jan 5, 2021</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1562,7 +1457,7 @@
 									<p class="portfolio-subtitle">A rapid prototype of smart tongs, to help with food safety</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>During the winter break I worked with 2 of my coworkers at Gastronomous to develop a prototype for an idea we had. The idea came after meeting with one of Canada’s largest restaurant brands, where they told us they have problems keeping a log of burger temperatures. We came up with a pair of “smart tongs” that could measure the internal temperature of anything you pick up with them. By doing this they can ensure that their grill is hot enough, the grill worker is cooking them thoroughly and most importantly they aren't serving undercooked food. We wanted to prototype this as soon as possible, so that we could present them to potential customers in the new year.</p>
 								</div>
@@ -1598,20 +1493,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-				
-				<!-- CARD 5-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/VenTalkCover.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">VenTalk</h3>
-							<p class="date">11/26/20</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+
+					<!--Post 5-->
+					<li>
+						<h2 class="blog-link">VenTalk</h2>
+						<h3 class="blog-date">Nov 26, 2020</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1620,7 +1509,7 @@
 									<p class="portfolio-subtitle">A project hoping to improve mental health during the pandemic, and afterwards</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>Despite coronavirus pushing hackathons entirely online, some of my highschool friends wanted to compete in a hackathon to help gain some experience. We decided to apply to Hack Western and competed in it this past weekend, winning the Telus Mental Health Award. We started out knowing that we wanted to do something related to mental health in the pandemic setting, as it is now affecting more people than ever. We asked ourselves, what is one thing that was lost due to the pandemic and that a lot of people need, and that ended up being simply talking to someone. And thus the idea for VenTalk was born, an anonymous messaging platform for people to vent, or just casually talk.</p>
 								</div>
@@ -1638,21 +1527,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
+					</li>
 
-
-				<!-- CARD 4-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Work Holding 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">CNC Work Holding</h3>
-							<p class="date">10/30/20</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 4-->
+					<li>
+						<h2 class="blog-link">CNC Work Holding</h2>
+						<h3 class="blog-date">Oct 30, 2020</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1661,7 +1543,7 @@
 									<p class="portfolio-subtitle">Better workholding for my custom CNC router</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>As the final part of my CNC project, I needed a way to secure material to the table. A common way to do this is a lever that pulls down applying a force to the workpiece. To adjust heights, the lever is placed on a “step block” that resembles a staircase. I liked this solution but I had two problems with it. First, they are generally pretty short and can’t hold work that is in the middle of a wasteboard. Second, the ends of them are usually flat, which puts a lot of force on a sharp edge which could lead to denting and more scrap. My solution for this was very simple, an arm with a round “finger”, that could better distribute the force.</p>
 								</div>
@@ -1688,20 +1570,14 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
+					</li>
 
-				<!-- CARD 3-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Bearing Cover.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Bearing Design</h3>
-							<p class="date">10/21/20</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 3-->
+					<li>
+						<h2 class="blog-link">Ball Bearing Design</h2>
+						<h3 class="blog-date">Oct 21, 2020</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
@@ -1710,7 +1586,7 @@
 									<p class="portfolio-subtitle">An excersise in designing a yoyo bearing</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="image-box">
 									<img class="center-picture sixty-per" src="./assets/Bearing Side View.png">
 								</div>
@@ -1737,29 +1613,23 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
+					</li>
 
-				<!-- CARD 2-->
-				<figure style="cursor: pointer;" class="card eng all">
-					<a class="portfolio-link">
-						<img src="./assets/Airglass 320p.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Past Projects</h3>
-							<p class="date">10/03/20</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					<!--Post 2-->
+					<li>
+						<h2 class="blog-link">Old Chords</h2>
+						<h3 class="blog-date">Oct 3, 2020</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">Past Projects</h2>
+									<h2 class="portfolio-title">Old Chords</h2>
 									<p class="portfolio-subtitle">Projects that just didn't make the cut</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="image-box">
 									<img class="center-picture thirty-per" src="./assets/Iron Man Blueprint Sketch.png">
 								</div>
@@ -1802,29 +1672,22 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-
-				<!-- CARD 1-->
-				<figure style="cursor: pointer;" class="card misc all">
-					<a class="portfolio-link">
-						<img src="./assets/Website.png" width=100% height=auto>
-						<figcaption>
-							<h3 class="post-name">Welcome</h3>
-							<p class="date">09/18/20</p>
-						</figcaption>
-						<!--Modal-->
-						<div class="portfolio-modal">
-							<button type="button" class="modal-close">
+					</li>
+					<!--Post 1-->
+					<li>
+						<h2 class="blog-link">Welcome to my Website</h2>
+						<h3 class="blog-date">Sep 18, 2020</h3>
+						<div class="blog-post">
+							<button type="button" class="blog-close">
 								<img src="./assets/close button.svg" alt="Close" style="width: 2em; height: auto;">
 							</button>
 							<div class="portfolio-header">
 								<div class="portfolio-title-box">
-									<h2 class="portfolio-title">Welcome to my website</h2>
+									<h2 class="portfolio-title">Welcome to my Website</h2>
 									<p class="portfolio-subtitle">A place to post projects, experiences, and ideas</p>
 								</div>
 							</div>
-							<div class="portfolio-content">
+							<div class="blog-content">
 								<div class="text-box">
 									<p>After applying for jobs in my 1B school term, in the summer of 2020, I realized that having an easy to access portfolio could really help me. Before this website, I would just hope that employers and recruiters would see the little “see portfolio” note on my resume. But now it's easy to provide a link to my website where people can see my experience, projects and well, this blog.</p>
 								</div>
@@ -1839,10 +1702,8 @@
 								</div>
 							</div>
 						</div>
-					</a>
-				</figure>
-
-
+					</li>
+				</ul>
 			</div>
 		</main>
 		<footer>
@@ -1855,26 +1716,19 @@
 		</footer>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-		
-		<script type="text/javascript">
-			$(".cards_container").isotope({
-				itemSelector: '.card',
-				layoutMode: 'fitRows'
-			});
+		<script>
+			const triggers = document.getElementsByClassName("blog-link");
+			const triggerArray = Array.from(triggers).entries();
+			const modals = document.getElementsByClassName("blog-post");
+			const closeButtons = document.getElementsByClassName("blog-close");
 
-			$(".filters ul li a").click(function(){
-				$(".filters ul li a").removeClass("active");
-				$(this).addClass("active");
-
-				var selector = $(this).attr("data-filter")
-
-				$(".cards_container").isotope({
-					filter: selector
-				});
-				return false
-			});
+			for (let [index, trigger] of triggerArray) {
+				const toggleModal = () => {
+					modals[index].classList.toggle("show-modal");
+				};
+				trigger.addEventListener("click", toggleModal);
+				closeButtons[index].addEventListener("click", toggleModal);
+			}
 		</script>
-		<script src="../js/modal.js"></script>
 	</body>
 </html>
