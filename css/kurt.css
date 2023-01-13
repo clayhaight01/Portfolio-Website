@@ -517,7 +517,9 @@ main {
     .text-box {
         margin: 0 2em 1em;
         font-size: 14px;
-
+    }
+    .multiple-pictures {
+        padding: 0 2em;
     }
     .tech_row {
         flex-direction: column;
