@@ -73,11 +73,14 @@
 								</div>
 							</div>
 							<div class="portfolio-content">
+								<div class="image-box">
+									<img class="portfolio-full-width" src="./assets/TB_side_render.png">
+								</div>
 								<div class="text-box">
-									<p>My second term of junior year had what was probably my favorite course thus far, MTE 380. Why is that? Because of how open ended and challenging it was. I’ve written about this before on my <a href="./blog.html">blog</a> - but I think courses should strive to be more like this one. The rundown of the syllabus was teams of 3 - 6 will compete to complete a robotics challenge that will be announced in the second week. Your mark of the course is highly dependent on your competition score, which is calculated as:</p>
+									<p>My second term of junior year had what was probably my favorite course thus far, MTE 380. Why is that? Because of how open ended and challenging it was. I’ve written about this before on my blog - but I think courses should strive to be more like this one. The rundown of the syllabus was teams of 3 - 6 will compete to complete a robotics challenge that will be announced in the second week. Your mark of the course is highly dependent on your competition score, which is calculated as:</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_perf_score.png">
+									<img class="center-picture twenty-five-per" src="./assets/TB_perf_score.png">
 								</div>
 								<div class="text-box">
 									<b>The Challenge</b>
@@ -86,14 +89,13 @@
 									<p>Essentially the field is two 8ft x 8ft areas separated by a 3ft tall wall. The goal is to start on one side, and navigate towards a red pole on the other side of the field, requiring some method of crossing the wall. Part of the wall is made out of steel sheet metal, encouraging some sort of magnetic solution. Another part of the wall has a ramp up and down. It's worth noting that controlled flight is not allowed, and that you are allowed to leave behind parts as you go.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_field_dimensioned.png">
+									<img class="center-picture sixty-per" src="./assets/TB_field_dimensioned.png">
 								</div>
 								<div class="text-box">
-									<p>Off the bat, our team noticed that it’s obvious that the priority of optimization should be:
-										1. Reduce time to complete
-										2. Reduce mass
-									And that there is a tradeoff in score you can calculate between the two, since they are related by square law. For example, if some upgrade doubles the mass, but saves ⅓ of the time to complete the course this is justified because:
-										</p>
+									<p>Off the bat, our team noticed that it’s obvious that the priority of optimization should be:<br>
+										1. Reduce time to complete<br>
+										2. Reduce mass<br>
+									And that there is a tradeoff in score you can calculate between the two, since they are related by square law. For example, if some upgrade doubles the mass, but saves ⅓ of the time to complete the course this is justified because:</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/TB_tradeoff.png">
@@ -128,14 +130,14 @@
 								<div class="text-box">
 									<p>To reduce force, the impact time needs to be maximized, the mass needs to be reduced, and the impact velocity needs to be reduced. To increase impact time, we can look at the equation for the period of a spring which is based on spring stiffness and mass (assuming the crush structure acts like a spring). These are all knobs we control!</p>
 									<div class="text-box" style="margin-left: 0; margin-right: 0;">
-										<li class="white">Cut mass by reusing structures as much as possible, cutting out anything that isn’t necessary, and making the robot as small as physically possible</li>
-										<li class="white">Reduce impact velocity by tuning our parabolic arc such that the peak height is as low as possible (amongst other things to reduce energy)</li>
-										<li class="white">Maximize impact time by using materials that deform and crumple on impact, absorbing energy</li>
+										<li class="text-box-bullet">Cut mass by reusing structures as much as possible, cutting out anything that isn’t necessary, and making the robot as small as physically possible</li>
+										<li class="text-box-bullet">Reduce impact velocity by tuning our parabolic arc such that the peak height is as low as possible (amongst other things to reduce energy)</li>
+										<li class="text-box-bullet">Maximize impact time by using materials that deform and crumple on impact, absorbing energy</li>
 									</div>
 									<p>As you may have noticed, we now have even more incentive to make the robot light! We get points through the competition, and it reduces impact on the robot - a win win. This reduces the optimization problem and lets us hyper focus on making it as lightweight as possible.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_states.png">
+									<img class="center-picture sixty-per" src="./assets/TB_states.png">
 								</div>
 								<div class="text-box">
 									<b>Robot Design</b>
@@ -159,13 +161,13 @@
 									<p>To make the structure as light as possible, we made the risky decision of using the main PCB as a structural member, sandwiching the motors and sensors between it and an identically sized dummy PCB. PCBs are manufactured out of FR4, or glass fiber, and are surprisingly stiff. We tested this idea by drop testing an old Raspberry Pi strapped to a 150g weight onto concrete from roughly the same height as the robot - none of the components broke off or were electrically damaged, and it still booted. The motors are clamped between the two PCBs, centered for rotational symmetry. The TOF is soldered at a 90 degree angle, facing forwards but braced by both PCBs. Both motors have integrated encoders that slot downwards through holes in the bottom board. Finally, the batteries are positioned at the back of the electronics sandwich, where they are as safe as possible from impact because of a tail that protrudes out of the back. There is almost no space left in the completed robot, things are packaged together as tightly as possible without sacrificing DFA or repairability.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_layout1.png">
+									<img class="center-picture fifty-per" src="./assets/TB_layout1.png">
 								</div>
 								<div class="text-box">
 									<p>The gearbox output shaft is only supported by two tiny plain bearings, and from reliability testing at a previous internship I've seen first hand how they slowly wear down into slots, destroying the gears in the process. To reduce this, the motors are pressed into a custom machined bearing block made out of 7075 aluminum. The fit is tight, and even though the shaft is only supported by the one ball bearing, when loaded right it can take a majority of the force. In an attempt to do just that, the wheels are curved inwards such that the contact patch is inline with the bearing - this however does not help as much when the robot hits the ground at an angle. Many people thought it was strange I used aluminum for this part instead of plastic since we were so focused on reducing weight. Well in a prototype made for drop testing this part was plastic - and it was the first point of failure. In addition, having a proper reamed hole for a bearing press fit is also important for bearing life. On top of this if you think about the motor mount as a spring in parallel with the brass gearbox plate, in order for the bearing to take a significant portion of the load the motor mount needs to have a high relative stiffness compared to the gearbox plate. Brass is very stiff, around 40% stiffer than 6061 and 30% stiffer than 7075. There are more complexities to this argument including the tolerance stackup of all these parts, but it’s beyond the scope of this post.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_motor_mount.png">
+									<img class="center-picture thirty-per" src="./assets/TB_motor_mount.png">
 								</div>
 								<div class="text-box">
 									<p>The next part to be designed was the wheel and in turn the wheel hub. The wheel hub is another tiny machined piece of aluminum that interfaces with the gearbox D shaft, and locks onto the wheels with two keyed cuts. Two tapped holes accept set screws that reduce the hertzian contact stresses significantly compared to a typical single set screw design.</p>
@@ -179,14 +181,14 @@
 								<div class="text-box">
 									<p>In order to test some of the crazy wheel ideas I had, I needed a way to measure the impact. To do this, I made a mass dummy that had a similar mass and COG to the revision of the robot at the time. I rigidly secured an IMU on the mass dummy to log impacts so that I could quantitatively measure the performance of various wheels. Near the end of the project I had a perfect replica of the robot with no electronics, but identical mass, COG, and moments of inertia. An example drop with a super early version of the wheels is shown below with the acceleration plot below it.</p>
 								</div>
-								<div class="image-box">
+								<div class="image-box" style="margin-bottom: 0;">
 									<img class="center-picture forty-per" src="./assets/TB_impact_testing.gif">
 								</div>
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/TB_impact_testing.png">
 								</div>
 								<div class="text-box">
-									<p>I figured this problem has probably been solved before, so did a bunch of research on crush structures, shock absorbing wheels, and rugged robots. I found a company called Recon Robotics that actually makes a robot called ThrowBot (we came up with our name and rough design before finding the company funnily enough) and there were some pretty good pictures of the wheels (left) that I could copy and test. There was also a cool wheel design (right) on the Boston Dynamics Flea robot from 2012, I feel like it doesn’t get enough credit - it's super <a href="https://www.youtube.com/watch?v=6b4ZZQkcNEo&ab_channel=BostonDynamics">cool</a>!</p>
+									<p>I figured this problem has probably been solved before, so did a bunch of research on crush structures, shock absorbing wheels, and rugged robots. I found a company called Recon Robotics that actually makes a robot called ThrowBot (we came up with our name and rough design before finding the company funnily enough) and there were some pretty good pictures of the wheels (left) that I could copy and test. There was also a cool wheel design (right) on the Boston Dynamics Flea robot from 2012, I feel like it doesn’t get enough credit - it's super cool!</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -197,22 +199,22 @@
 								<div class="text-box">
 									<p>I made 6 different iterations of the Recon Robotics wheel design but found inconsistent results, none of which were particularly good. The drop test shown earlier was the first iteration of these wheels. The wheel has straight radial spokes which crush in unpredictable ways, meaning depending on how it lands the stiffness can change. After testing one iteration of the Boston Dynamics wheel it was clear that I wouldn’t be able to make it flexible enough with the filament I had available.</p>
 								</div>
-								<div class="text-bo;x">
+								<div class="text-box">
 									<p>So I decided to try and beat both of these results. Obviously this is a different use case and manufacturing method for these wheels, and I never expected the other designs to be optimal. One thing that was obvious to me was that the stiffness should be radially consistent, meaning no matter where you land on the wheel it shouldn’t change too much. Also, the spokes should crumple in a repeatable and controlled way. The design that comes to mind is sort of like leaf spring suspension, patterned radially. By pre-buckling the spokes, they compress in a predictable way. I played around with curvature, spoke count, and thickness over 8 different iterations to hone in a stiffness I was happy with.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_wheel_iter_1.jpg">
+									<img class="center-picture eighty-per" src="./assets/TB_wheel_iter_1.jpg">
 								</div>
 								<div class="text-box">
 									<p>I already talked about how the wheels curve inwards such that the contact point is inline with the bearings, but let's talk about the rest of the front profile. Originally I had curved the outside of the wheel so that if the robot landed on the side of the wheel, it would tip over automatically. In practice though, there was nothing to absorb shock for a side impact. To solve this, I curved the spokes back outwards into a spike reminiscent of a Roman Chariot. The spike was constrained to a certain shape to ensure the COG of the robot was always outside of the support polygon formed by the wheel and the spike. It also had to be designed such that its stiffness was similar to the wheels. This took 3 iterations to get right, with the final design only using every other spoke in the spike (which can be seen upon close inspection of the picture below).</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_wheel_iter_2.jpg">
+									<img class="center-picture eighty-per" src="./assets/TB_wheel_iter_2.jpg">
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="./assets/TB_wheel_final_render.png">
-										<img class="center-picture" src="./assets/TB_wheel_final.jpg">
+										<img class="center-picture thirty-per" src="./assets/TB_wheel_final_render.png">
+										<img class="center-picture thirty-per" src="./assets/TB_wheel_final.jpg">
 									</div>
 								</div>
 								<div class="text-box">
@@ -226,8 +228,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="./assets/TB_enclosure_back.png">
-										<img class="center-picture" src="./assets/TB_enclosure_front.png">
+										<img class="center-picture thirty-per" src="./assets/TB_enclosure_back.png">
+										<img class="center-picture thirty-per" src="./assets/TB_enclosure_front.png">
 									</div>
 								</div>
 								<div class="text-box">
@@ -247,8 +249,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="./assets/TB_launcher_clamps.JPG">
-										<img class="center-picture" src="./assets/TB_launcher_epoxy.jpg">
+										<img class="center-picture thirty-per" src="./assets/TB_launcher_clamps.JPG">
+										<img class="center-picture thirty-per" src="./assets/TB_launcher_epoxy.jpg">
 									</div>
 								</div>
 								<div class="text-box">
@@ -266,14 +268,14 @@
 								<div class="image-box">
 									<div class="multiple-pictures">
 										<img class="center-picture" src="./assets/TB_launcher_iso_real.png">
-										<img class="center-picture" src="./assets/TB_launcher_iso_render.png">
+										<img class="center-picture forty-per" src="./assets/TB_launcher_iso_render.png">
 									</div>
 								</div>
 								<div class="text-box">
 									<p>The final weight of the launcher was 270 grams bringing the total combined weight to 120 grams.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_CF_launcher.gif">
+									<img class="center-picture sixty-per" src="./assets/TB_CF_launcher.gif">
 								</div>
 								<div class="text-box">
 									<b>Electronics</b>
@@ -288,13 +290,13 @@
 									<p>A rough outline of the electronics diagram is below. Essentially it's a ToF sensor and IMU sensor on an I2C bus, and then 2 ABN encoders that connect to interrupt lines on the Artemis. Motor control is handled by two H bridge drivers from TI. In terms of power there's a 3.3V buck converter, and a power led inline with a button, intended to reduce the 20mA constant power draw.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_electronics_diagram.png">
+									<img class="center-picture sixty-per" src="./assets/TB_electronics_diagram.png">
 								</div>
 								<div class="text-box">
 									<p>The biggest set back our project had was with the integrated encoders on the motors we selected. As mentioned previously I had selected these N20 gear motors, and two brands sell them with integrated hall effect sensors and a diametrically magnetized disc magnet. Those two brands are Pololu (a very reputable brand) and DFRobot (a not so reputable brand) but hey they looked identical and the DFRobot ones were 5X cheaper all things considered. Our first PCB lasted a good month of testing and programming, and only died when we had an accidental short. This led us to order the parts for a second one, which seemed to slowly lose functionality as it was turned on. First the ToF died, then the IMU, then the encoder signals and finally the Artemis wouldn’t communicate at all. With 2 weeks left before the competition, still not knowing what went wrong with the robot, we ordered parts for 3 more just to be sure. The next one we built lasted a total of 1 hour before drawing the current limit from the power supply. By progressively removing components we came to the conclusion that it must be the buck converter, and swapped it out for a linear regulator. After 10 minutes it was drawing the current limit yet again. After disassembling all components and unit testing them, we noticed that the hall effects on the motor encoders did not match, and a couple of which we couldn’t even find on Google. It appears that DFRobot just randomly picks 1 of 3 hall effect options when making these encoders, and on most of our motors they burnt out and shorted the 3.3V rail after some run time. So on the 4th board, 2 days before competition, we wired everything except for the encoder wires. This meant ditching any sort of path planning or straight driving algorithms. Putting more load on our software team this late in the project was asking a lot, but they pulled it off by using the ToF depth image to steer towards the pole, regardless of motor speeds. This PCB worked fine for the rest of the competition, and we still had a backup. Don’t ask about the budget.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_graveyard.jpg">
+									<img class="center-picture fifty-per" src="./assets/TB_graveyard.jpg">
 								</div>
 								<div class="text-box">
 									<b>Software</b>
@@ -313,13 +315,13 @@
 									<p>At this point the robot takes a depth image, we lengthened the exposure period to maximize range so this takes around half a second. The depth image might look something like below.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_depth.png">
+									<img class="center-picture sixty-per" src="./assets/TB_depth.png">
 								</div>
 								<div class="text-box">
 									<p>Once we have the image, we compute a convolution with a filter developed by Stephen. The convolution is optimized to look for a pole, and output a distribution that “points” to it. If the output of the convolution doesn’t show a high confidence of a pole, the program continues.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/TB_conv_example.png">
+									<img class="center-picture sixty-per" src="./assets/TB_conv_example.png">
 								</div>
 								<div class="text-box">
 									<p>The robot will turn by 45 degrees (the FOV of the sensor) and repeat this process until it’s done a full 360 degrees. At that point it turns randomly and drives forwards a meter, hoping to get within range of the sensor. As mentioned at the beginning of this post, the “4m range” was only in a dark room with a white target. In reality we were competing in a bright classroom and searching for a red pole. With default firmware settings, range was around 0.9m, but after a longer exposure period and looser confidence intervals we boosted it to around 1.5m.</p>
@@ -338,8 +340,8 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="./assets/TB_PI.png">
-										<img class="center-picture" src="./assets/TB_PI_3_years.png">
+										<img class="center-picture forty-per" src="./assets/TB_PI.png">
+										<img class="center-picture forty-per" src="./assets/TB_PI_3_years.png">
 									</div>
 								</div>
 								<div class="text-box">
@@ -347,19 +349,12 @@
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
-										<img class="center-picture" src="./assets/TB_7th_floor.gif">
-										<img class="center-picture" src="./assets/TB_missing_teeth.jpg">
+										<img class="center-picture forty-per" src="./assets/TB_7th_floor.gif">
+										<img class="center-picture" style="width: 34%" src="./assets/TB_missing_teeth.jpg">
 									</div>
 								</div>
 								<div class="text-box">
 									<p>At face value this was just a competition amongst our classmates, and for many it was just doing what was required of them to pass the course. But I don’t know if I’ve ever had a robotics project with such complexity come down to such a tight deadline. I also think we got very close to the optimal design, that being said I am super curious to see what future teams do to beat our score.</p>
-								</div>
-
-								<div class="image-box">
-									<div class="multiple-pictures">
-										<img class="center-picture" src="./assets/Bracket Bot Spoke FEA.png">
-										<img class="center-picture" src="./assets/Bracket Bot Prusa.png">
-									</div>
 								</div>
 							</div>
 						</div>

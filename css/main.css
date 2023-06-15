@@ -297,6 +297,17 @@ a:hover {
     width: 100%;
 }
 
+.text-box li {
+    padding-left: 1em;
+    text-indent: -1em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-family:'Helvetica', 'Arial';
+    font-size: 1.25em;
+    line-height: 1.25em;
+    color: #363636;
+}
+
 .image-box {
     margin-block-start: 0px;
     margin-block-end: 0px;
@@ -358,6 +369,10 @@ a:hover {
 
 .forty-per {
     width: 45%;
+}
+
+.fifty-per {
+    width: 50%;
 }
 
 .sixty-per {
@@ -606,14 +621,9 @@ figcaption {
     margin-top: 1em;
 }
 
-.multiple-pictures:first-child {
-    margin-top: 1em;
-}
-
 .portfolio-full-width {
-    width: 100vw;
+    width: 100%;
     max-width: initial;
-    margin: 0 calc(50% - 50vw);
     object-fit: cover;
 }
 
@@ -786,7 +796,7 @@ button:focus {
         flex-direction: column;
     }
     .center-picture {
-        width: 100%;
+        width: 100% !important;
     }
     .exception {
         margin-bottom: 1em;
