@@ -846,6 +846,9 @@ button:focus {
     a p {
         font-size: 1em;
     }
+    .text-box li {
+        font-size: 1em;
+    }
     .portfolio-title {
         font-size: 1.5em;
     }
