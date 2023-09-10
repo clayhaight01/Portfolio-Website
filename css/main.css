@@ -962,12 +962,13 @@ button:focus {
         align-items: flex-start;
         margin-left: 16px;
         margin-right: 0;
-        width: calc(84vw - 58px - 16px);
+        width: calc(84vw - 58px - 16px - 16px);
         height: 58px;
     }
     .timeline-blurb {
         order: 3;
         width: auto;
+        margin-top: 8px;
         margin-left: calc(58px + 16px);
     }
 }
