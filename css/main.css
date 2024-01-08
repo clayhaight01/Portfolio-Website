@@ -227,6 +227,81 @@ a:hover {
     text-decoration: underline;
 }
 
+.timeline {
+    max-width: 1080px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-entries {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-bar {
+    position: absolute;
+    width: 5px;
+    background: linear-gradient(#79d4ab, #55abdd);
+    top: 143px;
+    bottom: 69px;
+    left: 50%;
+    transform: translate(-100%, 0);
+    border-radius: 15px;
+}
+
+.timeline-entry {
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.timeline-img {
+    order: 2;
+    position: relative;
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 96px;
+    object-fit: cover;
+    z-index: 999;
+}
+
+.timeline-dot {
+    order: 2;
+    position: relative;
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 32px;
+    margin: 32px;
+    object-fit: cover;
+    z-index: 999;
+}
+
+.timeline-blurb {
+    order: 3;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 0 0 1em 1em;
+    font-weight: 300;
+    display: inline-block;
+    width: calc(1080px - 106px / 2);
+}
+
+.timeline-details {
+    order: 1;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin: 0 1em 0 0;
+    font-weight: 300;
+    width: calc(1080px - 106px / 2);
+    height: 106px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
 .about-blurb {
     margin-top: 2em;
     display: flex;
@@ -860,9 +935,44 @@ button:focus {
         padding: 1em 0em 1em 3em;
     }
     body {
-        padding-bottom: 91px;
+        padding-bottom: 111px;
+    }
+
+}
+@media (max-width: calc(1080px + 16vw)) {
+    .timeline-bar {
+        left: calc(29px + 8vw);
+        transform: translate(-50%, 0);
+        bottom: 131px;
+    }
+    .timeline-entry {
+        flex-wrap: wrap;
+    }
+    .timeline-img {
+        order: 1;
+        width: 48px;
+    }
+    .timeline-dot {
+        order: 1;
+        width: 16px;
+        margin: 16px;
+    }
+    .timeline-details {
+        order: 2;
+        align-items: flex-start;
+        margin-left: 16px;
+        margin-right: 0;
+        width: calc(84vw - 58px - 16px - 16px);
+        height: 58px;
+    }
+    .timeline-blurb {
+        order: 3;
+        width: auto;
+        margin-top: 8px;
+        margin-left: calc(58px + 16px);
     }
 }
+
 
 @media (max-width: 420px) {
     .skill-level {
