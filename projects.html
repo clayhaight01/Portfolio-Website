@@ -591,6 +591,69 @@
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/Bracket Bot Balancing.gif">
 								</div>
+								<div class="text-box">
+									<b>Revival</b>
+								</div>
+								<div class="text-box">
+									<p>At the start of 3B after our 4 month co-op term when it was time to move in, Ethan brought Bracket Bot with him - partially as a joke. Leaving a robot in the living room of an apartment of engineers is like dangling a carrot in front of a donkey. I wanted to update this post with the work we did because we probably put in 5 times more energy into the project than the previous semester.</p>
+								</div>
+								<div class="text-box">
+									<p>This time we happened to have an ODrive V3.6, which was a suitable replacement for the Trinamics. ODrive is (or was) an open source BLDC motor controller project by hobbyists for hobbyists. The new ODrive controllers are closed source and much more expensive sadly, but there is a huge community for the older V3 generation which are completely open source. In a single night we got the motors working with the ODrive, something that took weeks with Trinamic drivers.</p>
+								</div>
+								<div class="text-box">
+									<b>Controls</b>
+								</div>
+								<div class="text-box">
+									<p>We decided that our cascaded PID approach might be too simple to get super robust balancing - something that I later found out to be incorrect but still a step in a good direction. Instead we read some more research papers and kept hearing about LQR and LQG controllers. After reading about them more and studying up on the topic we decided it would be a good thing to try. Ivan became the relevant expert and wrote a simple balancing script in python using pitch angle, pitch rate, wheel position, and wheel velocity as inputs and a wheel torque as a single output. In order for LQR to work we needed an accurate model of our system, including moments of inertia around the principal axis. To do this I meticulously went through each component and compared it's weight to its CAD weight, validating the CAD model.</p>
+								</div>
+								<div class="text-box">
+									<b>Software</b>
+								</div>
+								<div class="text-box">
+									<p>We started the codebase from scratch, mostly using python. We used the multiprocessing package for communicating between different processes, and boost for communicating between C and python. To run ORB-SLAM even faster, Ethan and Brian found a CUDA accelerated ORB-SLAM library and adapted it to work on our hardware. This allowed ORB-SLAM to run much faster and take up less processing power on the CPU. A video of it running on device in E7 can be seen below.</p>
+								</div>
+								<div class="image-box">
+									<video class="center-picture forty-per" src="./assets/ORBSLAM_E7.mp4">
+								</div>
+								<div class="text-box">
+									<p>We also knew we needed a lighter semantic segmentation model, so instead of using Mask2Former we used a smaller SegNet based on FCN-ResNet18. It runs close to 30fps on it's own, but about half as fast when ORB-SLAM is also running. We temporarily aggregate multiple segmentations together to get a better resolution segmentation. A raw output from the model is below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture forty-per" src="./assets/FCN_Segmentation.png">
+								</div>
+								<div class="text-box">
+									<p>As mentioned before, the plan was to extract the floor plane from SLAM and then project the floor segmentation onto it - this never really worked before but Ivan and I finally got it working cohesively. The projections can be merged together to make a map of sorts (which ends up looking a lot less intuitive than you may think because of lighting - Google Maps is so much more impressive to me now).</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture forty-per" src="./assets/Floor_Projections.png">
+								</div>
+								<div class="text-box">
+									<p>Although the goal was to be completely autonomous, we really wanted a way to pre-program paths. We could even design driving lanes through the university buildings that the robots could stick to. I build a simple tool to draw cubic splines onto maps, it exports waypoints that include acceleration and velocity considerations. Using it on an example map of our apartment can be seen in the image below.</p>
+								</div>
+								<div class="image-box">
+									<img class="center-picture forty-per" src="./assets/Path_Tool.png">
+								</div>
+								<div class="text-box">
+									<p>Finally, after a lot of work combining everything, we tried executing the pre-planned paths on the robot. Our apartment was super cluttered so the robot barely fit to begin with, but it did manage to circle our kitchen island.</p>
+								</div>
+								<div class="image-box">
+									<video class="center-picture forty-per" src="./assets/Bracket_Bot_Drive.mp4">
+								</div>
+								<div class="text-box">
+									<b>COMMA HACK 4</b>
+								</div>
+								<div class="text-box">
+									<p>I happened to meet George at a party in SF, and had to show him Bracket Bot. He thought it was super funny and mentioned how serious they are about robotics at comma - a few months later we got invited to COMMA HACK 4. The hackathon was 48 hours in San Diego, with the main challenge of driving through their office hallways autonomously using a comma body, to a finishing point just outside. I ended up doing two hacks, the first was attaching a custom telescopic arm and suction cup to the comma body to give it beer fetching abilities. Doing hardware at a 48 hour hackathon is a bad idea, right after getting it to work we burnt out a lot of the electronics. The second was solving the autonomous driving challenge with Ivan. We really wanted to take an end to end approach, similar to comma. Building a software stack like what we used on Bracket Bot just wouldn’t cut it, plus I think we learned that more holistic approaches tend to win out in the end. End to end usually would take a ton of data, but we planned to overfit on purpose. We planned on training a model that took in an image from the camera, and output 3 values representing turn left, go straight, and turn right probability. To gather a ton of data quickly, we literally carried the robot around the path while recording video. To capture a ton of out of distribution data we purposefully collected correction data - we would angle the robot to the left to collect “turn right” data - same with the other side. We would then take the model output, and combine the 3 numbers into 2 wheel velocities, allowing us to interpolate between uncertainties.</p>
+								</div>
+								<div class="image-box">
+									<div class="multiple-pictures">
+										<img class="center-picture thirty-per" src="./assets/Mechanic_Ted.jpg">
+										<img class="center-picture fifty-per" src="./assets/PrimeArm.gif">
+									</div>
+								</div>
+								<div class="text-box">
+									<p>This technique worked shockingly well, in areas it was bad we would just collect more data. It started to break at competition time when the sun was coming through the windows, but we just collected more data. We also had a heuristic that would get it unstuck (since when either wheel hit a wall it would just swing into the wall and get stuck). If a wheel was stuck for more than 2 seconds we would simply back up and turn a bit in the opposite way. If you want to watch our demo, the hackathon was live streamed here: https://www.youtube.com/watch?v=VT-i3yRsX2s</p>
+								</div>
 							</div>
 						</div>
 					</a>
