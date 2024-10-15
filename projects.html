@@ -19,23 +19,23 @@
 		<link rel="stylesheet" type="text/css" href="./css/main.css">
 		<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<header class="top_header">
+		<header>
 			<nav>
-				<ul class="nav_list">
-					<li><a href="./index.html">Home</a></li>
-					<li><a href="./about.html">About</a></li>
-					<li><a href="./projects.html">Projects</a></li>
-					<li><a href="./blog.html">Blog</a></li>
-				</ul>
+				<a href="./index.html">Home</a>
+				<a href="./about.html">About</a>
+				<a href="./projects.html">Projects</a>
+				<a href="./blog.html">Blog</a>
 			</nav>
 			<hr>
-			<div class="bottom_nav_condensed">
-				<h1 class="condensed_name">Clayton <b>Haight</b></h1>
-				<p class="location">ON | <b>CA</b></p>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
 			</div>
 		</header>
 		<main>
@@ -78,7 +78,7 @@
 									<img class="portfolio-full-width" src="./assets/TB_side_render.png">
 								</div>
 								<div class="text-box">
-									<p>My second term of junior year had what was probably my favorite course thus far, MTE 380. Why is that? Because of how open ended and challenging it was. I’ve written about this before on my blog - but I think courses should strive to be more like this one. The rundown of the syllabus was teams of 3 - 6 will compete to complete a robotics challenge that will be announced in the second week. Your mark of the course is highly dependent on your competition score, which is calculated as:</p>
+									<p>My second term of junior year had what was probably my favorite course thus far, MTE 380. Why is that? Because of how open ended and challenging it was. I've written about this before on my blog - but I think courses should strive to be more like this one. The rundown of the syllabus was teams of 3 - 6 will compete to complete a robotics challenge that will be announced in the second week. Your mark of the course is highly dependent on your competition score, which is calculated as:</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture twenty-five-per" src="./assets/TB_perf_score.png">
@@ -93,7 +93,7 @@
 									<img class="center-picture sixty-per" src="./assets/TB_field_dimensioned.png">
 								</div>
 								<div class="text-box">
-									<p>Off the bat, our team noticed that it’s obvious that the priority of optimization should be:<br>
+									<p>Off the bat, our team noticed that it's obvious that the priority of optimization should be:<br>
 										1. Reduce time to complete<br>
 										2. Reduce mass<br>
 									And that there is a tradeoff in score you can calculate between the two, since they are related by square law. For example, if some upgrade doubles the mass, but saves ⅓ of the time to complete the course this is justified because:</p>
@@ -120,7 +120,7 @@
 									<b>Preliminary Design</b>
 								</div>
 								<div class="text-box">
-									<p>I want to talk about perception and sensing before the rest of the robot, since we made a decision that fundamentally altered the entire robot design. A big problem with the launching design was not knowing where you were going to land, meaning that the search space for the pole is probabilistically larger than the other two methods (where you roughly know where your robot is in the field, and can more easily go to some location to start your pole search). To counter this, we looked at long distance range sensors that could see the full field. I’m a big fan of the VL TOF series from STM, and they had a new offering available that claimed to do up to 4m ranging with a 8x8 depth grid (VL53L5CX). What we didn’t see early on, and what came back to bite us, was that it can only do 4m of ranging without a depth grid and in very specific lighting (realistically it was closer to 1m). A big downside was the sensor's firmware was so large it needed to be uploaded on boot over I2C from memory big enough to fit it, ruling out most Arduino Atmel based microcontrollers altogether.</p>
+									<p>I want to talk about perception and sensing before the rest of the robot, since we made a decision that fundamentally altered the entire robot design. A big problem with the launching design was not knowing where you were going to land, meaning that the search space for the pole is probabilistically larger than the other two methods (where you roughly know where your robot is in the field, and can more easily go to some location to start your pole search). To counter this, we looked at long distance range sensors that could see the full field. I'm a big fan of the VL TOF series from STM, and they had a new offering available that claimed to do up to 4m ranging with a 8x8 depth grid (VL53L5CX). What we didn't see early on, and what came back to bite us, was that it can only do 4m of ranging without a depth grid and in very specific lighting (realistically it was closer to 1m). A big downside was the sensor's firmware was so large it needed to be uploaded on boot over I2C from memory big enough to fit it, ruling out most Arduino Atmel based microcontrollers altogether.</p>
 								</div>
 								<div class="text-box">
 									<p>But by far the biggest challenge with the launching design was how to make the robot survive on impact. To do this, we need to optimize the following equation to reduce force inflicted on the robot upon landing.</p>
@@ -131,7 +131,7 @@
 								<div class="text-box">
 									<p>To reduce force, the impact time needs to be maximized, the mass needs to be reduced, and the impact velocity needs to be reduced. To increase impact time, we can look at the equation for the period of a spring which is based on spring stiffness and mass (assuming the crush structure acts like a spring). These are all knobs we control!</p>
 									<div class="text-box" style="margin-left: 0; margin-right: 0;">
-										<li class="text-box-bullet">Cut mass by reusing structures as much as possible, cutting out anything that isn’t necessary, and making the robot as small as physically possible</li>
+										<li class="text-box-bullet">Cut mass by reusing structures as much as possible, cutting out anything that isn't necessary, and making the robot as small as physically possible</li>
 										<li class="text-box-bullet">Reduce impact velocity by tuning our parabolic arc such that the peak height is as low as possible (amongst other things to reduce energy)</li>
 										<li class="text-box-bullet">Maximize impact time by using materials that deform and crumple on impact, absorbing energy</li>
 									</div>
@@ -150,13 +150,13 @@
 									<img class="center-picture forty-per" src="./assets/TB_motor_selection.png">
 								</div>
 								<div class="text-box">
-									<p>The next challenge was finding a battery, and in parallel with this determining the smallest battery possible for our power budget. To do this I worked with Ethan, our electrical lead to cut down as much power usage as possible before selecting components for the PCB. This included using a super low power microcontroller (Artemis), having the power LED be activated by a switch, running sensors in low power mode, and switching from a linear regulator to a custom buck converter. In the end, for the battery to last for five 5 minute runs, around 160mAh would be needed. At that low of an energy usage, it wasn’t the capacity that limited us, but instead the discharge rate. Since current could be up to 1.2A, and most discharge ratings of LiPo packs are 1C, we would need a 1200mAh battery.</p>
+									<p>The next challenge was finding a battery, and in parallel with this determining the smallest battery possible for our power budget. To do this I worked with Ethan, our electrical lead to cut down as much power usage as possible before selecting components for the PCB. This included using a super low power microcontroller (Artemis), having the power LED be activated by a switch, running sensors in low power mode, and switching from a linear regulator to a custom buck converter. In the end, for the battery to last for five 5 minute runs, around 160mAh would be needed. At that low of an energy usage, it wasn't the capacity that limited us, but instead the discharge rate. Since current could be up to 1.2A, and most discharge ratings of LiPo packs are 1C, we would need a 1200mAh battery.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/TB_power_budget.png">
 								</div>
 								<div class="text-box">
-									<p>It's very difficult to get batteries in Canada, a lot of suppliers like Digikey have a tiny selection in Canada, and other vendors don’t want to deal with the shipping at all. By some completely random miracle we found out that disposable vapes use rechargeable Li-Ion batteries, and they have very high discharge rates (up to 10C!). Sadly we couldn’t find a cell smaller than the 13300 (1S 400mAh) but this is still acceptable as it's only 8 grams and fairly easy to package.</p>
+									<p>It's very difficult to get batteries in Canada, a lot of suppliers like Digikey have a tiny selection in Canada, and other vendors don't want to deal with the shipping at all. By some completely random miracle we found out that disposable vapes use rechargeable Li-Ion batteries, and they have very high discharge rates (up to 10C!). Sadly we couldn't find a cell smaller than the 13300 (1S 400mAh) but this is still acceptable as it's only 8 grams and fairly easy to package.</p>
 								</div>
 								<div class="text-box">
 									<p>To make the structure as light as possible, we made the risky decision of using the main PCB as a structural member, sandwiching the motors and sensors between it and an identically sized dummy PCB. PCBs are manufactured out of FR4, or glass fiber, and are surprisingly stiff. We tested this idea by drop testing an old Raspberry Pi strapped to a 150g weight onto concrete from roughly the same height as the robot - none of the components broke off or were electrically damaged, and it still booted. The motors are clamped between the two PCBs, centered for rotational symmetry. The TOF is soldered at a 90 degree angle, facing forwards but braced by both PCBs. Both motors have integrated encoders that slot downwards through holes in the bottom board. Finally, the batteries are positioned at the back of the electronics sandwich, where they are as safe as possible from impact because of a tail that protrudes out of the back. There is almost no space left in the completed robot, things are packaged together as tightly as possible without sacrificing DFA or repairability.</p>
@@ -165,7 +165,7 @@
 									<img class="center-picture fifty-per" src="./assets/TB_layout1.png">
 								</div>
 								<div class="text-box">
-									<p>The gearbox output shaft is only supported by two tiny plain bearings, and from reliability testing at a previous internship I've seen first hand how they slowly wear down into slots, destroying the gears in the process. To reduce this, the motors are pressed into a custom machined bearing block made out of 7075 aluminum. The fit is tight, and even though the shaft is only supported by the one ball bearing, when loaded right it can take a majority of the force. In an attempt to do just that, the wheels are curved inwards such that the contact patch is inline with the bearing - this however does not help as much when the robot hits the ground at an angle. Many people thought it was strange I used aluminum for this part instead of plastic since we were so focused on reducing weight. Well in a prototype made for drop testing this part was plastic - and it was the first point of failure. In addition, having a proper reamed hole for a bearing press fit is also important for bearing life. On top of this if you think about the motor mount as a spring in parallel with the brass gearbox plate, in order for the bearing to take a significant portion of the load the motor mount needs to have a high relative stiffness compared to the gearbox plate. Brass is very stiff, around 40% stiffer than 6061 and 30% stiffer than 7075. There are more complexities to this argument including the tolerance stackup of all these parts, but it’s beyond the scope of this post.</p>
+									<p>The gearbox output shaft is only supported by two tiny plain bearings, and from reliability testing at a previous internship I've seen first hand how they slowly wear down into slots, destroying the gears in the process. To reduce this, the motors are pressed into a custom machined bearing block made out of 7075 aluminum. The fit is tight, and even though the shaft is only supported by the one ball bearing, when loaded right it can take a majority of the force. In an attempt to do just that, the wheels are curved inwards such that the contact patch is inline with the bearing - this however does not help as much when the robot hits the ground at an angle. Many people thought it was strange I used aluminum for this part instead of plastic since we were so focused on reducing weight. Well in a prototype made for drop testing this part was plastic - and it was the first point of failure. In addition, having a proper reamed hole for a bearing press fit is also important for bearing life. On top of this if you think about the motor mount as a spring in parallel with the brass gearbox plate, in order for the bearing to take a significant portion of the load the motor mount needs to have a high relative stiffness compared to the gearbox plate. Brass is very stiff, around 40% stiffer than 6061 and 30% stiffer than 7075. There are more complexities to this argument including the tolerance stackup of all these parts, but it's beyond the scope of this post.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture thirty-per" src="./assets/TB_motor_mount.png">
@@ -189,7 +189,7 @@
 									<img class="center-picture forty-per" src="./assets/TB_impact_testing.png">
 								</div>
 								<div class="text-box">
-									<p>I figured this problem has probably been solved before, so did a bunch of research on crush structures, shock absorbing wheels, and rugged robots. I found a company called Recon Robotics that actually makes a robot called ThrowBot (we came up with our name and rough design before finding the company funnily enough) and there were some pretty good pictures of the wheels (left) that I could copy and test. There was also a cool wheel design (right) on the Boston Dynamics Flea robot from 2012, I feel like it doesn’t get enough credit - it's super cool!</p>
+									<p>I figured this problem has probably been solved before, so did a bunch of research on crush structures, shock absorbing wheels, and rugged robots. I found a company called Recon Robotics that actually makes a robot called ThrowBot (we came up with our name and rough design before finding the company funnily enough) and there were some pretty good pictures of the wheels (left) that I could copy and test. There was also a cool wheel design (right) on the Boston Dynamics Flea robot from 2012, I feel like it doesn't get enough credit - it's super cool!</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -198,10 +198,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>I made 6 different iterations of the Recon Robotics wheel design but found inconsistent results, none of which were particularly good. The drop test shown earlier was the first iteration of these wheels. The wheel has straight radial spokes which crush in unpredictable ways, meaning depending on how it lands the stiffness can change. After testing one iteration of the Boston Dynamics wheel it was clear that I wouldn’t be able to make it flexible enough with the filament I had available.</p>
-								</div>
-								<div class="text-box">
-									<p>So I decided to try and beat both of these results. Obviously this is a different use case and manufacturing method for these wheels, and I never expected the other designs to be optimal. One thing that was obvious to me was that the stiffness should be radially consistent, meaning no matter where you land on the wheel it shouldn’t change too much. Also, the spokes should crumple in a repeatable and controlled way. The design that comes to mind is sort of like leaf spring suspension, patterned radially. By pre-buckling the spokes, they compress in a predictable way. I played around with curvature, spoke count, and thickness over 8 different iterations to hone in a stiffness I was happy with.</p>
+									<p>So I decided to try and beat both of these results. Obviously this is a different use case and manufacturing method for these wheels, and I never expected the other designs to be optimal. One thing that was obvious to me was that the stiffness should be radially consistent, meaning no matter where you land on the wheel it shouldn't change too much. Also, the spokes should crumple in a repeatable and controlled way. The design that comes to mind is sort of like leaf spring suspension, patterned radially. By pre-buckling the spokes, they compress in a predictable way. I played around with curvature, spoke count, and thickness over 8 different iterations to hone in a stiffness I was happy with.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture eighty-per" src="./assets/TB_wheel_iter_1.jpg">
@@ -219,7 +216,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>The tail was another critical part, and was exposed to impact by definition of its functionality. To react the torque from driving, and allow the robot to move around without just spinning out, something needs to hold the body relative to the floor. Since it needs to protrude from the safety zone the wheels provide, it also needs to be a crush structure. I went through 4 iterations of tail design, the first being curved to keep the robot body level, and then after ditching that design it ended up being straight - accepting that the robot would be at a 30 deg angle in either orientation depending on landing. Having an ambidextrous robot also means you don’t need space and time to flip the robot over if it's upside down - you can just start searching as soon as you land. The design of the crush structure was a bunch of tapered hexagonal crush structures that could both bend and buckle depending on impact. At the end of the tail is a PLA ball that reduces friction on the ground and allows the tail to be shorter, reducing mass.</p>
+									<p>The tail was another critical part, and was exposed to impact by definition of its functionality. To react the torque from driving, and allow the robot to move around without just spinning out, something needs to hold the body relative to the floor. Since it needs to protrude from the safety zone the wheels provide, it also needs to be a crush structure. I went through 4 iterations of tail design, the first being curved to keep the robot body level, and then after ditching that design it ended up being straight - accepting that the robot would be at a 30 deg angle in either orientation depending on landing. Having an ambidextrous robot also means you don't need space and time to flip the robot over if it's upside down - you can just start searching as soon as you land. The design of the crush structure was a bunch of tapered hexagonal crush structures that could both bend and buckle depending on impact. At the end of the tail is a PLA ball that reduces friction on the ground and allows the tail to be shorter, reducing mass.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/TB_curved_tail.JPG">
@@ -255,7 +252,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>I wish I could’ve found a lighter solution to the springs, but with such limited time I wanted to stick as close to the prototype as possible. The springs are held captive, and are twisted slightly to encourage them to buckle when they’re crashed into the end stop. Reducing the shock loading when the springs crash was pretty important, the part at the end shown above is stripped down for weight and is only epoxied into the tube.</p>
+									<p>I wish I could've found a lighter solution to the springs, but with such limited time I wanted to stick as close to the prototype as possible. The springs are held captive, and are twisted slightly to encourage them to buckle when they're crashed into the end stop. Reducing the shock loading when the springs crash was pretty important, the part at the end shown above is stripped down for weight and is only epoxied into the tube.</p>
 								</div>
 								<div class="text-box">
 									<p>The release mechanism was developed by my group member who made the launcher prototype. Its tapered shape allows it to take almost zero force to pull out, ideally the angle of the taper is at the slip angle (inverse tan of the coefficient of friction) but since friction is unknown it had to be guessed. A servo motor horn pulls the pin up 3 seconds after the launcher is turned on, but due to a last minute rule change we were allowed to do a manual release. That saved us all the weight of a servo, battery, arduino, and boost converter - but made the project less cool in my opinion.</p>
@@ -282,10 +279,10 @@
 									<b>Electronics</b>
 								</div>
 								<div class="text-box">
-									<p>Ethan of Big Crete Engineering and Omar handled PCB design and electronics for the project. I’ll skim over it for context.</p>
+									<p>Ethan of Big Crete Engineering and Omar handled PCB design and electronics for the project. I'll skim over it for context.</p>
 								</div>
 								<div class="text-box">
-									<p>As mentioned before we made a custom PCB to act as the robot's chassis, this was a decision mainly to package everything as tightly as possible and to reduce weight. It also coupled into the earlier decision of using the 8x8 ToF sensor (VL53L5CX) which required us to load its firmware on bootup, making us use a microcontroller more powerful than an Arduino. Arduino Uno’s Atmega328 only has 1 kilobyte of EEPROM, but the firmware for the sensor alone is 90 kilobytes. We selected an Artemis Module from Sparkfun, built on a Cortex M4-F. It’s packaged very nicely, including most of the peripheral components with an EMI shield and antenna built in. It has bluetooth connectivity, a whole megabyte of flash, and up to 96MHz clock speed (6X faster than an Arduino Uno). The only downside is the terrible soldering situation, the module is a PCB with 58 square pads broken out underneath. Some of the pads are so close they break the design rules for JLC PCB, and as it would turn out a couple of our boards were missing solder mask in tight areas. It was also difficult to tell when it fully reflowed without a CT scanner or X-Ray because all the connections were flush under the board.</p>
+									<p>As mentioned before we made a custom PCB to act as the robot's chassis, this was a decision mainly to package everything as tightly as possible and to reduce weight. It also coupled into the earlier decision of using the 8x8 ToF sensor (VL53L5CX) which required us to load its firmware on bootup, making us use a microcontroller more powerful than an Arduino. Arduino Uno's Atmega328 only has 1 kilobyte of EEPROM, but the firmware for the sensor alone is 90 kilobytes. We selected an Artemis Module from Sparkfun, built on a Cortex M4-F. It's packaged very nicely, including most of the peripheral components with an EMI shield and antenna built in. It has bluetooth connectivity, a whole megabyte of flash, and up to 96MHz clock speed (6X faster than an Arduino Uno). The only downside is the terrible soldering situation, the module is a PCB with 58 square pads broken out underneath. Some of the pads are so close they break the design rules for JLC PCB, and as it would turn out a couple of our boards were missing solder mask in tight areas. It was also difficult to tell when it fully reflowed without a CT scanner or X-Ray because all the connections were flush under the board.</p>
 								</div>
 								<div class="text-box">
 									<p>A rough outline of the electronics diagram is below. Essentially it's a ToF sensor and IMU sensor on an I2C bus, and then 2 ABN encoders that connect to interrupt lines on the Artemis. Motor control is handled by two H bridge drivers from TI. In terms of power there's a 3.3V buck converter, and a power led inline with a button, intended to reduce the 20mA constant power draw.</p>
@@ -294,7 +291,7 @@
 									<img class="center-picture sixty-per" src="./assets/TB_electronics_diagram.png">
 								</div>
 								<div class="text-box">
-									<p>The biggest set back our project had was with the integrated encoders on the motors we selected. As mentioned previously I had selected these N20 gear motors, and two brands sell them with integrated hall effect sensors and a diametrically magnetized disc magnet. Those two brands are Pololu (a very reputable brand) and DFRobot (a not so reputable brand) but hey they looked identical and the DFRobot ones were 5X cheaper all things considered. Our first PCB lasted a good month of testing and programming, and only died when we had an accidental short. This led us to order the parts for a second one, which seemed to slowly lose functionality as it was turned on. First the ToF died, then the IMU, then the encoder signals and finally the Artemis wouldn’t communicate at all. With 2 weeks left before the competition, still not knowing what went wrong with the robot, we ordered parts for 3 more just to be sure. The next one we built lasted a total of 1 hour before drawing the current limit from the power supply. By progressively removing components we came to the conclusion that it must be the buck converter, and swapped it out for a linear regulator. After 10 minutes it was drawing the current limit yet again. After disassembling all components and unit testing them, we noticed that the hall effects on the motor encoders did not match, and a couple of which we couldn’t even find on Google. It appears that DFRobot just randomly picks 1 of 3 hall effect options when making these encoders, and on most of our motors they burnt out and shorted the 3.3V rail after some run time. So on the 4th board, 2 days before competition, we wired everything except for the encoder wires. This meant ditching any sort of path planning or straight driving algorithms. Putting more load on our software team this late in the project was asking a lot, but they pulled it off by using the ToF depth image to steer towards the pole, regardless of motor speeds. This PCB worked fine for the rest of the competition, and we still had a backup. Don’t ask about the budget.</p>
+									<p>The biggest set back our project had was with the integrated encoders on the motors we selected. As mentioned previously I had selected these N20 gear motors, and two brands sell them with integrated hall effect sensors and a diametrically magnetized disc magnet. Those two brands are Pololu (a very reputable brand) and DFRobot (a not so reputable brand) but hey they looked identical and the DFRobot ones were 5X cheaper all things considered. Our first PCB lasted a good month of testing and programming, and only died when we had an accidental short. This led us to order the parts for a second one, which seemed to slowly lose functionality as it was turned on. First the ToF died, then the IMU, then the encoder signals and finally the Artemis wouldn't communicate at all. With 2 weeks left before the competition, still not knowing what went wrong with the robot, we ordered parts for 3 more just to be sure. The next one we built lasted a total of 1 hour before drawing the current limit from the power supply. By progressively removing components and unit testing them, we noticed that the hall effects on the motor encoders did not match, and a couple of which we couldn't even find on Google. It appears that DFRobot just randomly picks 1 of 3 hall effect options when making these encoders, and on most of our motors they burnt out and shorted the 3.3V rail after some run time. So on the 4th board, 2 days before competition, we wired everything except for the encoder wires. This meant ditching any sort of path planning or straight driving algorithms. Putting more load on our software team this late in the project was asking a lot, but they pulled it off by using the ToF depth image to steer towards the pole, regardless of motor speeds. This PCB worked fine for the rest of the competition, and we still had a backup. Don't ask about the budget.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture fifty-per" src="./assets/TB_graveyard.jpg">
@@ -306,7 +303,7 @@
 									<p>As mentioned before, the selection of our fancy ToF sensor drove the selection of the Sparkfun Artemis module. By default it runs mbed OS, a real time operating system that runs on the embedded M4F processor.</p>
 								</div>
 								<div class="text-box">
-									<p>I didn’t do any work on the software side so I won’t go into much detail, this was done by Stephen and Jessie. Essentially the program we had by the end was a simple state machine shown below. On power up the robot would continuously monitor the magnitude of the accelerometer, waiting for it to be a significant value over 1G, representing the launch. To be as fast as possible we would wait for a magnitude of acceleration approximately equal to 1G, meaning the robot has settled.
+									<p>I didn't do any work on the software side so I won't go into much detail, this was done by Stephen and Jessie. Essentially the program we had by the end was a simple state machine shown below. On power up the robot would continuously monitor the magnitude of the accelerometer, waiting for it to be a significant value over 1G, representing the launch. To be as fast as possible we would wait for a magnitude of acceleration approximately equal to 1G, meaning the robot has settled.
 									</p>
 								</div>
 								<div class="image-box">
@@ -319,19 +316,19 @@
 									<img class="center-picture sixty-per" src="./assets/TB_depth.png">
 								</div>
 								<div class="text-box">
-									<p>Once we have the image, we compute a convolution with a filter developed by Stephen. The convolution is optimized to look for a pole, and output a distribution that “points” to it. If the output of the convolution doesn’t show a high confidence of a pole, the program continues.</p>
+									<p>Once we have the image, we compute a convolution with a filter developed by Stephen. The convolution is optimized to look for a pole, and output a distribution that "points" to it. If the output of the convolution doesn't show a high confidence of a pole, the program continues.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture sixty-per" src="./assets/TB_conv_example.png">
 								</div>
 								<div class="text-box">
-									<p>The robot will turn by 45 degrees (the FOV of the sensor) and repeat this process until it’s done a full 360 degrees. At that point it turns randomly and drives forwards a meter, hoping to get within range of the sensor. As mentioned at the beginning of this post, the “4m range” was only in a dark room with a white target. In reality we were competing in a bright classroom and searching for a red pole. With default firmware settings, range was around 0.9m, but after a longer exposure period and looser confidence intervals we boosted it to around 1.5m.</p>
+									<p>The robot will turn by 45 degrees (the FOV of the sensor) and repeat this process until it's done a full 360 degrees. At that point it turns randomly and drives forwards a meter, hoping to get within range of the sensor. As mentioned at the beginning of this post, the "4m range" was only in a dark room with a white target. In reality we were competing in a bright classroom and searching for a red pole. With default firmware settings, range was around 0.9m, but after a longer exposure period and looser confidence intervals we boosted it to around 1.5m.</p>
 								</div>
 								<div class="text-box">
 									<b>Competition</b>
 								</div>
 								<div class="text-box">
-									<p>In what seemed like classic Waterloo tradition, the day before was a practice session from 1:00pm - 5:30pm. After seeing the state of the teams the day before, the TA decided to stay as long as needed. Near midnight our software was finalized and we started doing full integration tests on the field. We quickly realized that the floor in the competition room was super dusty, and our robot would slide quite far from it's initial impact location. This meant that even if the catapult was dialed in to get the robot close to the pole, we wouldn’t know where it would tumble. We tried some crazy things like double sided tape wheels, weld filler rod spokes, and spinning the wheels in midair for gyroscopic precession. We gave up on these approaches and decided that if the robot tumbled we would just repeat our attempt. Attempts could be repeated without penalty if under 10 seconds had passed, and by the time the robot landed and tumbled it would only be around 8 seconds. This was a risky strategy but allowed us to continuously reattempt until we had a good run. We knew about this rule at the beginning of the competition, but weren’t confident we could land on the other side in under 10 seconds. This ended up being a total cheat code, allowing us to get our perfect cannonball run. At 5:30am our team knew we could land within a meter roughly every 4 attempts. Rumor has it the last team left at 7:30am. Competition started at 9:30am.</p>
+									<p>In what seemed like classic Waterloo tradition, the day before was a practice session from 1:00pm - 5:30pm. After seeing the state of the teams the day before, the TA decided to stay as long as needed. Near midnight our software was finalized and we started doing full integration tests on the field. We quickly realized that the floor in the competition room was super dusty, and our robot would slide quite far from it's initial impact location. This meant that even if the catapult was dialed in to get the robot close to the pole, we wouldn't know where it would tumble. We tried some crazy things like double sided tape wheels, weld filler rod spokes, and spinning the wheels in midair for gyroscopic precession. We gave up on these approaches and decided that if the robot tumbled we would just repeat our attempt. Attempts could be repeated without penalty if under 10 seconds had passed, and by the time the robot landed and tumbled it would only be around 8 seconds. This was a risky strategy but allowed us to continuously reattempt until we had a good run. We knew about this rule at the beginning of the competition, but weren't confident we could land on the other side in under 10 seconds. This ended up being a total cheat code, allowing us to get our perfect cannonball run. At 5:30am our team knew we could land within a meter roughly every 4 attempts. Rumor has it the last team left at 7:30am. Competition started at 9:30am.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/TB_comp.gif">
@@ -346,7 +343,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>After the competition we decided to do some destructive testing, dropping the robot from the seventh floor of our engineering building. Miraculously we didn’t have a battery fire and all the electronics remained functional! A small piece of the enclosure holding one of the batteries in broke off. One of the gearboxes also took a side impact shearing gear teeth somehow - but the other one works perfectly fine.</p>
+									<p>After the competition we decided to do some destructive testing, dropping the robot from the seventh floor of our engineering building. Miraculously we didn't have a battery fire and all the electronics remained functional! A small piece of the enclosure holding one of the batteries in broke off. One of the gearboxes also took a side impact shearing gear teeth somehow - but the other one works perfectly fine.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -355,7 +352,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>At face value this was just a competition amongst our classmates, and for many it was just doing what was required of them to pass the course. But to me, it meant pushing a complicated system to its limits, and squezzing every last bit of performance (and weight) out of it. I don’t know if I’ve ever had a robotics project with such complexity come down to such a tight deadline. I also think we got very close to the optimal design, that being said I am super curious to see what future teams do to beat our score.</p>
+									<p>At face value this was just a competition amongst our classmates, and for many it was just doing what was required of them to pass the course. But to me, it meant pushing a complicated system to its limits, and squezzing every last bit of performance (and weight) out of it. I don't know if I've ever had a robotics project with such complexity come down to such a tight deadline. I also think we got very close to the optimal design, that being said I am super curious to see what future teams do to beat our score.</p>
 								</div>
 							</div>
 						</div>
@@ -381,13 +378,13 @@
 							</div>
 							<div class="portfolio-content">
 								<div class="text-box">
-									<p>One of my favourite hackers, George Hotz, founder of comma.ai, recently mocked Tesla by coming out with the “comma body” seen below. Comma.ai is a company that like Tesla, is aiming to solve self driving - though their approach is much different. While Tesla was collecting data from their fleet of cars, George was crowdsourcing driving data through an app called chffr from a community of hackers. While Tesla was designing custom silicon for self driving computation, George and the comma team were modifying android phones to tap into the CAN system of steer by wire cars and perform simple ADAS. At one point comma had the highest ADAS rating of any automaker with the comma two - including Tesla autopilot. And finally, when Tesla revealed that it wanted to make a humanoid robot in August of 2021, George announced the comma body, a hoverboard with a piece of extrusion and a comma three on top. What a mockery.</p>
+									<p>One of my favourite hackers, George Hotz, founder of comma.ai, recently mocked Tesla by coming out with the "comma body" seen below. Comma.ai is a company that like Tesla, is aiming to solve self driving - though their approach is much different. While Tesla was collecting data from their fleet of cars, George was crowdsourcing driving data through an app called chffr from a community of hackers. While Tesla was designing custom silicon for self driving computation, George and the comma team were modifying android phones to tap into the CAN system of steer by wire cars and perform simple ADAS. At one point comma had the highest ADAS rating of any automaker with the comma two - including Tesla autopilot. And finally, when Tesla revealed that it wanted to make a humanoid robot in August of 2021, George announced the comma body, a hoverboard with a piece of extrusion and a comma three on top. What a mockery.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture forty-per" src="./assets/comma body.png">
 								</div>
 								<div class="text-box">
-									<p>But now the times are changing - there's a new kid on the block (or there was supposed to be). Meet Bracket Bot, or {bot} for short. Inspired by the simple form factor of the comma body, bracket bot is built very similarly. The segway form factor allows for easy controls and a cheap mechanical structure. Bracket bot uses 2 brushless hoverboard wheels to drive, much like the comma body, but paired with high resolution encoders and state of the art motor controllers. The structure is simply a piece of 4040 extrusion, a bracket, and another vertical piece of 4040 for the “mast”. Inside the enclosure is a custom built battery, a Jetson Nano,  and 4 long distance time-of-flight sensors. Atop the mast standing at 5’8 is a wide angle camera, in conjunction with an additional time-of-flight sensor.</p>
+									<p>But now the times are changing - there's a new kid on the block (or there was supposed to be). Meet Bracket Bot, or {bot} for short. Inspired by the simple form factor of the comma body, bracket bot is built very similarly. The segway form factor allows for easy controls and a cheap mechanical structure. Bracket bot uses 2 brushless hoverboard wheels to drive, much like the comma body, but paired with high resolution encoders and state of the art motor controllers. The structure is simply a piece of 4040 extrusion, a bracket, and another vertical piece of 4040 for the "mast". Inside the enclosure is a custom built battery, a Jetson Nano,  and 4 long distance time-of-flight sensors. Atop the mast standing at 5'8 is a wide angle camera, in conjunction with an additional time-of-flight sensor.</p>
 								</div>
 								<div class="text-box">
 									<p>This was mainly my project, but two friends helped out near the end. Ethan Childerhose of bigcrete.engineering and Ivan Yevenko. Ethan designed a high power buck converter for the power hungry Jetson Nano, wrote a custom software SPI library, and worked with me on the firmware development. Ivan wrestled with ORB-SLAM and added functionality for local and global floor detection which helped with accurate homography, he also critiqued my crazy perception ideas. We aimed to have the project done within two weeks, but after running into significant motor controller problems and realizing the software was harder than anticipated, it lasted months and still never got completed. Typical.</p>
@@ -399,13 +396,13 @@
 									<b>Form Factor</b>
 								</div>
 								<div class="text-box">
-									<p>People love to hate on the Tesla Bot form factor, I for one think that it makes sense for a lot of things. The one thing I don’t think it makes sense for is manufacturing, which confuses me since it’s supposed to be the first use case of the Tesla Bot. The things that are hard for machines to do are not hard because of the form factor, they are often hard because they need finesse. A fine degree of sensor fusion and processing. For example it's hard for robots to route cable harnesses through cars, yet trivial for humans. This is because humans have great force feedback, an understanding of cable physics, great 3D perception of where the cable is, but not because of the human form factor. It is often this case across the assembly line, trust me - i’ve walked it. Where the form factor really makes sense is in spaces designed for humans that can’t change as easily as an assembly line. Anytime a door needs to be opened, or stairs need to be climbed, or even getting into a car (just watch the 2015 DARPA robotics challenge) you’ll want a humanoid form factor.</p>
+									<p>People love to hate on the Tesla Bot form factor, I for one think that it makes sense for a lot of things. The one thing I don't think it makes sense for is manufacturing, which confuses me since it's supposed to be the first use case of the Tesla Bot. The things that are hard for machines to do are not hard because of the form factor, they are often hard because they need finesse. A fine degree of sensor fusion and processing. For example it's hard for robots to route cable harnesses through cars, yet trivial for humans. This is because humans have great force feedback, an understanding of cable physics, great 3D perception of where the cable is, but not because of the human form factor. It is often this case across the assembly line, trust me - i've walked it. Where the form factor really makes sense is in spaces designed for humans that can't change as easily as an assembly line. Anytime a door needs to be opened, or stairs need to be climbed, or even getting into a car (just watch the 2015 DARPA robotics challenge) you'll want a humanoid form factor.</p>
 								</div>
 								<div class="text-box">
-									<p>To be able to interact with human spaces, you need to accurately reflect the human body with around 30-40 DOF. But the goal of Bracket Bot was just to have a presence in public spaces, specifically in our buildings engineering build E5. This meant it had to be able to ride elevators, go over small bumps, and not block hallways or tight spaces. To meet these requirements, we made the robot roughly the size of an average human. It uses 8” wheels to traverse over large bumps and thresholds. Although not as close to a human as the Tesla Bot it’s surely close for 20X less degrees of freedom.</p>
+									<p>To be able to interact with human spaces, you need to accurately reflect the human body with around 30-40 DOF. But the goal of Bracket Bot was just to have a presence in public spaces, specifically in our buildings engineering build E5. This meant it had to be able to ride elevators, go over small bumps, and not block hallways or tight spaces. To meet these requirements, we made the robot roughly the size of an average human. It uses 8" wheels to traverse over large bumps and thresholds. Although not as close to a human as the Tesla Bot it's surely close for 20X less degrees of freedom.</p>
 								</div>
 								<div class="image-box">
-									<img class="center-picture forty-per" src="./assets/Optimus.png">
+									<img class="center-picture" src="./assets/Optimus.png">
 								</div>
 								<div class="text-box">
 									<p>So this is why we picked the form factor, same stance and height as the average human. The segway allows for high speeds and great maneuverability in a small package. Similar eye placement to that of humans lets us get a wide angle view from high up, and a high mass moment of inertia for the segway.</p>
@@ -414,7 +411,7 @@
 									<b>Mechanical</b>
 								</div>
 								<div class="text-box">
-									<p>I knew what we had to work with before the project started. I pooled together components with my roommates and some other friends to get this built as soon as possible. We gathered 3 Prusa’s in our apartment and started printing stuff 24/7, iterating fast with the initial 2 week goal in mind. We had a ton of 8” hoverboard wheels from broken hoverboards, as well as the 18650s that came with them. So I knew we could work with those. They have a D shaft to interface with so I designed a 3D printed flexure to clamp onto it (see below). Although using plastic was suboptimal for a part with such high contact stresses, it was what we had to work with. For the chassis I used a bunch of 4040 with 3D printed brackets (hence the name). Similar to the comma body I added a kickstand, which would catch the robot if it fell or died instead of face planting. On the ends of the kickstand were print-in-place wheels for prototyping and testing.</p>
+									<p>I knew what we had to work with before the project started. I pooled together components with my roommates and some other friends to get this built as soon as possible. We gathered 3 Prusa's in our apartment and started printing stuff 24/7, iterating fast with the initial 2 week goal in mind. We had a ton of 8" hoverboard wheels from broken hoverboards, as well as the 18650s that came with them. So I knew we could work with those. They have a D shaft to interface with so I designed a 3D printed flexure to clamp onto it (see below). Although using plastic was suboptimal for a part with such high contact stresses, it was what we had to work with. For the chassis I used a bunch of 4040 with 3D printed brackets (hence the name). Similar to the comma body I added a kickstand, which would catch the robot if it fell or died instead of face planting. On the ends of the kickstand were print-in-place wheels for prototyping and testing.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -423,7 +420,7 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>The enclosure is pretty clever, it's 4 pieces with interlocking features that keep the outer surfaces aligned. FDM prints have a pretty characteristic texture and along with the gloss, it makes it very obvious when they aren’t aligned. Each piece is supported by spokes (shown below in white) which keeps the enclosure strong enough to support the weight of the robot in any crash orientation (with the kickstand removed). To align each piece, 2 dovetails that purposefully over constrain the assembly are attached to mating pieces. They flex the parts to be concentric and reduce warpage. The end pieces are also used to mount the wheel encoder and Time-of-Flight sensor.</p>
+									<p>The enclosure is pretty clever, it's 4 pieces with interlocking features that keep the outer surfaces aligned. FDM prints have a pretty characteristic texture and along with the gloss, it makes it very obvious when they aren't aligned. Each piece is supported by spokes (shown below in white) which keeps the enclosure strong enough to support the weight of the robot in any crash orientation (with the kickstand removed). To align each piece, 2 dovetails that purposefully over constrain the assembly are attached to mating pieces. They flex the parts to be concentric and reduce warpage. The end pieces are also used to mount the wheel encoder and Time-of-Flight sensor.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -438,7 +435,7 @@
 									<img class="center-picture sixty-per" src="./assets/Bracket Bot Knolling.jpg">
 								</div>
 								<div class="text-box">
-									<p>I wish the mechanical aspect of this project was more complicated, I wanted to add a simple arm. Or something challenging. The hardest part was the enclosure fitment and panel gap, which is fantastic because I work at Tesla. I eventually ran out of things to do and started the electrical and even software myself (which wasn’t supposed to be my part of the project for a good reason).</p>
+									<p>I wish the mechanical aspect of this project was more complicated, I wanted to add a simple arm. Or something challenging. The hardest part was the enclosure fitment and panel gap, which is fantastic because I work at Tesla. I eventually ran out of things to do and started the electrical and even software myself (which wasn't supposed to be my part of the project for a good reason).</p>
 								</div>
 								<div class="text-box">
 									<p>Bow down to your {evil} robot overlord.</p>
@@ -453,7 +450,7 @@
 									<b>Electrical</b>
 								</div>
 								<div class="text-box">
-									<p>Let me preempt this - the wire routing is not my best work. The electrical layout is shown below, showing most of the buses and power connections. I learned about how big of a problem wire routing is, even with 2 motors and motor controllers, I can’t imagine scaling up to Tesla Bot level. One of the big things I realized is how important it is to reduce wires per actuator. We were forced to use SPI because of our motor controller selection, which required 5 wires per controller (2 chip selects). Tesla Bot uses CAN as far as I can tell, which means 2.5X less points of failure, and 2.5X less wire to route per actuator.</p>
+									<p>Let me preempt this - the wire routing is not my best work. The electrical layout is shown below, showing most of the buses and power connections. I learned about how big of a problem wire routing is, even with 2 motors and motor controllers, I can't imagine scaling up to Tesla Bot level. One of the big things I realized is how important it is to reduce wires per actuator. We were forced to use SPI because of our motor controller selection, which required 5 wires per controller (2 chip selects). Tesla Bot uses CAN as far as I can tell, which means 2.5X less points of failure, and 2.5X less wire to route per actuator.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture sixty-per" src="./assets/Bracket Bot Electrical Diagram.png">
@@ -462,7 +459,7 @@
 									<p>Let's start with power distribution. Power directly from the battery gets distributed to each motor controller. The Jetson is power hungry, consuming 25W at max computation (which we will basically always be at) at an annoyingly low voltage of 5V. With no good high power 5V bucks on the market, Ethan decided to design and build his own using a 45V 5A DC-DC converter from TI.</p>
 								</div>
 								<div class="text-box">
-									<p>Modern day FOC brushless motor control is kind of a weird duopoly. You have two good options, VESC (and all of its copies) or O-Drive. Both of these options have a ton of features in terms of position, velocity, torque control and different sensored and sensorless techniques. Both of them are also pretty pricey, and we couldn’t get a sponsorship from either company. We started out with some spare VESCs we had lying around, but one of them was fried, forcing us to go another route. There is a third option that some hobbyists use, but it comes with unique challenges. Trinamic Motion Control, a German company making custom silicon motor controllers. Bought by Maxim Integrated (who is in turn owned by Analog Devices) it sounds as messy as it is. Although they very generously offered to sponsor our project by sending us two 4671+6100 breakout boards, they were a huge pain to work with. There was no available library for the Jetson so we were forced to write our own by writing bytes directly to memory addresses. On top of this, the Jetson only supports 2 hardware SPI chip selects, so Ethan had to write a custom software SPI library to use 4 devices on the line. Luckily, Trinamic provides an IDE that allows you to tune your control values and motor parameters. Unluckily, it is the worst software I have ever used. It is incredibly unstable, most versions didn’t even work at all. Enjoy some actual screenshots below.</p>
+									<p>Modern day FOC brushless motor control is kind of a weird duopoly. You have two good options, VESC (and all of its copies) or O-Drive. Both of these options have a ton of features in terms of position, velocity, torque control and different sensored and sensorless techniques. Both of them are also pretty pricey, and we weren't able to get a sponsorship from either company. We started out with some spare VESCs we had lying around, but one of them was fried, forcing us to go another route. There is a third option that some hobbyists use, but it comes with unique challenges. Trinamic Motion Control, a German company making custom silicon motor controllers. Bought by Maxim Integrated (who is in turn owned by Analog Devices) it sounds as messy as it is. Although they very generously offered to sponsor our project by sending us two 4671+6100 breakout boards, they were a huge pain to work with. There was no available library for the Jetson so we were forced to write our own by writing bytes directly to memory addresses. On top of this, the Jetson only supports 2 hardware SPI chip selects, so Ethan had to write a custom software SPI library to use 4 devices on the line. Luckily, Trinamic provides an IDE that allows you to tune your control values and motor parameters. Unluckily, it is the worst software I have ever used. It is incredibly unstable, most versions didn't even work at all. Enjoy some actual screenshots below.</p>
 								</div>
 								<div class="image-box">
 									<div class="multiple-pictures">
@@ -471,18 +468,20 @@
 									</div>
 								</div>
 								<div class="text-box">
-									<p>Once we finally got a usable tune on the motors, it was time to write the control code which I’ll go into in the software section. Trinamic only lets you command a velocity in integers, meaning no less than 1rpm! That means that the control loop couldn’t react until it commanded a velocity that rounded up to 1, which drastically hurt the stability. The controllers would also randomly set 363rpm to the velocity registers non-deterministically when we set the drive mode to stop. We still don’t know why this was the case, and this was the main bug holding us back from completing the project.</p>
+									<p>Once we finally got a usable tune on the motors, it was time to write the control code which I'll go into in the software section. Trinamic only lets you command a velocity in integers, meaning no less than 1rpm! That means that the control loop couldn't react until it commanded a velocity that rounded up to 1, which drastically hurt the stability. The controllers would also randomly set 363rpm to the velocity registers non-deterministically when we set the drive mode to stop. We still don't know why this was the case, and this was the main bug holding us back from completing the project.</p>
 								</div>
 								<div class="text-box">
-									<p>Next I’ll talk about the battery. It was a pretty simple problem, we scavenged 18650 cells from hoverboards and spot welded them together with the generous help of Waterloo’s Solar Car team, Midnight Sun. We used the same voltage as a hoverboard (10S) and as many cells as we could in parallel (2P). Some rough napkin math shows it should last around 30 minutes of casual driving. I built up a nice 4040 friendly enclosure with a BMS included, seen below.</p>
+									<p>Next I'll talk about the battery. It was a pretty simple problem, we scavenged 18650 cells from hoverboards and spot welded them together with the generous help of Waterloo's Solar Car team, Midnight Sun. We used the same voltage as a hoverboard (10S) and as many cells as we could in parallel (2P). Some rough napkin math shows it should last around 30 minutes of casual driving. I built up a nice 4040 friendly enclosure with a BMS included, seen below.</p>
 								</div>
 								<div class="image-box">
 									<img class="center-picture sixty-per" src="./assets/Bracket Bot Battery.png">
 								</div>
 								<div class="text-box">
-									<p>Let's talk about our sensor suite. I gained a lot of insight into robotics perception through my internship at Matician, working with some of the most talented CV engineers in robotics. I’ll dig more into perception later, but the gist of it is that we wanted to be able to identify and interact with people (requiring at least 1 camera) and also wanted to be certain we didn’t hit anything (proximity sensor safety net). Ivan and I didn’t think that a stereo pair was necessary as we didn’t care too much about depth accuracy. We planned to have safe margins around walls and objects anyway, and thus didn’t need accurate depth. Our SLAM system used our transient data to build decently accurate depth maps, just based on monocular vision. As for proximity sensing, I am a huge fan of the VL series of Time-of-Flight from STM. They're super precise, decently accurate (depends on the reflectivity sadly), tiny, and easy to work with. Although a member of the pure vision party, in this case not hitting things is immensely important. Both for the reasons of not being kicked out of Waterloo, and because the robot could tip over. Finally the IMU we chose was a BNO055 which is an awesome blend of accelerometer, magnetometer and gyroscope that yields low drift and a stable 3 axis output.</p>
+									<p>Let's talk about our sensor suite. I gained a lot of insight into robotics perception through my internship at Matician, working with some of the most talented CV engineers in robotics. I've written about this before on my blog - but I think courses should strive to be more like this one. The rundown of the syllabus was teams of 3 - 6 will compete to complete a robotics challenge that will be announced in the second week. Your mark of the course is highly dependent on your competition score, which is calculated as:</p>
 								</div>
 								<div class="image-box">
+									<img class="center-picture twenty-five-per" src="./assets/TB_perf_score.png">
+								</div>
 									<div class="multiple-pictures">
 										<img class="center-picture" src="./assets/Bracket Bot Sensor FOV.png">
 										<img class="center-picture" src="./assets/Bracket Bot ToF Side.png">
@@ -1431,12 +1430,12 @@
 		</main>
 		<footer>
 			<hr>
-			<ul>
-				<li><a href="https://www.linkedin.com/in/claytonhaight/">&#128101 LinkedIn</a></li>
-				<li><a href="https://github.com/clayhaight01">&#128187 GitHub</a></li>
-				<li><a href="mailto:chaight@uwaterloo.ca">&#128236 chaight@uwaterloo.ca</a></li>
-				<li><a href="https://twitter.com/clayhaight"><svg xmlns="http://www.w3.org/2000/svg" style="transform: translate(0, 10%);" height="16px" viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg> @clayhaight</a></li>
-			</ul>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
 		</footer>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
