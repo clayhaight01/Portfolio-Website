@@ -22,7 +22,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     padding: 10px 0;
 }
 
@@ -34,7 +34,7 @@ nav a {
 
 .container, header, main, footer {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     padding: 0 15px;
     box-sizing: border-box;
 }
@@ -54,4 +54,41 @@ img {
 p, h1, h2, h3, h4, h5, h6, ul, ol {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+}
+
+.timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline-entry {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+.timeline-details {
+    width: 100%;
+    order: 1;
+}
+
+.timeline-img, .timeline-dot {
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+.timeline-img img, .timeline-dot img {
+    width: 100%;
+    object-fit: contain;
+    background-color: white; /* Add a background color if needed */
+}
+
+.timeline-blurb {
+    width: 80%;
+    order: 3;
+    padding-left: 1em;
+    box-sizing: border-box;
 }
