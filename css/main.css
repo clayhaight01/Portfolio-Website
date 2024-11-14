@@ -63,32 +63,58 @@ p, h1, h2, h3, h4, h5, h6, ul, ol {
 
 .timeline-entry {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-bottom: 2em;
+    width: 100%;
 }
 
 .timeline-details {
-    width: 100%;
-    order: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    margin-bottom: 1em;
 }
 
 .timeline-img, .timeline-dot {
-    width: 20%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    border: 2px solid white;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
-.timeline-img img, .timeline-dot img {
-    width: 100%;
-    object-fit: contain;
-    background-color: white; /* Add a background color if needed */
+.timeline-info {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.timeline-info-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-name {
+    font-weight: 600;
+    margin: 0;
+}
+
+.job-title {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.job-date {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap;
 }
 
 .timeline-blurb {
-    width: 80%;
-    order: 3;
-    padding-left: 1em;
-    box-sizing: border-box;
+    margin: 0;
+    padding-left: calc(50px + 1em);
 }
