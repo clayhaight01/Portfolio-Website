@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YJVF4226"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85YJVF4226');
+		</script>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
+		<title>Clayton Haight | Fold3r Origami CNC</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../about.html">About</a>
+				<a href="../projects.html">Projects</a>
+				<a href="../blog.html">Blog</a>
+			</nav>
+			<hr>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
+			</div>
+		</header>
+		<main>
+			<div class="project-container">
+				<h2>Fold3r Origami CNC</h2>
+				<p class="project-subtitle">A machine capable of assisting with the complex art of origami</p>
+				
+				<div class="text-box">
+					<p>In my first year Mechatronics Engineering course we had a final design project, in which we were tasked in making an automated device with a Lego EV3 robotics kit. With the recent interest in origami from me and my friends, we thought it would be an awesome project to try to fold origami. But after looking at some preliminary designs we had, we figured it would be way too hard with the 4 motors we were limited to. So as a compromise we decided to make an origami creasing machine, one that you could import a picture of a folding pattern, and it would crease a paper on both sides to show the user where the folds needed to be. To do this we designed, built, and programmed a 4 axis CNC, with a rotating creasing wheel, pictured below. On the team, I handled the mechanical design, the build, and the control system code.</p>
+				</div>
+				<div class="image-box">
+					<div class="multiple-pictures">
+						<img class="center-picture forty-per" src="../assets/Fold3r Full Render.png">
+						<img class="center-picture forty-per" src="../assets/Fold3r Real.png">
+					</div>
+				</div>
+				<div class="text-box">
+					<p>Since we wanted to make the device easy to use for anyone, we wanted to make a “CAM” program of sorts. The simplest way we found to do this was to have the user draw blue or red lines on a square piece of paper, blue being a down fold and red being an up fold (seen below). This picture would be read into an OpenCV program that would detect the coordinate endpoints of these lines, and output a custom “G-code” of all the coordinates of crease lines to a text file, automatically optimizing them. Then the EV3 could interpret the text file and crease all the lines on one side of the paper, prompting the user to flip the page, and then finishing the lines on the other side.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture" src="../assets/Crease Pattern.png" style="width: 100%;">
+				</div>
+				<div class="text-box">
+					<p>The main XY system is a basic gantry system using threaded rod and smooth rod. Since our time and budget was constrained we picked a very basic system, using a threaded rod kept the cost low yet allowed our machine to be precise. On top of this, by using a synchro shaft on the Y axis, we were able to drive two threaded rods with one servo motor.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture sixty-per" src="../assets/Exploded Gantry.png">
+				</div>
+				<div class="text-box">
+					<p>Holding the end effector is an extremely compact but simple Z and C axis. The Z-axis used a small lead screw and box way slides and was driven with the smaller servo motor. The Z-axis was retained in a ring gear that was responsible for spinning the creasing wheel. By rotating the entire Z-axis a much smaller sub-assembly was possible, as opposed to moving a rotational axis up and down. At the end of this assembly is a creasing wheel or “pizza cutter” which is essentially a sharp wheel to crease the paper.</p>
+				</div>
+				<div class="image-box">
+					<div class="multiple-pictures">
+						<img class="center-picture" src="../assets/Creasing Head Render.png">
+						<img class="center-picture" src="../assets/Fold3r Creasing Wheel w Arrows.png">
+					</div>
+				</div>
+				<div class="text-box">
+					<p>Keeping the paper down without damaging it was a big problem that we faced in the design phase, as paper is delicate and needs to be intact for origami to work. In addition to this, to make deep crease marks in the paper, it was necessary to allow the creasing wheel to push the paper into something compliant, thus wrapping the paper around the wheel. To tackle these problems we made a simple vacuum table with a shop vac and a perforated foam sheet, which allowed us to vary the compliance of the foam and the strength of the work holding.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture sixty-per" src="../assets/Exploded Vacuum Table Render.png">
+				</div>
+				<div class="text-box">
+					<p>This project was extremely fun, we tackled a really cool problem with some simple and clever solutions. The end product worked extremely well and impressed lots of professors and students, seeing a pre-creased origami paper opened people's eyes to the art of origami.</p>
+				</div>
+				
+				<div class="back-link">
+					<a href="../projects.html">← Back to Projects</a>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
+		</footer>
+	</body>
+</html> 

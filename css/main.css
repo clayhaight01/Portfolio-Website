@@ -9,12 +9,31 @@
     margin-block-end: 0px;
   }
 
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.wrapper {
+    width: 100%;
+    margin-bottom: 0;
 }
 
 nav {
@@ -44,6 +63,9 @@ nav a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
 }
 
 img {
@@ -56,6 +78,65 @@ p, h1, h2, h3, h4, h5, h6, ul, ol {
     margin-bottom: 0.5em;
 }
 
+.wrapper > h2 {
+    margin-bottom: 1.5em;
+}
+
+.blog-title {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.blog-title h3 {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.blog-title:hover {
+    text-decoration: underline;
+    color: #0066cc;
+}
+
+.blog-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.blog-list li {
+    margin-bottom: 1.5em;
+}
+
+.blog-date {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+/* Bold text styling */
+b {
+    font-weight: 700;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.text-box b {
+    font-weight: 700;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+/* Multiple pictures styling */
 .timeline {
     max-width: 600px;
     margin: 0 auto;
@@ -117,4 +198,161 @@ p, h1, h2, h3, h4, h5, h6, ul, ol {
 .timeline-blurb {
     margin: 0;
     padding-left: calc(50px + 1em);
+}
+
+/* Footer styling */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* Project Pages */
+.project-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.project-subtitle {
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.project-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.project-container .image-box {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.project-container .text-box {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.project-container .multiple-pictures {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-container .center-picture {
+    display: block;
+    margin: 0 auto;
+}
+
+.project-container .twenty-five-per {
+    width: 25%;
+}
+
+.project-container .thirty-per {
+    width: 30%;
+}
+
+.project-container .forty-per {
+    width: 40%;
+}
+
+.project-container .fifty-per {
+    width: 50%;
+}
+
+.project-container .sixty-per {
+    width: 60%;
+}
+
+.project-container .eighty-per {
+    width: 80%;
+}
+
+.project-container .portfolio-full-width {
+    width: 100%;
+}
+
+.project-container .left-picture {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+.project-container .right-picture {
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+.back-link {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 15px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.project-tag {
+    background-color: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
 }

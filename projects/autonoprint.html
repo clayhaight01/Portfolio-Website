@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YJVF4226"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85YJVF4226');
+		</script>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
+		<title>Clayton Haight | Autonoprint</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../about.html">About</a>
+				<a href="../projects.html">Projects</a>
+				<a href="../blog.html">Blog</a>
+			</nav>
+			<hr>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
+			</div>
+		</header>
+		<main>
+			<div class="project-container">
+				<h2>Autonoprint</h2>
+				<p class="project-subtitle">Modified 3D printer with autonomous capabilities</p>
+				
+				<div class="text-box">
+					<p>During the University of Toronto’s “MakeUofT” 24 hour hackathon, my team of 4 decided to mod a Prusa i3 to make it more autonomous. Even though hobby 3D printers are amazing, and can be fairly maintenance-free, they aren’t autonomous and still require someone to manage them. Our idea was simple, allow the printer to be able to clear and clean its build plate, monitor its status, and start a print remotely. Since the printer can clear and clean its build plate, it can hypothetically print over and over again.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture sixty-per" src="../assets/Autonoprint Render.png">
+				</div>
+				<div class="text-box">
+					<p>To do this, I designed a “scraper arm” that would be lowered across the print bed, locking into a slot on the opposite side. With a scraper flush on the bed, when the bed is moved at full speed, the print easily pops off. While moving, isopropyl alcohol is pumped under the scraper and in front of the wiper, cleaning the PEI coating on the bed from any oil or debris.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture sixty-per" src="../assets/Autonoprint.jpg">
+				</div>
+				<div class="text-box">
+					<p>In addition to the scraper arm, we added a Raspberry Pi that could control the printer from a web server, queueing prints, moving the axis and live streaming a video feed. On the Raspberry Pi, we used a program called “Spaghetti Detective” to automatically detect failed prints, which would then trigger our scraper arm to remove the print and start over.</p>
+				</div>
+				
+				<div class="back-link">
+					<a href="../projects.html">← Back to Projects</a>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
+		</footer>
+	</body>
+</html> 

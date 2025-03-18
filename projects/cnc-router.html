@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YJVF4226"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85YJVF4226');
+		</script>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
+		<title>Clayton Haight | CNC Router</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../about.html">About</a>
+				<a href="../projects.html">Projects</a>
+				<a href="../blog.html">Blog</a>
+			</nav>
+			<hr>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
+			</div>
+		</header>
+		<main>
+			<div class="project-container">
+				<h2>CNC Router</h2>
+				<p class="project-subtitle">Custom designed and built CNC router</p>
+				
+				<div class="image-box">
+					<img class="portfolio-full-width" src="../assets/CNC Front Full Render Cropped.png">
+				</div>
+				<div class="text-box">
+					<p>While working on other mechanical projects over my life, I always ran into one big problem: manufacturing. Paying a job shop to do a one-off part for me is way too expensive, and only so much can be made at home with basic tools. This problem was partly solved when I built a 3D printer in 2013, but there was still a missing piece; the ability to manufacture metal parts. Sometimes 3D printed plastic is just not good enough and stiffer, stronger materials need to be used. This, along with the challenge of 3 axis machine design enticed me enough to start this project in January of 2020.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture" src="../assets/CNC CAD.png" style="width: 100%; height: auto;">
+				</div>
+				<div class="text-box">
+					<p>The entire design revolves around a T slot extrusion bed that ensures that the Y-axis rails are parallel and that the gantry structure is reinforced. Because of my manufacturing constraints, most of the parts had to be extrusion or 3D printed, but most of the 3D printed parts were designed to be converted to routered parts down the road. A cool learning experience for me was using topology optimization for a bracket between two pieces of extrusion, while not very practical it did offer me insight into FEA optimization. The entire cost of the machine was kept under $700 by avoiding the use of linear rails and ball screws, which typically push the price of the machine over $2000. Instead, a bearing block style system was used in conjunction with steel reinforced belts. For my purposes, it was an easy and cheap solution that still offers more than enough strength.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture" src="../assets/CNC Build.png" style="width: 100%; height: auto;">
+				</div>
+				<div class="text-box">
+					<p>The build process was very long, spanning 2 months from April to May, mainly because I wanted to ensure that it was built properly and robustly. The main base is a wood table that I filled with a sand epoxy mixture for dampening and rigidity, everything else is built up from there. Throughout the entire process, I ensured perpendicularity was as close to perfect as possible, and that all dimensions were accurate to reduce tolerance stacks. Something very important I learned while building is just how important wire management is, originally I planned on just using cable sleeves but I realized how easily something could break without proper routing. I settled for a durable drag chain system on the X and Y axes and making everything unpluggable to make troubleshooting much easier.</p>
+				</div>
+				<div class="text-box">
+					<img class="right-picture" src="../assets/Dial Indicator On Rail.png" style="height: auto;">
+					<p>The CNC router is still being improved and developed but as of now, it can cut wood, plastics, and aluminum with up to 0.002in accuracy. The T slot table makes work holding super easy with custom clamps or even a machine vice. The router, despite being for wood, is very powerful and can spin at over 30k rpm. In the future, I would like to try more 3D contours and hopefully some PCB milling with extremely small end mills.</p>
+				</div>
+				<div class="text-box">
+					<img class="left-picture" src="../assets/CNC Electronics.png" style="height: auto;">
+					<p>The machine is controlled with a 32 bit ARM processor and an ESP32 module for wifi connectivity and controlling the TFT touchscreen. The processor sends commands to 3 TB6600 stepper controllers that in turn control the NEMA 23 stepper motors on all axes. The ESP32 communicates with the STM32 via serial and can send G-code to jog it, change a tool, probe a tool, and run a program from wifi or an SD card.</p>
+				</div>
+				
+				<div class="back-link">
+					<a href="../projects.html">← Back to Projects</a>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
+		</footer>
+	</body>
+</html> 

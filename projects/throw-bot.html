@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YJVF4226"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85YJVF4226');
+		</script>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="Throw Bot - A hyper optimized robot built to win">
+		<title>Clayton Haight | Throw Bot</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../about.html">About</a>
+				<a href="../projects.html">Projects</a>
+				<a href="../blog.html">Blog</a>
+			</nav>
+			<hr>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
+			</div>
+		</header>
+		<main>
+			<div class="project-container">
+				<h2>Throw Bot</h2>
+				<p class="project-subtitle">A hyper optimized robot built to win</p>
+				
+				<div class="image-box">
+					<img class="portfolio-full-width" src="../assets/TB_side_render.png">
+				</div>
+				<div class="text-box">
+					<p>My second term of junior year had what was probably my favorite course thus far, MTE 380. Why is that? Because of how open ended and challenging it was. I've written about this before on my blog - but I think courses should strive to be more like this one. The rundown of the syllabus was teams of 3 - 6 will compete to complete a robotics challenge that will be announced in the second week. Your mark of the course is highly dependent on your competition score, which is calculated as:</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture twenty-five-per" src="../assets/TB_perf_score.png">
+				</div>
+				<div class="text-box">
+					<b>The Challenge</b>
+				</div>
+				<div class="text-box">
+					<p>Essentially the field is two 8ft x 8ft areas separated by a 3ft tall wall. The goal is to start on one side, and navigate towards a red pole on the other side of the field, requiring some method of crossing the wall. Part of the wall is made out of steel sheet metal, encouraging some sort of magnetic solution. Another part of the wall has a ramp up and down. It's worth noting that controlled flight is not allowed, and that you are allowed to leave behind parts as you go.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture sixty-per" src="../assets/TB_field_dimensioned.png">
+				</div>
+				<div class="text-box">
+					<p>Off the bat, our team noticed that it's obvious that the priority of optimization should be:<br>
+						1. Reduce time to complete<br>
+						2. Reduce mass<br>
+					And that there is a tradeoff in score you can calculate between the two, since they are related by square law. For example, if some upgrade doubles the mass, but saves ⅓ of the time to complete the course this is justified because:</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture forty-per" src="../assets/TB_tradeoff.png">
+				</div>
+				<div class="text-box">
+					<p>We used this calculation throughout our design process to ensure we remained competitive compared to other strategies. If we found that it was possible to get a higher score by making a weight vs. time decision, we used this to make that decision. So lets talk about some other strategies.</p>
+				</div>
+				<div class="text-box">
+					<b>Conceptual Design</b>
+				</div>
+				<div class="text-box">
+					<p>As I normally encourage in open-ended design projects, each member of the team independently brainstormed ideas with no bias, then did research to inform their ideas more, and finally presented their ideas. The three main categories of ideas were driving up the ramp, climbing the steel wall, or launching over the wall - as expected. Sketching out rough concepts for each of these methods allowed us to do a rough score calculation, a look at that below:</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture forty-per" src="../assets/TB_concepts_table.png">
+				</div>
+				<div class="text-box">
+					<p>As can be found by this analysis, jumping over the wall is pretty likely to give the best score. That being said, it relies on many assumptions. There may be faster ways to do any of these, and there might be lighter ways as well, but initial signaling told us to pursue launching over the wall.</p>
+				</div>
+				<div class="text-box">
+					<b>Preliminary Design</b>
+				</div>
+				<div class="text-box">
+					<p>I want to talk about perception and sensing before the rest of the robot, since we made a decision that fundamentally altered the entire robot design. A big problem with the launching design was not knowing where you were going to land, meaning that the search space for the pole is probabilistically larger than the other two methods (where you roughly know where your robot is in the field, and can more easily go to some location to start your pole search). To counter this, we looked at long distance range sensors that could see the full field. I'm a big fan of the VL TOF series from STM, and they had a new offering available that claimed to do up to 4m ranging with a 8x8 depth grid (VL53L5CX). What we didn't see early on, and what came back to bite us, was that it can only do 4m of ranging without a depth grid and in very specific lighting (realistically it was closer to 1m). A big downside was the sensor's firmware was so large it needed to be uploaded on boot over I2C from memory big enough to fit it, ruling out most Arduino Atmel based microcontrollers altogether.</p>
+				</div>
+				<div class="text-box">
+					<p>But by far the biggest challenge with the launching design was how to make the robot survive on impact. To do this, we need to optimize the following equation to reduce force inflicted on the robot upon landing.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture forty-per" src="../assets/TB_impact.png">
+				</div>
+				<div class="text-box">
+					<p>To reduce force, the impact time needs to be maximized, the mass needs to be reduced, and the impact velocity needs to be reduced. To increase impact time, we can look at the equation for the period of a spring which is based on spring stiffness and mass (assuming the crush structure acts like a spring). These are all knobs we control!</p>
+					<div class="text-box" style="margin-left: 0; margin-right: 0;">
+						<li class="text-box-bullet">Cut mass by reusing structures as much as possible, cutting out anything that isn't necessary, and making the robot as small as physically possible</li>
+						<li class="text-box-bullet">Reduce impact velocity by tuning our parabolic arc such that the peak height is as low as possible (amongst other things to reduce energy)</li>
+						<li class="text-box-bullet">Maximize impact time by using materials that deform and crumple on impact, absorbing energy</li>
+					</div>
+					<p>As you may have noticed, we now have even more incentive to make the robot light! We get points through the competition, and it reduces impact on the robot - a win win. This reduces the optimization problem and lets us hyper focus on making it as lightweight as possible.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture sixty-per" src="../assets/TB_states.png">
+				</div>
+				<div class="text-box">
+					<b>Robot Design</b>
+				</div>
+				<div class="text-box">
+					<p>Making stuff extremely light is quite a fun challenge, you can get into all kinds of cool materials and structural methods of saving weight. During the Throw Bot design, we prosecuted every gram added, and in the end, almost every part of the robot was pushed to the limit in terms of weight. For starters, I knew the heaviest components would be the motors and the batteries. It's clear from first principles that if you want a robot that can move linearly and rotationally independently you need two separate motors. Electric motors can have good power to weight ratios, but most of that power is useless because of how low torque they are. Therefore, I was looking for small motors with big reduction gearboxes. I had used these N20 motors during my internship at Matician and on Kurt (another project of mine), and they seemed perfect for this project. Using a calculator that considers drive speed, torque for accelerating, and torque for climbing onto the platform the pole is on, the optimal gear ratio can be found. In our case, that was 100:1 - but we also tested with 50:1 and 210:1. Later, a 2S battery is selected, which significantly over-volts the motor (8.4V/6V) but gives us performance gains at the cost of a potential burn out if it draws too much current.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture forty-per" src="../assets/TB_motor_selection.png">
+				</div>
+				<div class="text-box">
+					<p>The next challenge was finding a battery, and in parallel with this determining the smallest battery possible for our power budget. To do this I worked with Ethan, our electrical lead to cut down as much power usage as possible before selecting components for the PCB. This included using a super low power microcontroller (Artemis), having the power LED be activated by a switch, running sensors in low power mode, and switching from a linear regulator to a custom buck converter. In the end, for the battery to last for five 5 minute runs, around 160mAh would be needed. At that low of an energy usage, it wasn't the capacity that limited us, but instead the discharge rate. Since current could be up to 1.2A, and most discharge ratings of LiPo packs are 1C, we would need a 1200mAh battery.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture forty-per" src="../assets/TB_power_budget.png">
+				</div>
+				<div class="text-box">
+					<p>It's very difficult to get batteries in Canada, a lot of suppliers like Digikey have a tiny selection in Canada, and other vendors don't want to deal with the shipping at all. By some completely random miracle we found out that disposable vapes use rechargeable Li-Ion batteries, and they have very high discharge rates (up to 10C!). Sadly we couldn't find a cell smaller than the 13300 (1S 400mAh) but this is still acceptable as it's only 8 grams and fairly easy to package.</p>
+				</div>
+				<div class="text-box">
+					<p>To make the structure as light as possible, we made the risky decision of using the main PCB as a structural member, sandwiching the motors and sensors between it and an identically sized dummy PCB. PCBs are manufactured out of FR4, or glass fiber, and are surprisingly stiff. We tested this idea by drop testing an old Raspberry Pi strapped to a 150g weight onto concrete from roughly the same height as the robot - none of the components broke off or were electrically damaged, and it still booted. The motors are clamped between the two PCBs, centered for rotational symmetry. The TOF is soldered at a 90 degree angle, facing forwards but braced by both PCBs. Both motors have integrated encoders that slot downwards through holes in the bottom board. Finally, the batteries are positioned at the back of the electronics sandwich, where they are as safe as possible from impact because of a tail that protrudes out of the back. There is almost no space left in the completed robot, things are packaged together as tightly as possible without sacrificing DFA or repairability.</p>
+				</div>
+				<div class="image-box">
+					<img class="center-picture fifty-per" src="../assets/TB_layout1.png">
+				</div>
+				
+				<!-- Continue with the rest of the content -->
+				
+				<div class="back-link">
+					<a href="../projects.html">← Back to Projects</a>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
+		</footer>
+	</body>
+</html> 

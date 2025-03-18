@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YJVF4226"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85YJVF4226');
+		</script>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
+		<title>Clayton Haight | 3D Printed BLDC Motor</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../about.html">About</a>
+				<a href="../projects.html">Projects</a>
+				<a href="../blog.html">Blog</a>
+			</nav>
+			<hr>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
+			</div>
+		</header>
+		<main>
+			<div class="project-container">
+				<h2>3D Printed BLDC Motor</h2>
+				<p class="project-subtitle">An almost entirely 3D printed brushless motor</p>
+				
+				<div class="text-box">
+					<img class="center-picture sixty-per" src="../assets/Motor  Annotated.png" style="height: auto;">
+					<p>As a design challenge, I thought it would be interesting to try 3D printing a basic “air core” motor. Little did I know this would turn into a deep rabbit hole of prototyping, iteration, and learning. After 20+ design iterations, major design changes, and a lot of filament later, I finally had a model that could spin at a decent speed, with a good amount of torque all things considered. The main stator core is made of iron infused PLA filament to increase magnetic flux, wrapped in copper magnet wire. The outer shell of the motor revolves around the stator, housing the magnets in an outrunner fashion. In some prototypes, I was looking at arranging the magnets in a Halbach array but didn’t think the extra diameter and cost was worth the small efficiency gain.</p>
+				</div>
+				<div class="text-box">
+					<img class="center-picture sixty-per" src="../assets/Stator Full Render.png" style="height: auto;">
+					<p>During this project, I learned a lot about GD&T, tolerancing, magnetics, electronics, and prototyping as it took many different iterations to get somewhere I was happy with. Obviously, with a large spinning mass, the concentricity is very important, and on a home-built 3D printer this isn’t the easiest thing to do. To get it not to wobble and be perfectly concentric, a lot of tuning had to be done to my printer, and some design changes made it easier to dial in. The stator core also proved difficult, as printing iron particles as a hot liquid is just asking for trouble. A ton of jamming and under extrusion forced me to print the stator in 4 different parts, sliding them onto each other similar to laminates in actual motors, this also theoretically reduced eddy currents. Then the stator was wrapped with magnet wire by hand and soldered together in a wye configuration.</p>
+				</div>
+				<div class="image-box">
+					<div class="multiple-pictures">
+						<img class="center-picture" src="../assets/Motor Exposed View.png">
+						<img class="center-picture" src="../assets/Motor Spinning.png">
+					</div>
+				</div>
+				<div class="text-box">
+					<p>Finally, using a 15A electronic speed controller I was able to get the motor to spin at up to 500rpm (pictured right). Although 3D printing a motor is super impractical, it was a super interesting learning experience and I am glad I went through with the project, despite the many pitfalls.</p>
+				</div>
+				
+				<div class="back-link">
+					<a href="../projects.html">← Back to Projects</a>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
+		</footer>
+	</body>
+</html> 

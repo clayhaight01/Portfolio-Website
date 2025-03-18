@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YJVF4226"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85YJVF4226');
+		</script>
+		
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="A Waterloo Mechatronics engineering student, learning as much as I can about everything I can. Check out my portfolio of my projects, experiences, and ideas.">
+		<title>Clayton Haight | DIODE Board</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="../index.html">Home</a>
+				<a href="../about.html">About</a>
+				<a href="../projects.html">Projects</a>
+				<a href="../blog.html">Blog</a>
+			</nav>
+			<hr>
+			<h1>Clayton Haight</h1>
+			<div class="header-info">
+				<p>Robotics Engineer</p>
+				<p>MV | CA</p>
+			</div>
+		</header>
+		<main>
+			<div class="project-container">
+				<h2>DIODE Board</h2>
+				<p class="project-subtitle">A powerful and compact solution to controlling high power</p>
+				
+				<div class="text-box">
+					<p>Whenever my simple projects need automation it's almost always higher power switching with a microcontroller. I don’t know how many times I’ve set up the same MOSFET circuit on a breadboard with an Arduino, hoping the breadboard doesn’t melt. After enough struggle, I decided it would be a fun project to make a simple microcontroller that controls a MOSFET array. This can be used for many applications such as solenoid switching (as seen on my ventilator project), motor control, or high power LED switching.</p>
+				</div>
+				<div class="image-box">
+					<div class="multiple-pictures">
+						<img class="center-picture exception" src="../assets/DIODE Board Full Render.png" style="height: 25vw; width: auto;">
+						<img class="center-picture" src="../assets/DIODE 3D.png" style="height: 25vw; width: auto;">
+					</div>
+				</div>
+				<div class="text-box">
+					<p>The microcontroller is a basic ATmega328P running at 16MHz with an FTDI breakout for programming. Six of the digital output pins go to Darlington transistors, which allow for 24V switching with a 3A load, leaving a lot of headroom for applications. On top of all of this, the board uses extremely common SMD components and was able to be SMT assembled, saving me from the difficult soldering work. Pictured below on the left is the board getting the through-hole components soldered on and on the right the board driving a 12V 775 motor.</p>
+				</div>
+				<div class="image-box">
+					<div class="multiple-pictures">
+						<img class="center-picture" src="../assets/DIODE Soldering.png" style="height: 25vw; width: auto;">
+						<img class="center-picture" src="../assets/Motor Driven by DIODE.png" style="height: 25vw; width: auto;">
+					</div>
+				</div>
+				<div class="text-box">
+					<p>This project taught me a lot about PCB design and the capabilities of manufacturers. The high power capabilities of the board meant special design considerations had to be made, teaching me a lot in the process.</p>
+				</div>
+				
+				<div class="back-link">
+					<a href="../projects.html">← Back to Projects</a>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr>
+			<nav>
+				<a href="https://twitter.com/clayhaight">Twitter</a>
+				<a href="mailto:chaight@uwaterloo.ca">Email</a>
+				<a href="https://github.com/clayhaight01">GitHub</a>
+				<a href="https://www.linkedin.com/in/claytonhaight/">LinkedIn</a>
+			</nav>
+		</footer>
+	</body>
+</html> 

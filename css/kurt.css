@@ -68,8 +68,11 @@ body {
     padding: 0;
     list-style: none;
     flex: 1 0 0%;
-
     height: 48px;
+}
+
+.kurt_nav * {
+    overflow: hidden;
 }
 
 .kurt_nav a {
