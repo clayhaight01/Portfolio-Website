@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bug House Annoying Light Switch</title>
+  <style>
+    body { background:#111; color:#ddd; font-family:sans-serif; text-align:center; padding:40px; }
+    button { font-size:22px; padding:16px 24px; border:none; border-radius:8px; background:#28a745; color:white; }
+    button:active { background:#1c7c31; }
+  </style>
+</head>
+<body>
+  <h1>ESP Light Switch</h1>
+  <button onclick="toggle()">Toggle</button>
+  <p id="status">Idle</p>
+
+<script>
+async function toggle() {
+  try {
+    document.getElementById("status").textContent = "Requesting device...";
+    const device = await navigator.bluetooth.requestDevice({
+      filters: [{ name: "ESP_Toggle" }], // your ESP name
+      optionalServices: ["00001234-0000-1000-8000-00805f9b34fb"] // expanded form
+    });
+
+    document.getElementById("status").textContent = "Connecting...";
+    const server = await device.gatt.connect();
+
+    const service = await server.getPrimaryService("00001234-0000-1000-8000-00805f9b34fb");
+    const characteristic = await service.getCharacteristic("0000abcd-0000-1000-8000-00805f9b34fb");
+
+    document.getElementById("status").textContent = "Writing toggle...";
+    const value = new Uint8Array([0x01]);
+    await characteristic.writeValue(value);
+
+    document.getElementById("status").textContent = "Done!";
+    server.disconnect();
+  } catch (err) {
+    console.error(err);
+    document.getElementById("status").textContent = "Error: " + err;
+  }
+}
+</script>
+</body>
+</html>
