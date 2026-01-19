@@ -333,6 +333,28 @@ h2 {
     margin-bottom: 0;
 }
 
+/* Archived toggle */
+.archived-toggle {
+    color: #555;
+    cursor: pointer;
+}
+
+.archived-toggle h3 {
+    color: #555;
+}
+
+.archived-toggle:hover h3 {
+    color: #333;
+}
+
+.archived-toggle {
+    margin-bottom: 12px !important;
+}
+
+.archived-projects {
+    margin-top: 0;
+}
+
 /* Timeline */
 .timeline {
     width: 100%;
@@ -381,6 +403,15 @@ h2 {
     font-weight: 600;
     font-size: 1.1em;
     margin-bottom: 0;
+}
+
+.company-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.company-name a:hover {
+    color: var(--accent-color);
 }
 
 .job-title {

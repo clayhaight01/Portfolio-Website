@@ -29,7 +29,7 @@
 				<a href="./index.html">Home</a>
 				<a href="./about.html">About</a>
 				<a href="./projects.html">Projects</a>
-				<a href="./blog.html">Blog</a>
+				<!-- <a href="./blog.html">Blog</a> -->
 			</nav>
 			<hr>
 			<h1>Clayton Haight</h1>
@@ -67,6 +67,13 @@
 							<h3>CNC Router</h3>
 						</a>
 					</li>
+					<li>
+						<a href="#" class="blog-title archived-toggle" onclick="toggleArchived(event)">
+							<h3>Archived</h3>
+						</a>
+					</li>
+				</ul>
+				<ul class="blog-list archived-projects" style="display: none;">
 					<li>
 						<a href="./projects/diode-board.html" class="blog-title">
 							<h3>DIODE Board</h3>
@@ -141,5 +148,12 @@
 		</footer>
 	
 	<script src="./js/spa.js"></script>
+	<script>
+		function toggleArchived(event) {
+			event.preventDefault();
+			var archived = document.querySelector('.archived-projects');
+			archived.style.display = archived.style.display === 'none' ? 'block' : 'none';
+		}
+	</script>
 	</body>
 </html> 
