@@ -6,3 +6,10 @@ RewriteRule ^ /%1 [NC,L,R]
 
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+# Keep Bracket Bot images and videos out of search results
+<IfModule mod_headers.c>
+	<FilesMatch "^Bracket[ _]Bot">
+		Header set X-Robots-Tag "noindex, nofollow"
+	</FilesMatch>
+</IfModule>
